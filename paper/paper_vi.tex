@@ -37,10 +37,13 @@ các baseline mạnh (BERT4ETH, ZipZap, TSGN, LMAE4Eth) trong khi là phương p
 nhất còn định vị được. Với định vị, chúng tôi báo cáo một kết quả mà lĩnh vực cần
 nghe: một bộ xếp hạng nhận biết nội dung (content-aware) trên các đặc trưng
 giá trị/độ mới/vị trí on-chain vượt trội đáng kể so với một prior recency ở Hit@1
-(0.832 so với 0.693, paired bootstrap $p{=}0.002$), nhưng một ablation có kiểm soát
-cho thấy \emph{bản thân attention học được gần như không đóng góp gì}---loại bỏ nó
-khiến Hit@1 không đổi (0.802) và MRR còn nhỉnh hơn. Do đó chúng tôi lập luận chống
-lại việc coi attention là định vị, và công bố benchmark cùng giao thức như một
+(0.832 so với 0.693, paired bootstrap $p{=}0.002$). Chúng tôi còn chỉ ra rằng
+attention học được \emph{có thể} được huấn luyện để định vị---hai mục tiêu
+weakly-supervised nâng Hit@1 chỉ-attention thêm $+24\%$ tương đối
+(0.416$\rightarrow$0.515)---nhưng nó vẫn \emph{bị các đặc trưng thủ công thâu tóm}
+trong bộ xếp hạng hợp nhất, nơi giá trị biên của nó không có ý nghĩa thống kê. Do đó
+chúng tôi định khung định vị giao dịch là phân loại sơ bộ dựa-trên-đặc-trưng, có
+trợ-giúp-xếp-hạng, và công bố benchmark cùng giao thức như một
 thách thức mở.
 \end{abstract}
 
@@ -159,16 +162,26 @@ kết thúc tại mốc phát hiện, các biên lai phishing dồn về cuối 
 nên một prior recency thuần đã đạt Hit@5/10 quanh 0.92--0.93. Mọi tuyên bố định vị
 phải được đo so với prior này; chúng tôi báo cáo nó nổi bật thay vì giấu đi.
 
-\noindent\textbf{(3) Attention học được gần như không đóng góp gì.}
-Bảng~\ref{tab:attn} tách biệt giá trị biên của attention dưới giao thức y hệt. Loại
-đặc trưng attention khỏi bộ xếp hạng nhận biết nội dung khiến Hit@1 không đổi (0.802)
-và \emph{nâng} MRR (0.854$\rightarrow$0.861); bộ xếp hạng chỉ-attention (0.416 Hit@1)
-thấp xa recency. Nói cách khác, tín hiệu định vị nằm trong các đặc trưng on-chain
-thủ công, không phải trong trọng số attention của mô hình. Điều này nhất quán với
-mảng tài liệu rộng hơn nghi ngờ attention như lời giải thích~\cite{jain2019}, và
-chúng tôi nói thẳng: \emph{ở đây attention không phải là định vị}. Chúng tôi định
-khung định vị giao dịch như sàng lọc được trợ-giúp-xếp-hạng, dẫn-dắt-bởi-đặc-trưng,
-và công bố nó như một thách thức benchmark mở.
+\noindent\textbf{(3) Attention \emph{có thể} được huấn luyện để định vị, nhưng bị
+đặc trưng thủ công thâu tóm trong hợp nhất.} Một cách hiểu ngây thơ---``attention vô
+dụng''---sẽ sai, nên chúng tôi kiểm chứng trực tiếp. Chúng tôi tăng cường đầu
+gated-attention Head-L (không đổi kiến trúc) bằng hai mục tiêu weakly-supervised chỉ
+dùng nhãn túi (không giám sát mức giao dịch): một phạt entropy làm sắc nét phân bố
+attention và một mất mát instance-max buộc giao dịch được chú ý nhất phải phân loại
+đúng nhãn túi. Từng cái riêng lẻ không giúp, nhưng \emph{kết hợp} cả hai nâng định vị
+chỉ-attention đáng kể---Hit@1 $0.416\!\rightarrow\!0.515$ ($+24\%$ tương đối), Hit@5
+$0.752\!\rightarrow\!0.851$, MRR $0.576\!\rightarrow\!0.646$ (Bảng~\ref{tab:loc},
+``Head-L (mạnh)'')---và còn cải thiện cả AUC khó cross-domain, trong khi F1 mức tài
+khoản không đổi. Vậy attention học được \emph{có} mang tín hiệu định vị một khi được
+huấn luyện đúng cách. \emph{Tuy nhiên}, khi hợp nhất với các đặc trưng thủ công trong
+bộ xếp hạng SOTA, attention không thêm giá trị biên có ý nghĩa thống kê: dưới cùng
+giao thức LOO, hợp nhất với attention-mạnh (Hit@1 0.782) không thắng hợp nhất
+không-attention (0.792, paired $p{=}0.68$), và riêng các đặc trưng thủ công đã đạt
+Hit@1 0.792--0.832 (Bảng~\ref{tab:attn}). Trần định vị do đó được đặt bởi các đặc
+trưng on-chain thủ công, nhất quán với mảng tài liệu nghi ngờ attention như lời giải
+thích~\cite{jain2019}. Chúng tôi định khung định vị giao dịch là phân loại sơ bộ
+dựa-trên-đặc-trưng, có trợ-giúp-xếp-hạng---với attention là tín hiệu hữu ích nhưng
+không thiết yếu---và công bố nó như một thách thức benchmark mở.
 
 \section{Các Ablation}
 Bảng~\ref{tab:abl} ablate các thành phần backbone (không đổi) cho chuyển giao mức
@@ -290,18 +303,17 @@ TransMIL~\cite{transmil} & 0.406 & 0.673 & 0.792 & 0.533 \\
 CLAM~\cite{clam} & 0.455 & 0.792 & 0.871 & 0.599 \\
 \midrule\multicolumn{5}{l}{\emph{Học / hợp nhất (của chúng tôi)}}\\
 Head-L chỉ-attention & 0.416 & 0.752 & 0.891 & 0.576 \\
+Head-L (mạnh, +sharpen+inst) & 0.515 & 0.851 & 0.921 & 0.646 \\
 \textbf{Hợp nhất nhận biết nội dung}$^\dagger$ & \best{0.832} & \best{0.931} & \best{0.941} & \best{0.880} \\
 & \footnotesize[.752,.901] & \footnotesize[.881,.980] & \footnotesize[.891,.980] & \footnotesize[.823,.932] \\
 \bottomrule\end{tabular}\end{table}
 
-\begin{table}[t]\centering\caption{\textbf{Ablation đóng góp attention} (bộ xếp hạng
-nhận biết nội dung, không-danh-tiếng, cùng giao thức LOO, $n{=}101$). Loại đặc trưng
-attention học được \emph{không} gây hại: Hit@1 không đổi và MRR nhỉnh hơn. Tín hiệu
-định vị đến từ các đặc trưng on-chain thủ công, không phải attention.}\label{tab:attn}
+\begin{table}[t]\centering\caption{\textbf{Giá trị biên của attention} trong hợp nhất nhận-biết-nội-dung SOTA (cùng giao thức LOO, $n{=}101$). Riêng đặc trưng thủ công đã đạt Hit@1 0.792--0.832; thêm attention mạnh không thắng hợp nhất không-attention (paired $p{=}0.68$). Attention hữu ích nhưng không thiết yếu.}\label{tab:attn}
 \begin{tabular}{lcccc}\toprule
 \textbf{Biến thể} & \textbf{Hit@1} & \textbf{Hit@5} & \textbf{Hit@10} & \textbf{MRR} \\\midrule
-Nhận biết nội dung ($+$attn) & 0.802 & 0.921 & 0.950 & 0.854 \\
-Nhận biết nội dung ($-$attn) & 0.802 & 0.931 & 0.960 & \best{0.861} \\
+Nhận biết nội dung ($+$attn gốc) & 0.832 & 0.931 & 0.941 & 0.880 \\
+Nhận biết nội dung ($+$attn mạnh) & 0.782 & 0.931 & 0.941 & 0.848 \\
+Nhận biết nội dung ($-$attn) & 0.792 & 0.941 & 0.941 & 0.860 \\
 Prior recency & 0.693 & 0.921 & 0.931 & 0.799 \\
 Chỉ attention & 0.416 & 0.752 & 0.891 & 0.576 \\\bottomrule
 \end{tabular}\end{table}

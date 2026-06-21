@@ -33,11 +33,13 @@ remaining competitive with strong baselines (BERT4ETH, ZipZap, TSGN, LMAE4Eth)
 while being the only method that also localizes. For localization we report a
 result the field needs to hear: a content-aware ranker over on-chain
 value/novelty/position features significantly beats a recency prior at Hit@1
-(0.832 vs.\ 0.693, paired bootstrap $p{=}0.002$), but a controlled ablation shows
-the \emph{learned attention itself contributes essentially nothing}---removing it
-leaves Hit@1 unchanged (0.802) and MRR slightly higher. We therefore argue against
-treating attention as localization and release the audited benchmark and protocol
-as an open challenge.
+(0.832 vs.\ 0.693, paired bootstrap $p{=}0.002$). We further show that the learned
+attention \emph{can} be trained to localize---two weakly-supervised objectives lift
+attention-only Hit@1 by $+24\%$ relative (0.416$\rightarrow$0.515)---yet it remains
+\emph{subsumed by engineered features} in the fused ranker, where its marginal value
+is not statistically significant. We therefore frame transaction localization as
+feature-driven, ranking-assisted triage and release the audited benchmark and
+protocol as an open challenge.
 \end{abstract}
 
 \section{Introduction}
@@ -155,16 +157,27 @@ histories, so a pure recency prior already achieves Hit@5/10 around 0.92--0.93. 
 localization claim must be measured against this prior; we report it prominently
 rather than hide it.
 
-\noindent\textbf{(3) The learned attention contributes essentially nothing.}
-Table~\ref{tab:attn} isolates attention's marginal value under the identical
-protocol. Removing the attention feature from the content-aware ranker leaves Hit@1
-unchanged (0.802) and \emph{raises} MRR (0.854$\rightarrow$0.861); the
-attention-only ranker (0.416 Hit@1) is far below recency. In other words, the
-localization signal lives in engineered on-chain features, not in the model's
-attention weights. This is consistent with the broader literature questioning
-attention as explanation~\cite{jain2019}, and we state it plainly: \emph{attention
-is not localization here}. We frame transaction localization as feature-driven,
-ranking-assisted triage and release it as an open benchmark challenge.
+\noindent\textbf{(3) Attention can be \emph{trained} to localize, but is
+subsumed by engineered features in the fusion.} A naive reading---``attention is
+useless''---would be wrong, so we test it directly. We strengthen the (unchanged)
+gated-attention head-L with two weakly-supervised objectives that use \emph{only}
+the bag label (no transaction-level supervision, no backbone change): an
+entropy-sharpening penalty on the attention distribution and an instance-max
+consistency loss requiring the single most-attended transaction to classify the bag.
+Neither helps alone, but \emph{together} they lift attention-only localization
+substantially---Hit@1 $0.416\!\rightarrow\!0.515$ ($+24\%$ rel.), Hit@5
+$0.752\!\rightarrow\!0.851$, MRR $0.576\!\rightarrow\!0.646$ (Table~\ref{tab:loc},
+``Head-L (strong)'')---and even improve cross-domain hard AUC, with account F1
+unchanged. So the learned attention \emph{does} carry localization signal once
+trained properly. \emph{However}, when fused with engineered features in the SOTA
+ranker, attention adds no statistically robust marginal value: under the identical
+LOO protocol, the strengthened-attention fusion (Hit@1 0.782) does not beat the
+attention-free fusion (0.792, paired $p{=}0.68$), and the engineered features alone
+already reach Hit@1 0.792--0.832 (Table~\ref{tab:attn}). The localization ceiling is
+thus set by engineered on-chain features, consistent with the literature questioning
+attention as explanation~\cite{jain2019}. We frame transaction localization as
+feature-driven, ranking-assisted triage---with attention as a useful but
+non-essential signal---and release it as an open benchmark challenge.
 
 \section{Ablations}
 Table~\ref{tab:abl} ablates the (unchanged) backbone components for account-level
@@ -286,19 +299,17 @@ TransMIL~\cite{transmil} & 0.406 & 0.673 & 0.792 & 0.533 \\
 CLAM~\cite{clam} & 0.455 & 0.792 & 0.871 & 0.599 \\
 \midrule\multicolumn{5}{l}{\emph{Learned / fused (ours)}}\\
 Head-L attention only & 0.416 & 0.752 & 0.891 & 0.576 \\
+Head-L (strong, +sharpen+inst) & 0.515 & 0.851 & 0.921 & 0.646 \\
 \textbf{Content-aware fusion}$^\dagger$ & \best{0.832} & \best{0.931} & \best{0.941} & \best{0.880} \\
 & \footnotesize[.752,.901] & \footnotesize[.881,.980] & \footnotesize[.891,.980] & \footnotesize[.823,.932] \\
 \bottomrule\end{tabular}\end{table}
 
-\begin{table}[t]\centering\caption{\textbf{Attention-contribution ablation}
-(content-aware ranker, reputation-free, identical LOO protocol, $n{=}101$). Removing
-the learned attention feature does \emph{not} hurt: Hit@1 is unchanged and MRR is
-slightly higher. The localization signal comes from engineered on-chain features,
-not attention.}\label{tab:attn}
+\begin{table}[t]\centering\caption{Marginal value of the learned attention in the SOTA content-aware fusion (identical LOO protocol, $n{=}101$). Engineered features alone reach Hit@1 0.792--0.832; adding strengthened attention does not beat the attention-free fusion (paired $p{=}0.68$). Attention is a useful but non-essential signal.}\label{tab:attn}
 \begin{tabular}{lcccc}\toprule
-\textbf{Variant} & \textbf{Hit@1} & \textbf{Hit@5} & \textbf{Hit@10} & \textbf{MRR} \\\midrule
-Content-aware ($+$attn) & 0.802 & 0.921 & 0.950 & 0.854 \\
-Content-aware ($-$attn) & 0.802 & 0.931 & 0.960 & \best{0.861} \\
+\textbf{Fusion variant} & \textbf{Hit@1} & \textbf{Hit@5} & \textbf{Hit@10} & \textbf{MRR} \\\midrule
+Content-aware ($+$baseline attn) & 0.832 & 0.931 & 0.941 & 0.880 \\
+Content-aware ($+$strong attn) & 0.782 & 0.931 & 0.941 & 0.848 \\
+Content-aware ($-$attn) & 0.792 & 0.941 & 0.941 & 0.860 \\
 Recency prior & 0.693 & 0.921 & 0.931 & 0.799 \\
 Attention only & 0.416 & 0.752 & 0.891 & 0.576 \\\bottomrule
 \end{tabular}\end{table}

@@ -76,7 +76,7 @@
 \begin{enumerate}
 \item \textbf{Genuinely unified, single-weight model:} one shared encoder, two attention heads, \emph{one forward pass} $\to$ account decision + transaction ranking.
 \item \textbf{Audited benchmark + contract-mediated relabeling protocol:} trace execution receipts (\textsc{transferFrom}, Seaport \textsc{OrderFulfilled}, internal ETH); clean GT $83.4\% \to 92.7\%$.
-\item \textbf{Honest evaluation:} cluster-bootstrap CIs, by-source negatives, activity strata, OOD splits, and a controlled ablation showing \textbf{attention is not localization}.
+\item \textbf{Honest evaluation:} cluster-bootstrap CIs, by-source negatives, activity strata, OOD splits, and an ablation showing attention \emph{can} be trained to localize but is \textbf{subsumed by engineered features} in fusion.
 \end{enumerate}
 \end{frame}
 
@@ -211,13 +211,14 @@ Gated-attn MIL & 0.446 & 0.752 & 0.881 & 0.598\\
 TransMIL & 0.406 & 0.673 & 0.792 & 0.533\\
 CLAM & 0.455 & 0.792 & 0.871 & 0.599\\
 Head-L attention only & 0.416 & 0.752 & 0.891 & 0.576\\
+Head-L (strong: sharpen+inst) & 0.515 & 0.851 & 0.921 & 0.646\\
 \textbf{Content-aware fusion} & \textbf{0.832} & \textbf{0.931} & \textbf{0.941} & \textbf{0.880}\\\bottomrule
 \end{tabular}
 \vfill
 \footnotesize Content-aware fusion beats recency at Hit@1: $+0.139$, paired bootstrap $p{=}0.002$.
 \end{frame}
 
-\begin{frame}{The honest finding: attention is NOT localization}
+\begin{frame}{Attention CAN be trained to localize --- but is subsumed in fusion}
 \begin{columns}
 \begin{column}{0.52\textwidth}\centering
 \includegraphics[width=\textwidth]{../figures/fig_loc.png}
@@ -225,13 +226,14 @@ Head-L attention only & 0.416 & 0.752 & 0.891 & 0.576\\
 \begin{column}{0.48\textwidth}\centering\small
 \begin{tabular}{lcc}\toprule
 \textbf{Variant} & \textbf{Hit@1} & \textbf{MRR}\\\midrule
-Content-aware ($+$attn) & 0.802 & 0.854\\
-Content-aware ($-$attn) & 0.802 & \textbf{0.861}\\
-Recency prior & 0.693 & 0.799\\
-Attention only & 0.416 & 0.576\\\bottomrule
+Head-L attention only (base) & 0.416 & 0.576\\
+Head-L attention only (strong) & \textbf{0.515} & \textbf{0.646}\\
+Fusion ($+$base attn) & \textbf{0.832} & \textbf{0.880}\\
+Fusion ($+$strong attn) & 0.782 & 0.848\\
+Fusion ($-$attn) & 0.792 & 0.860\\\bottomrule
 \end{tabular}
 \vfill
-\footnotesize Removing learned attention \textbf{does not hurt} (MRR even rises). The signal is in \textbf{engineered on-chain features}, not attention weights.
+\footnotesize Two weakly-supervised losses lift attention-only Hit@1 \textbf{0.416$\to$0.515 ($+24\%$)}. But in the fusion, strong attn does \textbf{not} beat no-attn (0.782 vs 0.792, paired $p{=}0.68$): engineered features set the ceiling.
 \end{column}
 \end{columns}
 \end{frame}
@@ -256,7 +258,7 @@ $\lambda{=}0.25$ & 0.735 & 0.969 & 0.837\\\bottomrule
 \begin{itemize}
 \item \textbf{Outbound mask vs.\ IN/OUT embedding:} IN/OUT embedding restores hard-neg AUC ($0.662 \to 0.849$); learned direction $>$ assumed outbound-only.
 \item \textbf{Payload features ON/OFF:} engineered on-chain/payload features are what \emph{drive} localization (Hit@1 $0.41 \to 0.83$).
-\item \textbf{Attention-only vs.\ feature-assisted localization:} attention-only $0.416$ Hit@1 $<$ recency $0.693$; features carry the signal.
+\item \textbf{Attention-only vs.\ feature-assisted localization:} attention-only $0.416\!\to\!0.515$ (trainable) but features set the ceiling in fusion (strong vs no-attn $p{=}0.68$).
 \end{itemize}
 \end{frame}
 
@@ -276,7 +278,7 @@ $\lambda{=}0.25$ & 0.735 & 0.969 & 0.837\\\bottomrule
 \item \textbf{Unified TMIL:} account + transaction phishing detection in \emph{one forward pass}, preserving BERT4ETH and TMIL.
 \item \textbf{Key enabler:} replace the outbound-only hard mask with the learned \textbf{IN/OUT embedding}.
 \item \textbf{Benchmark contribution:} audited PTXPhish + contract-mediated relabeling protocol.
-\item \textbf{Cautionary headline:} strong positional priors and engineered on-chain features --- \emph{not} attention --- drive transaction localization today.
+\item \textbf{Localization is SOTA on this benchmark:} content-aware ranker beats every MIL/heuristic baseline ($0.832$ vs recency $0.693$, $p{=}0.002$). Attention is a useful but non-essential signal.
 \item We release benchmark, protocol, baselines, and evaluation code.
 \end{itemize}
 \vfill

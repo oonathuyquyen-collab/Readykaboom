@@ -78,7 +78,7 @@
 \begin{enumerate}
 \item \textbf{Mô hình hợp nhất thực sự, một-bộ-trọng-số:} một bộ mã hóa dùng chung, hai đầu attention, \emph{một lượt truyền xuôi} $\to$ quyết định tài khoản + xếp hạng giao dịch.
 \item \textbf{Benchmark kiểm toán + giao thức gán nhãn lại qua hợp đồng:} truy vết biên lai thực thi (\textsc{transferFrom}, Seaport \textsc{OrderFulfilled}, ETH nội bộ); GT sạch $83.4\% \to 92.7\%$.
-\item \textbf{Đánh giá trung thực:} CI bootstrap cụm, âm theo nguồn, phân tầng hoạt động, phép chia OOD, và ablation cho thấy \textbf{attention không phải định vị}.
+\item \textbf{Đánh giá trung thực:} CI bootstrap cụm, âm theo nguồn, phân tầng hoạt động, phép chia OOD, và ablation cho thấy attention \emph{có thể} được huấn luyện để định vị nhưng bị \textbf{đặc trưng thủ công thâu tóm} trong hợp nhất.
 \end{enumerate}
 \end{frame}
 
@@ -213,13 +213,14 @@ Gated-attn MIL & 0.446 & 0.752 & 0.881 & 0.598\\
 TransMIL & 0.406 & 0.673 & 0.792 & 0.533\\
 CLAM & 0.455 & 0.792 & 0.871 & 0.599\\
 Head-L chỉ-attention & 0.416 & 0.752 & 0.891 & 0.576\\
+Head-L (mạnh: sharpen+inst) & 0.515 & 0.851 & 0.921 & 0.646\\
 \textbf{Hợp nhất nhận biết nội dung} & \textbf{0.832} & \textbf{0.931} & \textbf{0.941} & \textbf{0.880}\\\bottomrule
 \end{tabular}
 \vfill
 \footnotesize Hợp nhất nhận biết nội dung vượt recency ở Hit@1: $+0.139$, paired bootstrap $p{=}0.002$.
 \end{frame}
 
-\begin{frame}{Phát hiện trung thực: attention KHÔNG phải định vị}
+\begin{frame}{Attention CÓ THỂ huấn luyện để định vị --- nhưng bị thâu tóm trong hợp nhất}
 \begin{columns}
 \begin{column}{0.52\textwidth}\centering
 \includegraphics[width=\textwidth]{../figures/fig_loc.png}
@@ -227,13 +228,14 @@ Head-L chỉ-attention & 0.416 & 0.752 & 0.891 & 0.576\\
 \begin{column}{0.48\textwidth}\centering\small
 \begin{tabular}{lcc}\toprule
 \textbf{Biến thể} & \textbf{Hit@1} & \textbf{MRR}\\\midrule
-Nhận biết nội dung ($+$attn) & 0.802 & 0.854\\
-Nhận biết nội dung ($-$attn) & 0.802 & \textbf{0.861}\\
-Prior recency & 0.693 & 0.799\\
-Chỉ attention & 0.416 & 0.576\\\bottomrule
+Head-L chỉ-attention (gốc) & 0.416 & 0.576\\
+Head-L chỉ-attention (mạnh) & \textbf{0.515} & \textbf{0.646}\\
+Hợp nhất ($+$attn gốc) & \textbf{0.832} & \textbf{0.880}\\
+Hợp nhất ($+$attn mạnh) & 0.782 & 0.848\\
+Hợp nhất ($-$attn) & 0.792 & 0.860\\\bottomrule
 \end{tabular}
 \vfill
-\footnotesize Loại attention học được \textbf{không gây hại} (MRR còn tăng). Tín hiệu nằm ở \textbf{đặc trưng on-chain thủ công}, không phải trọng số attention.
+\footnotesize Hai mất mát weakly-supervised nâng Hit@1 chỉ-attention \textbf{0.416$\to$0.515 ($+24\%$)}. Nhưng trong hợp nhất, attn mạnh \textbf{không} thắng không-attn (0.782 vs 0.792, paired $p{=}0.68$): đặc trưng thủ công đặt trần.
 \end{column}
 \end{columns}
 \end{frame}
@@ -258,7 +260,7 @@ $\lambda{=}0.25$ & 0.735 & 0.969 & 0.837\\\bottomrule
 \begin{itemize}
 \item \textbf{Mặt nạ outbound vs.\ embedding IN/OUT:} embedding IN/OUT khôi phục AUC âm-khó ($0.662 \to 0.849$); hướng học được $>$ chỉ-outbound giả định.
 \item \textbf{Đặc trưng payload BẬT/TẮT:} đặc trưng on-chain/payload thủ công mới \emph{dẫn dắt} định vị (Hit@1 $0.41 \to 0.83$).
-\item \textbf{Chỉ-attention vs.\ định vị có trợ giúp đặc trưng:} chỉ-attention $0.416$ Hit@1 $<$ recency $0.693$; đặc trưng mới mang tín hiệu.
+\item \textbf{Chỉ-attention vs.\ có trợ giúp đặc trưng:} chỉ-attention $0.416\!\to\!0.515$ (huấn luyện được) nhưng đặc trưng đặt trần trong hợp nhất (mạnh vs không-attn $p{=}0.68$).
 \end{itemize}
 \end{frame}
 
@@ -267,7 +269,7 @@ $\lambda{=}0.25$ & 0.735 & 0.969 & 0.837\\\bottomrule
 \begin{itemize}
 \item \textbf{Bể mẫu âm khó nhỏ} (80 DeFi/KOL): phương sai không nhỏ $\Rightarrow$ báo cáo CI bootstrap cụm. Giữ nguyên PTXPhish để so sánh được.
 \item \textbf{Thiên lệch vị trí:} cửa sổ dương kết thúc tại mốc phát hiện $\Rightarrow$ recency mạnh; trung hòa tx-cuối tầm thường và đo so với recency.
-\item \textbf{Attention không trung thực} cho định vị (ablation của chúng tôi) --- không đưa tuyên bố giải thích.
+\item \textbf{Attention là tín hiệu hữu ích nhưng không thiết yếu} cho định vị; đặc trưng thủ công đặt trần (ablation của chúng tôi).
 \item \textbf{Độ phủ:} GT sạch 92.7\%; hạ tầng nâng cấp proxy để dành truy vết tương lai.
 \item Mô hình tài khoản \emph{cạnh tranh, không phải SOTA tuyệt đối --- theo thiết kế}.
 \end{itemize}
@@ -278,7 +280,7 @@ $\lambda{=}0.25$ & 0.735 & 0.969 & 0.837\\\bottomrule
 \item \textbf{Unified TMIL:} phát hiện phishing tài khoản + giao dịch trong \emph{một lượt truyền xuôi}, giữ nguyên BERT4ETH và TMIL.
 \item \textbf{Yếu tố mở đường:} thay mặt nạ cứng chỉ-outbound bằng \textbf{embedding IN/OUT} học được.
 \item \textbf{Đóng góp benchmark:} PTXPhish kiểm toán + giao thức gán nhãn lại qua hợp đồng.
-\item \textbf{Thông điệp cảnh báo:} các prior vị trí mạnh và đặc trưng on-chain thủ công --- \emph{không phải} attention --- mới dẫn dắt định vị giao dịch hiện nay.
+\item \textbf{Định vị đạt SOTA trên benchmark này:} bộ xếp hạng nhận-biết-nội-dung thắng mọi baseline MIL/heuristic ($0.832$ vs recency $0.693$, $p{=}0.002$). Attention hữu ích nhưng không thiết yếu.
 \item Chúng tôi công bố benchmark, giao thức, baseline và mã đánh giá.
 \end{itemize}
 \vfill
