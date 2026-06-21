@@ -1,0 +1,286 @@
+\documentclass[aspectratio=169,10pt]{beamer}
+\usetheme{Madrid}\usecolortheme{whale}
+\usepackage{booktabs,graphicx,amsmath,amssymb}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}{\insertcaption}
+\setbeamerfont{frametitle}{size=\large}
+\title[Unified TMIL for ETH Phishing]{Unified TMIL: Account- \& Transaction-Level\\Ethereum Phishing Detection in One Forward Pass}
+\subtitle{Preserving BERT4ETH + TMIL, with an Audited Benchmark and an Honest Localization Study}
+\author{Anonymous Submission}
+\date{}
+\begin{document}
+
+\begin{frame}\titlepage\end{frame}
+
+\begin{frame}{Outline}\tableofcontents\end{frame}
+
+\section{Problem \& Motivation}
+\begin{frame}{The problem: phishing on Ethereum}
+\begin{itemize}
+\item On-chain phishing drains \textbf{hundreds of millions of USD} annually (address poisoning, ice-phishing approvals, malicious Seaport/NFT orders).
+\item Two questions, usually solved \emph{separately}:
+\begin{itemize}
+\item \textbf{Account level} --- is this address a scammer?
+\item \textbf{Transaction level} --- \emph{which} transaction is the fraudulent one?
+\end{itemize}
+\item Rarely solved by \textbf{one model}, and rarely with the \textbf{evaluation rigor} needed to trust small, reused crypto datasets.
+\end{itemize}
+\vfill
+\textbf{Our goal (deliberately constrained):} keep the published backbones unchanged, and show how far \emph{careful unification} + an \emph{honest protocol} can go.
+\end{frame}
+
+\section{Baselines \& Their Weaknesses}
+\begin{frame}{Baseline paper 1 --- BERT4ETH (WWW'23)}
+\begin{itemize}
+\item Pre-trained Transformer for Ethereum fraud detection.
+\item Each transaction $\to$ embeddings: \textbf{counterparty}, \textbf{IN/OUT direction}, \textbf{amount}, \textbf{count}, \textbf{position/time}, then a Transformer encoder.
+\item Strong \textbf{account-level} representation; \textbf{no transaction-level localization}.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Baseline paper 2 --- C-TMIL (Temporal MIL)}
+\begin{itemize}
+\item Multiple-Instance Learning view: \textbf{1 account = 1 bag} of transactions.
+\item Pipeline: \textbf{TCN} $\to$ \textbf{Gated-Attention MIL} $\to$ \textbf{Bag Aggregation} $\to$ \textbf{MLP}.
+\item Attention weights $\Rightarrow$ candidate localization.
+\item \textbf{Key limitation:} C-TMIL \emph{hard-masks inbound} transactions and attends to \emph{outbound only}.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Weaknesses we target}
+\begin{itemize}
+\item \textbf{Outbound-only hard mask} throws away inbound signal --- but approve/permit/ice-phishing is triggered \emph{inbound} (the drain is a \textsc{transferFrom}).
+\item \textbf{Two granularities, two models} --- no single unified system.
+\item \textbf{``Attention = explanation''} assumed, never tested.
+\item \textbf{Evaluation gaps:} no hard negatives, no CIs, no OOD, single-label localization GT, contract-mediated cases unlabeled.
+\end{itemize}
+\end{frame}
+
+\section{Our Direction \& Key Modification}
+\begin{frame}{Our direction --- preserve backbones, unify}
+\textbf{Constraints honored:}
+\begin{itemize}
+\item BERT4ETH embeddings (counterparty+IN/OUT+amount+count+position) --- \textbf{unchanged}.
+\item TMIL (TCN $\to$ Gated-Attn MIL $\to$ Bag Agg $\to$ MLP) --- \textbf{unchanged}.
+\item No new backbone, no new localization head.
+\end{itemize}
+\vfill
+\textbf{Key modification:}
+\begin{itemize}
+\item Replace C-TMIL's \emph{outbound-only hard mask} with the \emph{existing BERT4ETH IN/OUT embedding}.
+\item Let the model \textbf{learn} whether inbound or outbound matters, rather than assume.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Three contributions}
+\begin{enumerate}
+\item \textbf{Genuinely unified, single-weight model:} one shared encoder, two attention heads, \emph{one forward pass} $\to$ account decision + transaction ranking.
+\item \textbf{Audited benchmark + contract-mediated relabeling protocol:} trace execution receipts (\textsc{transferFrom}, Seaport \textsc{OrderFulfilled}, internal ETH); clean GT $83.4\% \to 92.7\%$.
+\item \textbf{Honest evaluation:} cluster-bootstrap CIs, by-source negatives, activity strata, OOD splits, and a controlled ablation showing \textbf{attention is not localization}.
+\end{enumerate}
+\end{frame}
+
+\section{Dataset}
+\begin{frame}{Datasets used}
+\begin{itemize}
+\item \textbf{Train (in-domain):} BERT4ETH phishing + normal EOA datasets (11{,}136 train bags; vocab 84{,}982 tokens).
+\item \textbf{Test --- account level (cross-domain):} PTXPhish cashier/recipient scammer accounts vs.\ benign accounts.
+\item \textbf{Test --- transaction level:} PTXPhish transaction hashes.
+\item \textbf{Histories} crawled via \textbf{Etherscan}; model trains \emph{only} on in-domain data $\Rightarrow$ PTXPhish is \textbf{zero-shot}.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Audited dataset structure}
+\centering
+\begin{tabular}{lr}\toprule
+\textbf{Subset} & \textbf{Count}\\\midrule
+Phishing tx audited (PTXPhish) & 4998\\
+\ \ direct-transfer clean GT & 4168 (83.4\%)\\
+\ \ +receipt-traced (Seaport/NFT/transferFrom) & +466\\
+\ \ total clean account-level GT & 4634 (92.7\%)\\
+Unique scammer EOAs (positives) & 292\\
+\ \ poisoning / payable / ice\_phishing & 188 / 59 / 45\\
+Hard negatives (PTXPhish benign, KOL/DeFi) & 80\\
+Held-out Normal-EOA negatives & 1324\\
+Interior-GT localization bags & 101\\\bottomrule
+\end{tabular}
+\end{frame}
+
+\begin{frame}{Ground truth \& the relabeling protocol}
+\begin{itemize}
+\item \textbf{Direct-transfer phishing:} the PTXPhish hash \emph{is} the localization target (in account history) --- 83.4\%.
+\item \textbf{Contract-mediated} (Approve, Permit, Seaport, NFT orders): the listed hash is a victim approval / marketplace call. The value movement is in an \emph{execution receipt}.
+\item We \textbf{trace} ERC-20/WETH \textsc{transferFrom}, Seaport \textsc{OrderFulfilled}, internal ETH $\to$ attribute the scammer EOA and \textbf{relabel the execution tx}.
+\item Clean account-level GT: \textbf{83.4\% $\to$ 92.7\%} (94.8\% excluding proxy-upgrade infra).
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Bag definition}
+\begin{itemize}
+\item \textbf{1 Ethereum account = 1 bag.}
+\item \textbf{Single fixed window} $L{=}100$ transactions ($>$90\% of scammer EOAs have $<L$ post-anchor tx).
+\item A single window avoids the score-aggregation ambiguity of overlapping sliding windows.
+\item Positive windows end at the \textbf{detection cutoff} $\Rightarrow$ recency becomes a strong prior (addressed later).
+\item We exclude each bag's \emph{final} tx from candidates \& GT for \textbf{all} methods (neutralize trivial last-tx artifact).
+\end{itemize}
+\end{frame}
+
+\section{Architecture}
+\begin{frame}{Unified TMIL architecture}
+\centering
+\includegraphics[height=0.78\textheight]{../figures/fig_architecture.png}
+\end{frame}
+
+\begin{frame}{Architecture --- in words}
+\begin{itemize}
+\item \textbf{Shared encoder:} BERT4ETH per-tx embeddings (counterparty/IN-OUT/amount/count/time) $\to$ LayerNorm $\to$ \textbf{TCN}.
+\item \textbf{Head-C} (soft gated-attention): pools the bag $\to$ \textbf{account} BCE.
+\item \textbf{Head-L}: ranks transactions for \textbf{localization}; uses the \emph{IN/OUT embedding} instead of a hard mask, trained \emph{jointly} under BCE.
+\item One set of weights, \textbf{one forward pass}.
+\item Loss: $\mathcal{L}=\mathrm{BCE}(C)+\lambda\,\mathrm{BCE}(L)+\beta\,\mathcal{L}_{\text{contrast}}$.
+\item \textbf{Finding:} a post-hoc read-out from the soft head is \emph{insufficient} --- Head-L must receive gradient.
+\end{itemize}
+\end{frame}
+
+\section{Results: Account Level}
+\begin{frame}{Account-level comparison (zero-shot cross-domain)}
+\centering\small
+\begin{tabular}{lcccc}\toprule
+\textbf{Method} & \textbf{ID-F1} & \textbf{ID-AUC} & \textbf{X-AUC} & \textbf{X-AUC$_{hard}$}\\\midrule
+BERT4ETH & 0.734 & 0.925 & 0.989 & \textbf{0.836}\\
+ZipZap & 0.711 & 0.915 & 0.979 & 0.776\\
+TSGN & 0.727 & 0.918 & 0.985 & 0.760\\
+LMAE4Eth & 0.750 & 0.933 & 0.980 & 0.708\\
+Max-pool MIL & 0.752 & 0.933 & 0.978 & 0.779\\
+Gated-attn MIL & 0.733 & 0.922 & 0.965 & 0.803\\
+Mean-pool MIL & 0.755 & 0.933 & 0.957 & \textbf{0.885}\\
+\textbf{Unified TMIL (ours)} & 0.743 & 0.922 & 0.984 & 0.725\\\bottomrule
+\end{tabular}
+\vfill
+\footnotesize Combined X-AUC \textbf{0.984}; hard subset 0.725, CI $[0.658,0.791]$. We are competitive \emph{and the only method that also localizes}; contribution is \textbf{unification}, not a new account SOTA.
+\end{frame}
+
+\begin{frame}{Account-level AUC by negative source \& activity}
+\begin{columns}
+\begin{column}{0.54\textwidth}\centering
+\includegraphics[width=\textwidth]{../figures/fig_account.png}
+\end{column}
+\begin{column}{0.44\textwidth}\centering\small
+\begin{tabular}{lccc}\toprule
+\textbf{\#tx} & \textbf{\#neg} & \textbf{\#pos} & \textbf{AUC}\\\midrule
+3--20 & 1218 & 54 & 0.999\\
+20--100 & 104 & 103 & 0.971\\
+100+ & 76 & 130 & 0.741\\\bottomrule
+\end{tabular}
+\vfill
+\footnotesize Signal persists in the high-activity stratum --- not just ``power-user vs.\ short-lived account''.
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Out-of-distribution generalization}
+\begin{columns}
+\begin{column}{0.5\textwidth}\centering
+\includegraphics[width=\textwidth]{../figures/fig_ood.png}
+\end{column}
+\begin{column}{0.5\textwidth}\centering\small
+\begin{tabular}{lcc}\toprule
+\textbf{OOD partition} & \textbf{AUC} & \textbf{AUPR}\\\midrule
+payable\_function & 0.998 & 0.894\\
+ice\_phishing & 0.967 & 0.316\\
+address\_poisoning & 0.984 & 0.765\\
+early (train) & 0.985 & 0.802\\
+late (test) & 0.983 & 0.763\\\bottomrule
+\end{tabular}
+\vfill
+\footnotesize Holds across cross-mechanism (held-out type) and temporal splits.
+\end{column}
+\end{columns}
+\end{frame}
+
+\section{Results: Localization}
+\begin{frame}{Transaction-level localization ($n=101$)}
+\centering\small
+\begin{tabular}{lcccc}\toprule
+\textbf{Ranker} & \textbf{Hit@1} & \textbf{Hit@5} & \textbf{Hit@10} & \textbf{MRR}\\\midrule
+Amount-rank & 0.347 & 0.584 & 0.663 & 0.447\\
+Degree-rank & 0.465 & 0.772 & 0.822 & 0.607\\
+Novelty-rank & 0.356 & 0.782 & 0.832 & 0.551\\
+Recency-rank & 0.693 & \textbf{0.921} & 0.931 & 0.799\\
+Gated-attn MIL & 0.446 & 0.752 & 0.881 & 0.598\\
+TransMIL & 0.406 & 0.673 & 0.792 & 0.533\\
+CLAM & 0.455 & 0.792 & 0.871 & 0.599\\
+Head-L attention only & 0.416 & 0.752 & 0.891 & 0.576\\
+\textbf{Content-aware fusion} & \textbf{0.832} & \textbf{0.931} & \textbf{0.941} & \textbf{0.880}\\\bottomrule
+\end{tabular}
+\vfill
+\footnotesize Content-aware fusion beats recency at Hit@1: $+0.139$, paired bootstrap $p{=}0.002$.
+\end{frame}
+
+\begin{frame}{The honest finding: attention is NOT localization}
+\begin{columns}
+\begin{column}{0.52\textwidth}\centering
+\includegraphics[width=\textwidth]{../figures/fig_loc.png}
+\end{column}
+\begin{column}{0.48\textwidth}\centering\small
+\begin{tabular}{lcc}\toprule
+\textbf{Variant} & \textbf{Hit@1} & \textbf{MRR}\\\midrule
+Content-aware ($+$attn) & 0.802 & 0.854\\
+Content-aware ($-$attn) & 0.802 & \textbf{0.861}\\
+Recency prior & 0.693 & 0.799\\
+Attention only & 0.416 & 0.576\\\bottomrule
+\end{tabular}
+\vfill
+\footnotesize Removing learned attention \textbf{does not hurt} (MRR even rises). The signal is in \textbf{engineered on-chain features}, not attention weights.
+\end{column}
+\end{columns}
+\end{frame}
+
+\section{Ablations}
+\begin{frame}{Backbone ablation (account-level transfer)}
+\centering\small
+\begin{tabular}{lccc}\toprule
+\textbf{Variant} & \textbf{ID-F1} & \textbf{X-AUC} & \textbf{X-AUC$_{hard}$}\\\midrule
+Full model & 0.734 & 0.974 & 0.849\\
+\ \ $-$ TCN encoder & 0.735 & 0.955 & 0.592\\
+\ \ $-$ counterparty emb. & 0.554 & 0.960 & 0.461\\
+\ \ $-$ IN/OUT emb. & 0.717 & 0.928 & 0.662\\
+$\lambda{=}0$ (soft only) & 0.733 & 0.965 & 0.803\\
+$\lambda{=}0.25$ & 0.735 & 0.969 & 0.837\\\bottomrule
+\end{tabular}
+\vfill
+\footnotesize Counterparty + IN/OUT embeddings drive hard-negative transfer $\Rightarrow$ justifies replacing the outbound mask with the IN/OUT embedding. Joint Head-L ($\lambda{>}0$) does not hurt accounts.
+\end{frame}
+
+\begin{frame}{Ablation summary (the three asked-for axes)}
+\begin{itemize}
+\item \textbf{Outbound mask vs.\ IN/OUT embedding:} IN/OUT embedding restores hard-neg AUC ($0.662 \to 0.849$); learned direction $>$ assumed outbound-only.
+\item \textbf{Payload features ON/OFF:} engineered on-chain/payload features are what \emph{drive} localization (Hit@1 $0.41 \to 0.83$).
+\item \textbf{Attention-only vs.\ feature-assisted localization:} attention-only $0.416$ Hit@1 $<$ recency $0.693$; features carry the signal.
+\end{itemize}
+\end{frame}
+
+\section{Discussion}
+\begin{frame}{Discussion \& limitations (stated, not hidden)}
+\begin{itemize}
+\item \textbf{Small hard-negative pool} (80 DeFi/KOL): non-trivial variance $\Rightarrow$ we report cluster-bootstrap CIs. We keep PTXPhish as-is for comparability.
+\item \textbf{Positional bias:} positive windows end at detection cutoff $\Rightarrow$ recency is strong; we neutralize the trivial last-tx and benchmark against recency.
+\item \textbf{Attention is not faithful} for localization (our ablation) --- no explanatory claim made.
+\item \textbf{Coverage:} clean GT 92.7\%; proxy-upgrade infra left for future tracing.
+\item Account model is \emph{competitive, not strictly SOTA --- by design}.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Conclusion}
+\begin{itemize}
+\item \textbf{Unified TMIL:} account + transaction phishing detection in \emph{one forward pass}, preserving BERT4ETH and TMIL.
+\item \textbf{Key enabler:} replace the outbound-only hard mask with the learned \textbf{IN/OUT embedding}.
+\item \textbf{Benchmark contribution:} audited PTXPhish + contract-mediated relabeling protocol.
+\item \textbf{Cautionary headline:} strong positional priors and engineered on-chain features --- \emph{not} attention --- drive transaction localization today.
+\item We release benchmark, protocol, baselines, and evaluation code.
+\end{itemize}
+\vfill
+\centering\textbf{Thank you --- questions?}
+\end{frame}
+
+\end{document}

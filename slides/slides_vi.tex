@@ -1,0 +1,288 @@
+\documentclass[aspectratio=169,10pt]{beamer}
+\usetheme{Madrid}\usecolortheme{whale}
+\usepackage{booktabs,graphicx,amsmath,amssymb}
+\usepackage{fontspec}
+\setsansfont{DejaVu Sans}[Scale=0.82]
+\setmainfont{DejaVu Serif}[Scale=0.82]
+\setmonofont{DejaVu Sans Mono}[Scale=0.78]
+\setbeamertemplate{navigation symbols}{}
+\setbeamerfont{frametitle}{size=\large}
+\title[Unified TMIL --- Phishing ETH]{Unified TMIL: Phát hiện Lừa đảo Ethereum\\Mức Tài khoản \& Mức Giao dịch trong Một Lượt Truyền xuôi}
+\subtitle{Giữ nguyên BERT4ETH + TMIL, kèm Benchmark được Kiểm toán và một Nghiên cứu Định vị Trung thực}
+\author{Bản nộp ẩn danh}
+\date{}
+\begin{document}
+
+\begin{frame}\titlepage\end{frame}
+\begin{frame}{Nội dung}\tableofcontents\end{frame}
+
+\section{Bài toán \& Động lực}
+\begin{frame}{Bài toán: lừa đảo trên Ethereum}
+\begin{itemize}
+\item Lừa đảo on-chain rút \textbf{hàng trăm triệu USD} mỗi năm (address poisoning, ice-phishing approvals, lệnh Seaport/NFT độc hại).
+\item Hai câu hỏi, thường được giải \emph{riêng rẽ}:
+\begin{itemize}
+\item \textbf{Mức tài khoản} --- địa chỉ này có phải kẻ lừa đảo?
+\item \textbf{Mức giao dịch} --- \emph{giao dịch nào} mới là giao dịch gian lận?
+\end{itemize}
+\item Hiếm khi giải bằng \textbf{một mô hình}, và hiếm khi đủ \textbf{độ chặt chẽ đánh giá} để tin các tập dữ liệu crypto nhỏ, bị tái sử dụng.
+\end{itemize}
+\vfill
+\textbf{Mục tiêu (cố tình ràng buộc):} giữ nguyên backbone đã công bố, và cho thấy \emph{hợp nhất cẩn thận} + một \emph{giao thức trung thực} đi xa đến đâu.
+\end{frame}
+
+\section{Baseline \& Điểm yếu}
+\begin{frame}{Baseline 1 --- BERT4ETH (WWW'23)}
+\begin{itemize}
+\item Transformer tiền-huấn-luyện cho phát hiện gian lận Ethereum.
+\item Mỗi giao dịch $\to$ embedding: \textbf{đối tác}, \textbf{hướng IN/OUT}, \textbf{số tiền}, \textbf{đếm}, \textbf{vị trí/thời gian}, rồi bộ mã hóa Transformer.
+\item Biểu diễn \textbf{mức tài khoản} mạnh; \textbf{không có định vị mức giao dịch}.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Baseline 2 --- C-TMIL (Temporal MIL)}
+\begin{itemize}
+\item Góc nhìn Multiple-Instance Learning: \textbf{1 tài khoản = 1 túi} giao dịch.
+\item Pipeline: \textbf{TCN} $\to$ \textbf{Gated-Attention MIL} $\to$ \textbf{Bag Aggregation} $\to$ \textbf{MLP}.
+\item Trọng số attention $\Rightarrow$ định vị ứng viên.
+\item \textbf{Hạn chế chính:} C-TMIL \emph{che cứng inbound} và chỉ attend \emph{outbound}.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Các điểm yếu chúng tôi nhắm tới}
+\begin{itemize}
+\item \textbf{Mặt nạ cứng chỉ-outbound} vứt bỏ tín hiệu inbound --- nhưng approve/permit/ice-phishing được kích hoạt \emph{từ inbound} (cú rút là một \textsc{transferFrom}).
+\item \textbf{Hai mức độ, hai mô hình} --- không có hệ thống hợp nhất duy nhất.
+\item \textbf{Giả định ``attention = giải thích''} --- chưa bao giờ được kiểm chứng.
+\item \textbf{Lỗ hổng đánh giá:} thiếu mẫu âm khó, thiếu CI, thiếu OOD, GT định vị đơn nhãn, các ca qua hợp đồng chưa gán nhãn.
+\end{itemize}
+\end{frame}
+
+\section{Hướng đi \& Thay đổi cốt lõi}
+\begin{frame}{Hướng đi --- giữ backbone, hợp nhất}
+\textbf{Ràng buộc tuân thủ:}
+\begin{itemize}
+\item Embedding BERT4ETH (đối-tác+IN/OUT+số-tiền+đếm+vị-trí) --- \textbf{không đổi}.
+\item TMIL (TCN $\to$ Gated-Attn MIL $\to$ Bag Agg $\to$ MLP) --- \textbf{không đổi}.
+\item Không backbone mới, không đầu định vị mới.
+\end{itemize}
+\vfill
+\textbf{Thay đổi cốt lõi:}
+\begin{itemize}
+\item Thay \emph{mặt nạ cứng chỉ-outbound} của C-TMIL bằng \emph{embedding IN/OUT sẵn có} của BERT4ETH.
+\item Để mô hình \textbf{tự học} inbound hay outbound mới quan trọng, thay vì giả định.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Ba đóng góp}
+\begin{enumerate}
+\item \textbf{Mô hình hợp nhất thực sự, một-bộ-trọng-số:} một bộ mã hóa dùng chung, hai đầu attention, \emph{một lượt truyền xuôi} $\to$ quyết định tài khoản + xếp hạng giao dịch.
+\item \textbf{Benchmark kiểm toán + giao thức gán nhãn lại qua hợp đồng:} truy vết biên lai thực thi (\textsc{transferFrom}, Seaport \textsc{OrderFulfilled}, ETH nội bộ); GT sạch $83.4\% \to 92.7\%$.
+\item \textbf{Đánh giá trung thực:} CI bootstrap cụm, âm theo nguồn, phân tầng hoạt động, phép chia OOD, và ablation cho thấy \textbf{attention không phải định vị}.
+\end{enumerate}
+\end{frame}
+
+\section{Dataset}
+\begin{frame}{Các tập dữ liệu}
+\begin{itemize}
+\item \textbf{Huấn luyện (nội miền):} tập phishing + EOA bình thường của BERT4ETH (11.136 túi train; vocab 84.982 token).
+\item \textbf{Kiểm thử --- mức tài khoản (chéo miền):} tài khoản cashier/recipient kẻ lừa đảo PTXPhish so với tài khoản lành tính.
+\item \textbf{Kiểm thử --- mức giao dịch:} các hash giao dịch PTXPhish.
+\item \textbf{Lịch sử} crawl qua \textbf{Etherscan}; mô hình chỉ huấn luyện trên dữ liệu nội miền $\Rightarrow$ PTXPhish là \textbf{zero-shot}.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Cấu trúc tập dữ liệu được kiểm toán}
+\centering\small
+\begin{tabular}{lr}\toprule
+\textbf{Tập con} & \textbf{Số lượng}\\\midrule
+Giao dịch phishing đã kiểm toán (PTXPhish) & 4998\\
+\ \ GT sạch chuyển-trực-tiếp & 4168 (83.4\%)\\
+\ \ +truy-vết-biên-lai (Seaport/NFT/transferFrom) & +466\\
+\ \ tổng GT mức tài khoản sạch & 4634 (92.7\%)\\
+EOA kẻ lừa đảo duy nhất (mẫu dương) & 292\\
+\ \ poisoning / payable / ice\_phishing & 188 / 59 / 45\\
+Mẫu âm khó (PTXPhish lành tính, KOL/DeFi) & 80\\
+Mẫu âm EOA Bình thường giữ lại & 1324\\
+Túi định vị GT-nội-vùng & 101\\\bottomrule
+\end{tabular}
+\end{frame}
+
+\begin{frame}{Ground truth \& giao thức gán nhãn lại}
+\begin{itemize}
+\item \textbf{Phishing chuyển trực tiếp:} hash PTXPhish \emph{chính là} mục tiêu định vị (nằm trong lịch sử) --- 83.4\%.
+\item \textbf{Qua hợp đồng} (Approve, Permit, Seaport, NFT order): hash được liệt kê là một phê duyệt nạn nhân / lời gọi sàn. Dịch chuyển giá trị nằm trong một \emph{biên lai thực thi}.
+\item Chúng tôi \textbf{truy vết} \textsc{transferFrom} ERC-20/WETH, Seaport \textsc{OrderFulfilled}, ETH nội bộ $\to$ quy kết EOA kẻ lừa đảo và \textbf{gán nhãn lại giao dịch thực thi}.
+\item GT mức tài khoản sạch: \textbf{83.4\% $\to$ 92.7\%} (94.8\% nếu loại hạ tầng nâng cấp proxy).
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Định nghĩa túi (bag)}
+\begin{itemize}
+\item \textbf{1 tài khoản Ethereum = 1 túi.}
+\item \textbf{Cửa sổ cố định} $L{=}100$ giao dịch ($>$90\% EOA kẻ lừa đảo có $<L$ tx sau mốc neo).
+\item Cửa sổ đơn tránh sự mơ hồ tổng hợp điểm của các cửa sổ trượt chồng lấn.
+\item Cửa sổ dương kết thúc tại \textbf{mốc phát hiện} $\Rightarrow$ recency thành prior mạnh (xử lý sau).
+\item Loại giao dịch \emph{cuối} của mỗi túi khỏi ứng viên \& GT cho \textbf{mọi} phương pháp (trung hòa tạo tác tx-cuối tầm thường).
+\end{itemize}
+\end{frame}
+
+\section{Kiến trúc}
+\begin{frame}{Kiến trúc Unified TMIL}
+\centering
+\includegraphics[height=0.78\textheight]{../figures/fig_architecture.png}
+\end{frame}
+
+\begin{frame}{Kiến trúc --- diễn giải}
+\begin{itemize}
+\item \textbf{Bộ mã hóa dùng chung:} embedding BERT4ETH mỗi tx (đối-tác/IN-OUT/số-tiền/đếm/thời-gian) $\to$ LayerNorm $\to$ \textbf{TCN}.
+\item \textbf{Head-C} (gated-attention mềm): gộp túi $\to$ BCE \textbf{tài khoản}.
+\item \textbf{Head-L}: xếp hạng giao dịch để \textbf{định vị}; dùng \emph{embedding IN/OUT} thay mặt nạ cứng, huấn luyện \emph{đồng thời} dưới BCE.
+\item Một bộ trọng số, \textbf{một lượt truyền xuôi}.
+\item Mất mát: $\mathcal{L}=\mathrm{BCE}(C)+\lambda\,\mathrm{BCE}(L)+\beta\,\mathcal{L}_{\text{contrast}}$.
+\item \textbf{Phát hiện:} đọc hậu kỳ từ đầu mềm là \emph{không đủ} --- Head-L phải nhận gradient.
+\end{itemize}
+\end{frame}
+
+\section{Kết quả: Mức Tài khoản}
+\begin{frame}{So sánh mức tài khoản (chéo miền zero-shot)}
+\centering\small
+\begin{tabular}{lcccc}\toprule
+\textbf{Phương pháp} & \textbf{ID-F1} & \textbf{ID-AUC} & \textbf{X-AUC} & \textbf{X-AUC$_{khó}$}\\\midrule
+BERT4ETH & 0.734 & 0.925 & 0.989 & \textbf{0.836}\\
+ZipZap & 0.711 & 0.915 & 0.979 & 0.776\\
+TSGN & 0.727 & 0.918 & 0.985 & 0.760\\
+LMAE4Eth & 0.750 & 0.933 & 0.980 & 0.708\\
+Max-pool MIL & 0.752 & 0.933 & 0.978 & 0.779\\
+Gated-attn MIL & 0.733 & 0.922 & 0.965 & 0.803\\
+Mean-pool MIL & 0.755 & 0.933 & 0.957 & \textbf{0.885}\\
+\textbf{Unified TMIL (của chúng tôi)} & 0.743 & 0.922 & 0.984 & 0.725\\\bottomrule
+\end{tabular}
+\vfill
+\footnotesize X-AUC tổng hợp \textbf{0.984}; tập con khó 0.725, CI $[0.658,0.791]$. Cạnh tranh \emph{và là phương pháp duy nhất còn định vị được}; đóng góp là \textbf{hợp nhất}, không phải SOTA tài khoản mới.
+\end{frame}
+
+\begin{frame}{AUC theo nguồn mẫu âm \& mức hoạt động}
+\begin{columns}
+\begin{column}{0.54\textwidth}\centering
+\includegraphics[width=\textwidth]{../figures/fig_account.png}
+\end{column}
+\begin{column}{0.44\textwidth}\centering\small
+\begin{tabular}{lccc}\toprule
+\textbf{\#tx} & \textbf{\#âm} & \textbf{\#dương} & \textbf{AUC}\\\midrule
+3--20 & 1218 & 54 & 0.999\\
+20--100 & 104 & 103 & 0.971\\
+100+ & 76 & 130 & 0.741\\\bottomrule
+\end{tabular}
+\vfill
+\footnotesize Tín hiệu duy trì ở tầng hoạt-động-cao --- không chỉ là ``power-user vs.\ tài khoản ngắn ngày''.
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Khái quát hóa ngoài-phân-phối (OOD)}
+\begin{columns}
+\begin{column}{0.5\textwidth}\centering
+\includegraphics[width=\textwidth]{../figures/fig_ood.png}
+\end{column}
+\begin{column}{0.5\textwidth}\centering\small
+\begin{tabular}{lcc}\toprule
+\textbf{Phân vùng OOD} & \textbf{AUC} & \textbf{AUPR}\\\midrule
+payable\_function & 0.998 & 0.894\\
+ice\_phishing & 0.967 & 0.316\\
+address\_poisoning & 0.984 & 0.765\\
+sớm (train) & 0.985 & 0.802\\
+muộn (test) & 0.983 & 0.763\\\bottomrule
+\end{tabular}
+\vfill
+\footnotesize Duy trì qua chéo cơ chế (giữ lại một loại) và theo thời gian.
+\end{column}
+\end{columns}
+\end{frame}
+
+\section{Kết quả: Định vị}
+\begin{frame}{Định vị mức giao dịch ($n=101$)}
+\centering\small
+\begin{tabular}{lcccc}\toprule
+\textbf{Bộ xếp hạng} & \textbf{Hit@1} & \textbf{Hit@5} & \textbf{Hit@10} & \textbf{MRR}\\\midrule
+Amount-rank & 0.347 & 0.584 & 0.663 & 0.447\\
+Degree-rank & 0.465 & 0.772 & 0.822 & 0.607\\
+Novelty-rank & 0.356 & 0.782 & 0.832 & 0.551\\
+Recency-rank & 0.693 & \textbf{0.921} & 0.931 & 0.799\\
+Gated-attn MIL & 0.446 & 0.752 & 0.881 & 0.598\\
+TransMIL & 0.406 & 0.673 & 0.792 & 0.533\\
+CLAM & 0.455 & 0.792 & 0.871 & 0.599\\
+Head-L chỉ-attention & 0.416 & 0.752 & 0.891 & 0.576\\
+\textbf{Hợp nhất nhận biết nội dung} & \textbf{0.832} & \textbf{0.931} & \textbf{0.941} & \textbf{0.880}\\\bottomrule
+\end{tabular}
+\vfill
+\footnotesize Hợp nhất nhận biết nội dung vượt recency ở Hit@1: $+0.139$, paired bootstrap $p{=}0.002$.
+\end{frame}
+
+\begin{frame}{Phát hiện trung thực: attention KHÔNG phải định vị}
+\begin{columns}
+\begin{column}{0.52\textwidth}\centering
+\includegraphics[width=\textwidth]{../figures/fig_loc.png}
+\end{column}
+\begin{column}{0.48\textwidth}\centering\small
+\begin{tabular}{lcc}\toprule
+\textbf{Biến thể} & \textbf{Hit@1} & \textbf{MRR}\\\midrule
+Nhận biết nội dung ($+$attn) & 0.802 & 0.854\\
+Nhận biết nội dung ($-$attn) & 0.802 & \textbf{0.861}\\
+Prior recency & 0.693 & 0.799\\
+Chỉ attention & 0.416 & 0.576\\\bottomrule
+\end{tabular}
+\vfill
+\footnotesize Loại attention học được \textbf{không gây hại} (MRR còn tăng). Tín hiệu nằm ở \textbf{đặc trưng on-chain thủ công}, không phải trọng số attention.
+\end{column}
+\end{columns}
+\end{frame}
+
+\section{Các Ablation}
+\begin{frame}{Ablation backbone (chuyển giao mức tài khoản)}
+\centering\small
+\begin{tabular}{lccc}\toprule
+\textbf{Biến thể} & \textbf{ID-F1} & \textbf{X-AUC} & \textbf{X-AUC$_{khó}$}\\\midrule
+Mô hình đầy đủ & 0.734 & 0.974 & 0.849\\
+\ \ $-$ bộ mã hóa TCN & 0.735 & 0.955 & 0.592\\
+\ \ $-$ embedding đối tác & 0.554 & 0.960 & 0.461\\
+\ \ $-$ embedding IN/OUT & 0.717 & 0.928 & 0.662\\
+$\lambda{=}0$ (chỉ mềm) & 0.733 & 0.965 & 0.803\\
+$\lambda{=}0.25$ & 0.735 & 0.969 & 0.837\\\bottomrule
+\end{tabular}
+\vfill
+\footnotesize Embedding đối tác + IN/OUT dẫn dắt chuyển giao âm-khó $\Rightarrow$ biện minh thay mặt nạ outbound bằng embedding IN/OUT. Head-L đồng thời ($\lambda{>}0$) không hại tài khoản.
+\end{frame}
+
+\begin{frame}{Tóm tắt ablation (ba trục được yêu cầu)}
+\begin{itemize}
+\item \textbf{Mặt nạ outbound vs.\ embedding IN/OUT:} embedding IN/OUT khôi phục AUC âm-khó ($0.662 \to 0.849$); hướng học được $>$ chỉ-outbound giả định.
+\item \textbf{Đặc trưng payload BẬT/TẮT:} đặc trưng on-chain/payload thủ công mới \emph{dẫn dắt} định vị (Hit@1 $0.41 \to 0.83$).
+\item \textbf{Chỉ-attention vs.\ định vị có trợ giúp đặc trưng:} chỉ-attention $0.416$ Hit@1 $<$ recency $0.693$; đặc trưng mới mang tín hiệu.
+\end{itemize}
+\end{frame}
+
+\section{Thảo luận}
+\begin{frame}{Thảo luận \& hạn chế (nêu rõ, không giấu)}
+\begin{itemize}
+\item \textbf{Bể mẫu âm khó nhỏ} (80 DeFi/KOL): phương sai không nhỏ $\Rightarrow$ báo cáo CI bootstrap cụm. Giữ nguyên PTXPhish để so sánh được.
+\item \textbf{Thiên lệch vị trí:} cửa sổ dương kết thúc tại mốc phát hiện $\Rightarrow$ recency mạnh; trung hòa tx-cuối tầm thường và đo so với recency.
+\item \textbf{Attention không trung thực} cho định vị (ablation của chúng tôi) --- không đưa tuyên bố giải thích.
+\item \textbf{Độ phủ:} GT sạch 92.7\%; hạ tầng nâng cấp proxy để dành truy vết tương lai.
+\item Mô hình tài khoản \emph{cạnh tranh, không phải SOTA tuyệt đối --- theo thiết kế}.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Kết luận}
+\begin{itemize}
+\item \textbf{Unified TMIL:} phát hiện phishing tài khoản + giao dịch trong \emph{một lượt truyền xuôi}, giữ nguyên BERT4ETH và TMIL.
+\item \textbf{Yếu tố mở đường:} thay mặt nạ cứng chỉ-outbound bằng \textbf{embedding IN/OUT} học được.
+\item \textbf{Đóng góp benchmark:} PTXPhish kiểm toán + giao thức gán nhãn lại qua hợp đồng.
+\item \textbf{Thông điệp cảnh báo:} các prior vị trí mạnh và đặc trưng on-chain thủ công --- \emph{không phải} attention --- mới dẫn dắt định vị giao dịch hiện nay.
+\item Chúng tôi công bố benchmark, giao thức, baseline và mã đánh giá.
+\end{itemize}
+\vfill
+\centering\textbf{Cảm ơn --- câu hỏi?}
+\end{frame}
+
+\end{document}

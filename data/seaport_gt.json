@@ -1,0 +1,3586 @@
+[
+ {
+  "txhash": "0xdf0c6e06c3db96cc998ad93103350c340b4270920be8ca57ec7a86e00eb2f024",
+  "scammer": "0x0000553f880ffa3728b290e04e819053a3590000",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 35,
+  "subtype": "bulk_transfer"
+ },
+ {
+  "txhash": "0x35aabdfef81c7e7ad011c4164eea04d364182b9540705542ca35ff2115fee147",
+  "scammer": "0x009515efabccdbafa485f3919d94c85ff23ba75d",
+  "value_eth": 0.0,
+  "method": "net_nft_contract",
+  "nft_count": 1,
+  "subtype": "bulk_transfer"
+ },
+ {
+  "txhash": "0x14ec2e671ed69a12f018fa5a89f07ee2dace24ff1bd1fbf362b58ff1ba58a62e",
+  "scammer": "0x4086d400a17617c4a863c05e5af6139737992cc1",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 4,
+  "subtype": "bulk_transfer"
+ },
+ {
+  "txhash": "0x6529ff328f7146ab9c2fb0de95e3ca2af0dd583cbd901a44fd456371455418c2",
+  "scammer": "0x4086d400a17617c4a863c05e5af6139737992cc1",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 2,
+  "subtype": "bulk_transfer"
+ },
+ {
+  "txhash": "0x95848357ea358c52f9edb9e6a4b78d76366096a5021b4b6c514b0adf58e1a01a",
+  "scammer": "0x4086d400a17617c4a863c05e5af6139737992cc1",
+  "value_eth": 0.05,
+  "method": "net_value",
+  "subtype": "bulk_transfer"
+ },
+ {
+  "txhash": "0x8008523e09fcd5c38055616a76e0937eebe48b7e5a8205c2f88bca6aac997761",
+  "scammer": "0x4086d400a17617c4a863c05e5af6139737992cc1",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "bulk_transfer"
+ },
+ {
+  "txhash": "0xfe497c1de364f27d321910ad28120c5538b6b645c6334b1781f9908c19afb9af",
+  "scammer": "0x4086d400a17617c4a863c05e5af6139737992cc1",
+  "value_eth": 0.106256266,
+  "method": "net_value",
+  "subtype": "bulk_transfer"
+ },
+ {
+  "txhash": "0x4bed9be82ea267b54fea5cefa3aa6cad2aeb7ee187267efbb63fb57cb489f1c3",
+  "scammer": "0x4086d400a17617c4a863c05e5af6139737992cc1",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 3,
+  "subtype": "bulk_transfer"
+ },
+ {
+  "txhash": "0x0abb915bb1f38c4eb0a86b1dafda1aba0166b3f73bc0c36bbea7a451355b97cc",
+  "scammer": "0x4086d400a17617c4a863c05e5af6139737992cc1",
+  "value_eth": 0.1052,
+  "method": "net_value",
+  "subtype": "bulk_transfer"
+ },
+ {
+  "txhash": "0xede4843e77b13d25db34614e501c020e00671a511b27741104859eb884b12d1d",
+  "scammer": "0x4086d400a17617c4a863c05e5af6139737992cc1",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "bulk_transfer"
+ },
+ {
+  "txhash": "0x0316e9cfa1df96f6f596fc876c32d61f279e891277ecbdfc6ce15ef52a451fb1",
+  "scammer": "0x4086d400a17617c4a863c05e5af6139737992cc1",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "bulk_transfer"
+ },
+ {
+  "txhash": "0xa5917f6965cb5dc14b8c9ca353bfb051897475273e00e1effefdf5657322ce49",
+  "scammer": "0x4086d400a17617c4a863c05e5af6139737992cc1",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "bulk_transfer"
+ },
+ {
+  "txhash": "0x7872dc17cc06e40510ad03ae9aac1eb8c0493b34ac6c3a9c440467e61faa0f6f",
+  "scammer": "0x4086d400a17617c4a863c05e5af6139737992cc1",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "bulk_transfer"
+ },
+ {
+  "txhash": "0x0b2e06ef71ccabb75ff768c7cefd81fb9e98a286986fa45c116b650b1c94cab0",
+  "scammer": "0x4086d400a17617c4a863c05e5af6139737992cc1",
+  "value_eth": 0.1,
+  "method": "net_value",
+  "subtype": "bulk_transfer"
+ },
+ {
+  "txhash": "0x8568cd77d480d8e5cc3b94d038cc74e18e68c801a86a9935ead5fd5a85698263",
+  "scammer": "0x4086d400a17617c4a863c05e5af6139737992cc1",
+  "value_eth": 0.0573825,
+  "method": "net_value",
+  "subtype": "bulk_transfer"
+ },
+ {
+  "txhash": "0x4f5a4d104845936043b9ebe144feaad832ddd8329435426c7c27a6b9ec249e6a",
+  "scammer": "0x1e282ec96162144b1d1f90ef5f47f6ae9547d2d6",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "bulk_transfer"
+ },
+ {
+  "txhash": "0xa155eb647901e7de0c50423931f41d8e8c82a0fac7c04b649c2f2f735fb190e7",
+  "scammer": "0x1e282ec96162144b1d1f90ef5f47f6ae9547d2d6",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 4,
+  "subtype": "bulk_transfer"
+ },
+ {
+  "txhash": "0xdc0974abc134c8d52ecec60d183536ec0f6ef8f2e22cef4170dbcb301be2c4c1",
+  "scammer": "0x1e282ec96162144b1d1f90ef5f47f6ae9547d2d6",
+  "value_eth": 0.25,
+  "method": "net_value",
+  "subtype": "bulk_transfer"
+ },
+ {
+  "txhash": "0x87fd311733148c62e3987040e13aadcd4c8691f8e9184f1c1cb8a255c3461c8e",
+  "scammer": "0x1e282ec96162144b1d1f90ef5f47f6ae9547d2d6",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "bulk_transfer"
+ },
+ {
+  "txhash": "0x03ed238835ebbed254377fd6b0193fbe84e6e3a8d6876fe0d023bada089117fc",
+  "scammer": "0x189c287746e9e9b3d2f0fb5768d3286527aab48a",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 3,
+  "subtype": "bulk_transfer"
+ },
+ {
+  "txhash": "0x6c55b0e11ee7e9c697268435399657e354d44ac1c5fc63127c11aefe1d8b790a",
+  "scammer": "0x189c287746e9e9b3d2f0fb5768d3286527aab48a",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 2,
+  "subtype": "bulk_transfer"
+ },
+ {
+  "txhash": "0xe11078bd73409b6e47dc11d351e0a59c2843709fa68a364ee9077bab4ea81a84",
+  "scammer": "0x189c287746e9e9b3d2f0fb5768d3286527aab48a",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 2,
+  "subtype": "bulk_transfer"
+ },
+ {
+  "txhash": "0x8c2d28e1ecf9b9a149439d9282b1844c5c1a5f22587738c74ce26689ab9f75e6",
+  "scammer": "0x189c287746e9e9b3d2f0fb5768d3286527aab48a",
+  "value_eth": 0.167,
+  "method": "net_value",
+  "subtype": "bulk_transfer"
+ },
+ {
+  "txhash": "0xfd06bd2f2dd02bbe1d9b5f58a6d0b5119cb6030c238edc6d1e1d619d6a195137",
+  "scammer": "0x13f0d9d59be538d3c4d835da0f89f48e6353fbb3",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "bulk_transfer"
+ },
+ {
+  "txhash": "0x39bf8956514af45c3c958d6e0f5262444a52523425cfcf4faa4b0eef56ea6008",
+  "scammer": "0x1304fe2b03a553cc7c883c2945647a2d22edc4aa",
+  "value_eth": 0.06435,
+  "method": "net_value",
+  "subtype": "bulk_transfer"
+ },
+ {
+  "txhash": "0x366cd2eeb4371579a6eb5b84fc8c0cb2d3a466cd5428f1a62a74e1d518a651c4",
+  "scammer": "0x12f8f67ed7b2b253dcf32a27c325b1056e76acd0",
+  "value_eth": 0.18492,
+  "method": "net_value",
+  "subtype": "bulk_transfer"
+ },
+ {
+  "txhash": "0x9103cd3f47d64e5ed6e73866239993535fbfdf3f7d5a6f8f3be9d7bef3d2009a",
+  "scammer": "0x0fd0035cda6cf909e64e328b92e842bd1b62726b",
+  "value_eth": 0.19,
+  "method": "net_value",
+  "subtype": "bulk_transfer"
+ },
+ {
+  "txhash": "0x466c176975b1f51e56ec58a657efed73debf74eaa08904cacef6cb1c810a4f0a",
+  "scammer": "0x0fd0035cda6cf909e64e328b92e842bd1b62726b",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 4,
+  "subtype": "bulk_transfer"
+ },
+ {
+  "txhash": "0x56e11266dcf5caa5456019bcb5c566ea74568d70fbeda0717d8ae2cc21fd5faa",
+  "scammer": "0x0db50f16d15eb9327eb72ec75341505ab9382365",
+  "value_eth": 0.1665,
+  "method": "net_value",
+  "subtype": "bulk_transfer"
+ },
+ {
+  "txhash": "0x29d0964c791097bd471423e3a260d6b3f049eda61c24e92d30c5df0f967a7497",
+  "scammer": "0x0db50f16d15eb9327eb72ec75341505ab9382365",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 2,
+  "subtype": "bulk_transfer"
+ },
+ {
+  "txhash": "0xe166354d5fab64b82979bf40ce706859ffa2bb3da775d5001ab585a091edf059",
+  "scammer": "0x0db50f16d15eb9327eb72ec75341505ab9382365",
+  "value_eth": 0.3,
+  "method": "net_value",
+  "subtype": "bulk_transfer"
+ },
+ {
+  "txhash": "0x29da347334b2dc011db94127a55458b6aaf2051d5041f491cb67b09d9e5910e5",
+  "scammer": "0x0db50f16d15eb9327eb72ec75341505ab9382365",
+  "value_eth": 0.3,
+  "method": "net_value",
+  "subtype": "bulk_transfer"
+ },
+ {
+  "txhash": "0x9fca3e6aafb2354eb800aa7760fada257572832f55d65f5dbd6bfbe3dd229072",
+  "scammer": "0x0db50f16d15eb9327eb72ec75341505ab9382365",
+  "value_eth": 1.8,
+  "method": "net_value",
+  "subtype": "bulk_transfer"
+ },
+ {
+  "txhash": "0xe0461aaae6404153230bbc9890f9d5719b93462029deaf1eeabfe7f8d202b02c",
+  "scammer": "0x0db50f16d15eb9327eb72ec75341505ab9382365",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "bulk_transfer"
+ },
+ {
+  "txhash": "0xbfe984f37193968ea885207cca4c65b36b0a7645e4a405689270c3ca2fceb27e",
+  "scammer": "0x0db50f16d15eb9327eb72ec75341505ab9382365",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 3,
+  "subtype": "bulk_transfer"
+ },
+ {
+  "txhash": "0xc73e4f7119e361fa2c60d950f13951dd93826086f3a2bf1bb7cab61e12d9d199",
+  "scammer": "0x0b4681ed90c94abab0a53ba0b127bf4227b3a1bd",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "bulk_transfer"
+ },
+ {
+  "txhash": "0x56851991bd479e51407116c4abb26cff2ee31c5c26ccfad8457bd6c684e19dbb",
+  "scammer": "0xa2682acab74e02200e8fa1da28b8b9524aba8884",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 16,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xece1a1f9bd3e91f4cf8cdb9b5fda0b4c2e7149f1beb8eaf17867cc316b5879da",
+  "scammer": "0x1ba383587e6b6e8925bc2fff5d6165ab8a2eeaaf",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 19,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x3a23aa3fbb3e882aaf1f4cb042a92142497bd74508053d057346cb1926389bfc",
+  "scammer": "0x93bbf194175c0bddb2812f60b4eb70ef2bb17bef",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 20,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xa0770ddcd89b79f100acf0a63f4616b933a972b25bbfe5de976f0319322ba3c9",
+  "scammer": "0x52d9a6a98311f86d319002a2ee803efc43014451",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 7,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xbf2542540ce22abe7a1822e15d67a50b73a7ba18e036bb305103e51606122b69",
+  "scammer": "0xc0fdf4fa92f88b82ccbebfc80fbe4eb7e5a8e0ca",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 70,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xac1836d1d12afcd4bfbdf1137703b6003d1feab78845260ad2a61f4798256ce7",
+  "scammer": "0xd86275f47908fc5ae20adb5ed179db6cecefbcd8",
+  "value_eth": 7e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x28d8083f5992ca97dfe2ab7408f6c41f7cf8d464052b4ea6f1fe3d6afa806cc1",
+  "scammer": "0x9a9c153c34b03045d114c22b80d5019538552653",
+  "value_eth": 2.4e-17,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x1d82a4145a342b1fc4bc422fa889b9036f8ec4b233199f9364bc18c39de187e5",
+  "scammer": "0x9a9c153c34b03045d114c22b80d5019538552653",
+  "value_eth": 2e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xd18c04de80236bc2056d239edb6e7fab01043698739f8e17908bb3c8cdbd4ba3",
+  "scammer": "0x9a9c153c34b03045d114c22b80d5019538552653",
+  "value_eth": 2e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x3d95b3ab72cb3cff4ee83223b69151eb4cb55dfc35c3db3bc1a1290e1120f7a7",
+  "scammer": "0x98cc016525f5a0812f3a7b07ed267c81920bccd6",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 2,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x335bbba42d9f70dfa0f7b973db86f1376ed4c04f62e13af043207d8555c3513d",
+  "scammer": "0xb3fd7eb574ab090b91f8138a12a5c54d3aee28f5",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 2,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x2a644dd1dc4a3e08102255beea5303b593721a46730d12bddfe4071feaafc9c2",
+  "scammer": "0xfd037b40f3523727b647e06725f37e507b2dfcbc",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xa7458c19d8f909e14f0d804a0e36073390ff8d785f030fd2812ab3aa4ce0f1d0",
+  "scammer": "0x181fca08430948f88b4dcf405d1537667062ec37",
+  "value_eth": 30700.000002768676,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x948b5e7d751b8a64f9b5a6ade630889977252417347e18af6d965a800b322a2b",
+  "scammer": "0x89f71b8f8e86e9d71583f27a2689ec10c9fc5286",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 2,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xc9863e3ef0f8009b037f355a780dc921f953a9bfc4118ed1bd8e12e134861e5a",
+  "scammer": "0xc8a4321d58a337766cbfa3c2690fe2532eeaf9ad",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x4c930365f3b5042c11ee575d59d5ef76c97ad245708fff272a40feb35e112ed4",
+  "scammer": "0xc36092444d2031e3c01bd20a61302065c5cae820",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xe32b4c01a7b869a2b72074d5fa7d4870467034e55c05165efab7c4268a2d38e4",
+  "scammer": "0x0355123e1a6acbb710772a5aa743aefbfada7681",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 8,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x573a8ce79f6ce1b167e0202192700b311e92b892eb5534074dccb3e2aa3ef7b8",
+  "scammer": "0x0b4230f14a893226f934d3f7ad7ad63bda9b9bac",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x559d6575edd3d8e1e6a09f7a591758a3238bf07ef091da071fa8d7de64e420af",
+  "scammer": "0xac01e6956c4131177d351da518edc73398ad202c",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 5,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xdc58f677e1ba2ce0cd120a5c39fd084385e004a705cf384667d07f089f4c42eb",
+  "scammer": "0x41cdee1d0a5ed003eb9a03e538d9ee67c7a4c544",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 21,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xc57a165a85863385bf8943c7dce07eee86e5a943e7ebe31946659036bd6b4158",
+  "scammer": "0x6802573b4290b0236133affc4e751f14554f6db1",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xd352262bfe061cb6a870966f849ebdd9b9dab1ad6d4f56a4d14b65061c0a8c0d",
+  "scammer": "0xc649ec2e021fa5f5275ddfc597f99ba19cda8d2c",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x2b32aa32e0a5e19b9b7a4fdce6a581493158daa98c76103b301455598dd7da9e",
+  "scammer": "0x6e591c166109c7671381c709d3aec51a4b9b93bf",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x8a9c4fe23b3395d4c4accf07e14f2c1b84f0d7a61f08440d9e0d00c7de6defdc",
+  "scammer": "0x94570ab5de0685bcf2230fbf0b84ddc8aa049a10",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 14,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x8595946c8d3ad82aa738821beef3df51b887d67c202ad38e9cc3bd7aee17c552",
+  "scammer": "0xe980eeca242caeec61d89748bae279b062af7362",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 2,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x905c66c3bd45681e7d56b11f0ddfe58de77fd21bcff7c0ca148536920ed7aade",
+  "scammer": "0x8e4390a8e1f8e159de0afeba0588e45341e59bcb",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xdef48e20217711c81906e620331779875cf93ccdd7de6ef2efe2b64aa05e2a04",
+  "scammer": "0x8038ad6faf09f680c8805d27403b2bba4b7b470e",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x21c57bb0064343f99acee66aef0d4b3849d9cafba674a9f5720d107d6620bdd2",
+  "scammer": "0x8e4390a8e1f8e159de0afeba0588e45341e59bcb",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 2,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xa16c369d6b3c8093f76c034695f84312cd1d68817f3f4a651dea26976479868e",
+  "scammer": "0x8e4390a8e1f8e159de0afeba0588e45341e59bcb",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x3ba97b28fc829db791ef013f047afd5660cdb22273e66662a227651132908057",
+  "scammer": "0x8e4390a8e1f8e159de0afeba0588e45341e59bcb",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 2,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xea283b3921a3f5f1b0018b72877bbe2c2a65dab13042a412a21d11be078ad17e",
+  "scammer": "0x8e4390a8e1f8e159de0afeba0588e45341e59bcb",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 5,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xd0143cbc309c5dd087aca46c13eb9cb3c94d0ded0b5ec4cde6163f9945fef1e9",
+  "scammer": "0x8e4390a8e1f8e159de0afeba0588e45341e59bcb",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 2,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x86e6ca78ffa84db8b5376424089b33fe111afc38e52d34c08f06da000ec3d452",
+  "scammer": "0xc1f426fbd09b65eb5517b176e48213a0a0b4c54c",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 3,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x15cba4b5eb606e9bd522ea147e782f3dbc8cecc51221e1e50817756c3f84b0eb",
+  "scammer": "0x8e4390a8e1f8e159de0afeba0588e45341e59bcb",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x142ed5313a55321cfbc2b286fd6d14f6077794d2c87ed9d54886ae218f4e4fa4",
+  "scammer": "0x4fa3a7790ba17fc6cb2e49d74338ecdd920ab25f",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xba47bbf062743cd5d93993ff9c619f03738b32bf457973525cbd71f323cf59c3",
+  "scammer": "0x8e4390a8e1f8e159de0afeba0588e45341e59bcb",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xe6dc512a90a6d6583b89fbeb0bcfee9fbf2d31049780a3154b98f7dd7d415ed6",
+  "scammer": "0x8e4390a8e1f8e159de0afeba0588e45341e59bcb",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x28fd4d8c54207e42e823980e467a54afa6314edaf649d15f2da2a17d4450c0df",
+  "scammer": "0x097745a91a5007dbf96e7572eeffbc5f54399b19",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x26816b8583440718f9777209c68bd8878b3fa164802eb5b6f3faf442c1ad16ba",
+  "scammer": "0x22290f2394bcb1c4f8c9e22ca83514dcb4a21433",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 14,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x4260ac1a0cbfa69abc11b5320f5a64b57be67dc5733cdb85b219f8bca9f02849",
+  "scammer": "0x7df0f9bed21870f4b3e8060ef6f8ef804f03a6fd",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 5,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xfc6ff5a5469df4855742dbe7097ba5d34cebfce98ef3deab8406917ab7fa1c67",
+  "scammer": "0x22290f2394bcb1c4f8c9e22ca83514dcb4a21433",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 25,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x57e649541f9df3257afe813d5e1c60347d8dbeb61cb9a9b9c638c75ce3a84297",
+  "scammer": "0x7df0f9bed21870f4b3e8060ef6f8ef804f03a6fd",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 4,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xe83c3e093c04c8a2a0bfb2b8f42172cd0757b5500f0ee9cd70daaf4ab20df307",
+  "scammer": "0x6a069ac5747cd55b626b602a9272f815498c1912",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x30db1010b1f6f3598da0caeac8e26ccd77560599050c14fafd7999117dd1664e",
+  "scammer": "0x8e4390a8e1f8e159de0afeba0588e45341e59bcb",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 2,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x7758c6316e0deaa3b45190ddc8701a24287564121896db4010f96edb42a6f30b",
+  "scammer": "0x8b4b146a72a629f1e868aa08d400e0118d3ff21d",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 21,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x5865c567318c0a070e8079291f931bb4b5d680d9f061db9742200a931b409a5a",
+  "scammer": "0xa691240845331b8b6855064f670d85038d1d4830",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x2f206e6f88299a1487690b058798c3687195ea75722639d830330d1145fab933",
+  "scammer": "0x492394ca31dd868b859125a681e4ff0fd9cbed95",
+  "value_eth": 1e-18,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x689e39ab1caed8e83744ed69f793142693d57a2b83a406ef440d2d85b3a60b8e",
+  "scammer": "0x492394ca31dd868b859125a681e4ff0fd9cbed95",
+  "value_eth": 1e-18,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xf31db4439ccb05957ca2d86931052f17948b037e4ff2aa34350d237628dbfba7",
+  "scammer": "0xa691240845331b8b6855064f670d85038d1d4830",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 3,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x405454cc877ab00b98c388255fb32c22f6315649cd70ae55a4a81dd50418adfa",
+  "scammer": "0xa691240845331b8b6855064f670d85038d1d4830",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 19,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x13a458a0303c046d17b18023f150e7cdb049a4bd891c4eaa2ff2f602be09c095",
+  "scammer": "0xa691240845331b8b6855064f670d85038d1d4830",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 3,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xa4d663c8edc36f7b86cc560f3ceb55acc7234463e0e6540a531a407d5438ead8",
+  "scammer": "0xa691240845331b8b6855064f670d85038d1d4830",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x1e63fb615a7c0b33b4acc8a77d4e7e4dba0c2901f4f439001ba75e81ca66fc16",
+  "scammer": "0xa691240845331b8b6855064f670d85038d1d4830",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 24,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xb8b10dc20376fd73abbfcd969a9eae4bcac09cf98e620ad192bfb769985665b9",
+  "scammer": "0xa691240845331b8b6855064f670d85038d1d4830",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 4,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x216e11d36863f619f614d4c0eaf9d0117ea984e4ad2a329b3362b6a9bcca3fbb",
+  "scammer": "0xa691240845331b8b6855064f670d85038d1d4830",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 10,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x35b5edf813e002a04de54e1e3bbac7d46a3c81ff17a0e4d496a8694bbe0588ca",
+  "scammer": "0xa691240845331b8b6855064f670d85038d1d4830",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 7,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x3704842d5e81c2d3eb8ad05f6645f12fd20da1012e6ef9f3f62732a5ab322a1b",
+  "scammer": "0xa691240845331b8b6855064f670d85038d1d4830",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x4931ecd10f354b99bd763f62feb843000dfd8febd08ee90c9d80d16387b1e23d",
+  "scammer": "0xa691240845331b8b6855064f670d85038d1d4830",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 2,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x49d9c2ec923d5753d902efdaaa516977f9a87c4ce72190ecce40d0e47f38d3fd",
+  "scammer": "0xa691240845331b8b6855064f670d85038d1d4830",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 12,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x34378f9ff74a1d0a1ed9ae0461a0298c29107c001d9948861eb32d7d242021ce",
+  "scammer": "0xa691240845331b8b6855064f670d85038d1d4830",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 2,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xd10d80b35082866ddc06cfa7d0ca6c0b712bfc927db137e8330eaa84d91548ec",
+  "scammer": "0xa691240845331b8b6855064f670d85038d1d4830",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 8,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xe63c8db9898ce7e11d9b55449390652254ed617fb6ab2c5973e23740aac7490f",
+  "scammer": "0xa691240845331b8b6855064f670d85038d1d4830",
+  "value_eth": 1e-18,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xc2d0641310b6cfa5b45a8aee759171eb4fb0e7ff7cdc8e0f12f7ce59769d1447",
+  "scammer": "0xa691240845331b8b6855064f670d85038d1d4830",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 2,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x9b59fa1fed4919d6517a1628febece1c6783c9621189745f6c75512402505521",
+  "scammer": "0xa691240845331b8b6855064f670d85038d1d4830",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 3,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x47055e400e2e26f53e409d222db0c1a551ede1d758ff722a8653cb7934cf4067",
+  "scammer": "0xa691240845331b8b6855064f670d85038d1d4830",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x612ac52af37c459c8e3d5a7eb9da993d50456da2b9fa931c925f524023ef9805",
+  "scammer": "0xa691240845331b8b6855064f670d85038d1d4830",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 8,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x39111446888209ff4c44ee4be21208de567fab505364a036dec4173abed741b8",
+  "scammer": "0x32579485f88c817f7eb89999f9ffe4e4a4592af1",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 2,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xe63cc6f14d64faee8296e671e5762424ea7edeb0ddf454689018f6429d8a69f9",
+  "scammer": "0x194c07e44b6a7d3b8c64426f031514700e9281bf",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x008178f0f79faad407feb348f5a90a6384da4fb7dbe0933fa55fd3f70dbd361e",
+  "scammer": "0x32579485f88c817f7eb89999f9ffe4e4a4592af1",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x446fce20f127cac6cf2ba03d032b23303d023609e69a6cfebca660540f2b4d5d",
+  "scammer": "0xa1b8ccad8fbbd508f31974fec72fad675d21f3ce",
+  "value_eth": 0.4169,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xbc5dc157ed7a519d5e40ba2f0511e90b9bb5f67347d1d6ee2c2518e3f6c7eb4d",
+  "scammer": "0x32579485f88c817f7eb89999f9ffe4e4a4592af1",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 3,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x56c965ef3e24e6975174478bc7185d63a872bf0e9d0b67a2b473f752cd736665",
+  "scammer": "0xff53bbd8bc335ee5f5b60dcb76efb2f59964b1a5",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xb47a6fd2616d15df516984dd113a088966082fa47232bc13e9b63d6336456a2a",
+  "scammer": "0x32579485f88c817f7eb89999f9ffe4e4a4592af1",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x6bdbf10a6ae8fca34e12e39cc817598fa88a5277148939c1aff716c392d63282",
+  "scammer": "0xb883110e731021cf9c138a031c77e181b7373ffe",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 3,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xc37a47368cd5a9fe1103f47d822f19cd26dc0819d740f01487d49b341446ac4c",
+  "scammer": "0x32579485f88c817f7eb89999f9ffe4e4a4592af1",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 3,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xbe97a23a023af52c87259b14e527eb6ff92b4e1a336874b1d8a07ef1a4eda06a",
+  "scammer": "0x44136967f00f65fafdf27e8b8c7fe5aa7f523695",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 7,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x6a590180b50b0f417898419e5302cc2386f7211a3cfe9d0e887792cd533029a1",
+  "scammer": "0x194c07e44b6a7d3b8c64426f031514700e9281bf",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x99ef4758266cbcbfe553b44a6240b1ff0e338a4e865b34a008392d9b86269b06",
+  "scammer": "0xff53bbd8bc335ee5f5b60dcb76efb2f59964b1a5",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xeb597b82e5b6c51edd5f7fec1afbd24987a34c514925e93bc4b3e8f383396d0a",
+  "scammer": "0x194c07e44b6a7d3b8c64426f031514700e9281bf",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 12,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xa1a1e2a67469af8c9fb590705cc2441aeeb6319b4c112ae173c8bbd049d478ff",
+  "scammer": "0xe3d77a45330276fccd6f003cbebdbb13a1f76877",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x8ca83593ea30d6cc63360dd0356d8a32bf7fde4df5d1c78ce85d6bc7d5251d66",
+  "scammer": "0x509a533008fd502c54cdeb6d4430b5e827e90226",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xdf01800dab86c53035c96e30fd2319970f00de9ebf1ca06c679fd4cf4b27e889",
+  "scammer": "0x194c07e44b6a7d3b8c64426f031514700e9281bf",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 2,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xe87e15066e685055dae5c846cdb67530be077af1415b9b61afa87482f952f218",
+  "scammer": "0x5e8e62d29a9601cd9848f8b7e690ae97407961e8",
+  "value_eth": 4.2076e-14,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x377a6ca86bdef4a90c759449423569c31ea274c0c383a89e0b13ea09ac4658e3",
+  "scammer": "0x194c07e44b6a7d3b8c64426f031514700e9281bf",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 17,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xffc19806a345ba58e4567e2b40c833c887d618d8a4799ebf076a3bd1067f75f8",
+  "scammer": "0x194c07e44b6a7d3b8c64426f031514700e9281bf",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x3d591db0425c8b2a04357f8978089877ce0f858e5b03a118d6d26ef6bc8f5eae",
+  "scammer": "0x92f5ae24da305f6fbd2d62586ed4de84ad05650f",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 5,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x99eadea3ce6efce1dd5631a8d4bba3aaa48e7b59537553e2033d2869bf7978f6",
+  "scammer": "0x32579485f88c817f7eb89999f9ffe4e4a4592af1",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 3,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x0d89c69b921b803da5a5a327f8f2b468f3a2450913caeead75486cf145dacdba",
+  "scammer": "0xe3d77a45330276fccd6f003cbebdbb13a1f76877",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x9b4647acd589b59ddc3e4ea89e1397609677a68adf9bd593a38fc44191400849",
+  "scammer": "0x194c07e44b6a7d3b8c64426f031514700e9281bf",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 20,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x7770b7ab20bd0a8e644459a334e4436610ef0a5d691ce2b7a9627e6c3b819478",
+  "scammer": "0x194c07e44b6a7d3b8c64426f031514700e9281bf",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 2,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x03ba945d3b91ac6681a5382f4f43c9c49620e8bd35fbde1fe53d095d8fd6d853",
+  "scammer": "0x194c07e44b6a7d3b8c64426f031514700e9281bf",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xa7ce8c1ccf9ffe4d49b13c69540bc874e2f6e47954bf2a2a8b3ade1e7c31b7f8",
+  "scammer": "0x194c07e44b6a7d3b8c64426f031514700e9281bf",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 15,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x55232efacf1bfbe0cafbb388a413527cf62e269f52495ecc05166c3b0222f04d",
+  "scammer": "0xa1b8ccad8fbbd508f31974fec72fad675d21f3ce",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x79a7ae29384cd7e3350f03e2082864db0990b636d1d5f56e2478d40d041036c3",
+  "scammer": "0xe36d6371d5742504a8d1679ea7a6aa5d81e82dbb",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x10e55d6ed003880681fa52250a472597ab6da2066ed9b9f22e7b5a12596ec316",
+  "scammer": "0xe36d6371d5742504a8d1679ea7a6aa5d81e82dbb",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x873778b89ee3663ce0f42b4f5842715a7901b268fc6b28574a4f069f9deb3e66",
+  "scammer": "0xe36d6371d5742504a8d1679ea7a6aa5d81e82dbb",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x6867d49333ff6ddd7e3567fe50c29eae0a07ae2d2e80b8be0ce7c629a60d32e8",
+  "scammer": "0x1572e6d687a79a30b7e25e4f3837f7af2ee442e2",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 12,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xeccb4b4a946d2c9d0d9a4fa3dbb10614c08fb33ac283e9788af9e2bca39d3530",
+  "scammer": "0xb8dcea5668aacab0e69562bf946022a63ef4a637",
+  "value_eth": 8.237794e-07,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x2ca904bdbe1f4d229c114578b81f5037fa479910c785cecde13af7e8d218689b",
+  "scammer": "0x92f5ae24da305f6fbd2d62586ed4de84ad05650f",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xa6f7e0e4397f1b9a3468e2fd0ff57e8f20a70ab8d76c9cfbcdc5f46b6ee6ecb7",
+  "scammer": "0x194c07e44b6a7d3b8c64426f031514700e9281bf",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x95551c581ecde91981ec7a125d3612373775b2540c25dd9aeb654147d7b9c01b",
+  "scammer": "0x1572e6d687a79a30b7e25e4f3837f7af2ee442e2",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x5af29ac363962fca9f682cac1ce345cc17edf15e59b8922cf273a03fcb22cf16",
+  "scammer": "0x3b638ce6044bd08c8768049abb981e9dd7d24141",
+  "value_eth": 0.011832940111455423,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x58d8cee3df5742b013f90cba3d9ea9797a64a9a2293e4343973b4989fbd7e2c7",
+  "scammer": "0xe40d97b6790b1d35d5748407756c3506b2429e36",
+  "value_eth": 0.1,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x3671c1ba85d1ed59e97027c3ed4d1b2f2503236c0c88d6b124d491f2968ce1a4",
+  "scammer": "0xace4debc98d6f4885abb1117c94aab07deb5d207",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x189a0b74a41bd11c8df3c41dde8ff070e90d8553ca798f52ab2181d9169ae965",
+  "scammer": "0x875adcb59cb5b56c7d5f7d5bd945ac25cfb28e96",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xcd103e5d083be5cbc082e96b142ce7c649e8adf5aa9eced87ea7ecc7c0e51703",
+  "scammer": "0x30f4471f1bf0b6215541f09fafbc3ab6681b99f7",
+  "value_eth": 0.2,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x08dc6d5380edfb8ba551dd159483b9f90ba1068b091fc46bd522fb1896cacd1f",
+  "scammer": "0x095dfb33c49b5f731dc4c920e398b2e35c991e88",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x7405093f56dc35c049f5ef6b407335a166fe11277d9e6849064b615479c7b388",
+  "scammer": "0xc873e404e3cfd84218aaab76c1d96bb03a3fe33d",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x767a87cbf2b0465559fa68a1a02f350cf8ef3e361571efba17d94cb55224f531",
+  "scammer": "0x369adae40d4f864034f58ce34ffe8cbe8e8c5303",
+  "value_eth": 0.85,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xc81405d96a4c3c4f2c3afb1710e66236d59e31c129c1b10ee5fca94b0af257aa",
+  "scammer": "0x4ef6f0d3f94ff609acef88068b1fc66a1184b3f3",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 8,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xa21f0fade7665f128390e12de3970e4993a7301f79ff6344ee7321582e9bf021",
+  "scammer": "0xc0fdd4a1cde78eb57d7f3e3cb8776412a33d84be",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 3,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xb86ce186f53274ebbb1da9425a0c187f3a7d72622f8900791048dd8ab9651df4",
+  "scammer": "0xc0fdd4a1cde78eb57d7f3e3cb8776412a33d84be",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xc54fce7333baaa99afb990cc99317736c88879070637a21db366d46c58cafbd9",
+  "scammer": "0xc0fdd4a1cde78eb57d7f3e3cb8776412a33d84be",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 2,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x9e2120ac9514e4b1f0d8c5a0dfaee31a2c7170b4ba656a8d0d7626470c2f10b7",
+  "scammer": "0x4e1c0d3114ebcd86b17df4a4a296269af48a0ccc",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x47bf8858adac76a18dd01fef72f520521d39337bd05eeea27e44ddbad75b5f20",
+  "scammer": "0x4e1c0d3114ebcd86b17df4a4a296269af48a0ccc",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x4b548f0dad8639cf77d2b9e1c065084e09c0308cc0a5f3ccb29e67c72e30c3c4",
+  "scammer": "0x4e1c0d3114ebcd86b17df4a4a296269af48a0ccc",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 2,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xfa7b0fe562ac83831e0303b91ce94f84c6c3f003bfdcd00c411af5c96930a711",
+  "scammer": "0x9337fa0f40067b321ad9fbbeadf67b8400e189c3",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xa517b652c091ae8cd7aa6be322d3956b944069267dcbad619bb3be1c9c324df7",
+  "scammer": "0x9337fa0f40067b321ad9fbbeadf67b8400e189c3",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x727b47a08f6ea86f806dcd496beb28c01f923baacb0044758f7c8f6466cf4260",
+  "scammer": "0x9337fa0f40067b321ad9fbbeadf67b8400e189c3",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x136b9790a5585c6e03fb1be3d606cfd54e04a9fb760a6bf809b8a60d26ec3d3d",
+  "scammer": "0x9337fa0f40067b321ad9fbbeadf67b8400e189c3",
+  "value_eth": 19.9,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x3c88ffdca9ee3f54b0fb17162b92726270c5b321924a827605b4ffd6b9919ff1",
+  "scammer": "0x9337fa0f40067b321ad9fbbeadf67b8400e189c3",
+  "value_eth": 0.04296,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xf092f791fe6a75ea77d572edc343a707c091bd20fb890d0a46a9b657fa1d9150",
+  "scammer": "0x9337fa0f40067b321ad9fbbeadf67b8400e189c3",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xc99bf389ed3fa7da814e90f2b9420f52b8a57491787016d3d373adc1dbc2c11c",
+  "scammer": "0x9337fa0f40067b321ad9fbbeadf67b8400e189c3",
+  "value_eth": 0.0273625,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xa8f990afc4cb95c752e3658ed305b41c8719aa3f2e498ffa79a8a4f9284ae572",
+  "scammer": "0x9337fa0f40067b321ad9fbbeadf67b8400e189c3",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xfa34a54ec63f39883dd3ca7d0910c44410ea7c5354e8d4e8a7815922184deabd",
+  "scammer": "0x9337fa0f40067b321ad9fbbeadf67b8400e189c3",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xb2e603d3ef55ad019de2065295155485f756f61fcf6823923efbfb135973abe8",
+  "scammer": "0x9337fa0f40067b321ad9fbbeadf67b8400e189c3",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xb39c24e3121635e8aad952dec55ace8af6e186b9635c82b55bef47b19b42b9ff",
+  "scammer": "0x9337fa0f40067b321ad9fbbeadf67b8400e189c3",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 2,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xf91ec88b591643a9daceb3702bf6b44c4b6cd37850c238d15eaddf03b4a0d3e5",
+  "scammer": "0x9337fa0f40067b321ad9fbbeadf67b8400e189c3",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xa39a387ddcb7159f937e388ea0122ed1c48a9b7040cc7432378e71a3c9c3315c",
+  "scammer": "0x9337fa0f40067b321ad9fbbeadf67b8400e189c3",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xdb87e80bc1568dc063869d4581f402811cbd971af8b33004902e7afb2e455df1",
+  "scammer": "0x9337fa0f40067b321ad9fbbeadf67b8400e189c3",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 3,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x385e6328d256c54bb34f9f58d304cfa5769a079d9be63c2dd44353b42fd838a2",
+  "scammer": "0x9337fa0f40067b321ad9fbbeadf67b8400e189c3",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xa7f462c1c019046d78a37c88b0bb4380c61a8903132abb9e202ae6ab6d63a60a",
+  "scammer": "0x9337fa0f40067b321ad9fbbeadf67b8400e189c3",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x5a80adc416a8e1d017e688a8d62f578e233c122db73b9ff5cb4910c9362ca849",
+  "scammer": "0x0e2bd0bf9022c5b3994e472333862a8c80a0ffdd",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x9f4d9266556ebdc7ff9cb08ab67feba4ae7d2bfea087d2a20cddaa1278f488a7",
+  "scammer": "0x0e2bd0bf9022c5b3994e472333862a8c80a0ffdd",
+  "value_eth": 0.103224,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x997a7287fb895c8215a3f15204f0e507e8c6c2b64afdbf9de3be1b29489726d8",
+  "scammer": "0xfac3e93133c980601acb10593336e896b36b7e1f",
+  "value_eth": 0.8351831,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x9ce48fc37a25580e759a5cb93dec609204c94441e5f0be64df912164eaf236ab",
+  "scammer": "0x0e2bd0bf9022c5b3994e472333862a8c80a0ffdd",
+  "value_eth": 0.05,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x9fbbcf50da483af55ca1991b14bdf8c2e420f94ec4ebda9e34b5b07101ffa908",
+  "scammer": "0x0e2bd0bf9022c5b3994e472333862a8c80a0ffdd",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 4,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x1371625b96aa2ccfddafb29af6568516971258772d6fe302861a9991f378e108",
+  "scammer": "0x0e2bd0bf9022c5b3994e472333862a8c80a0ffdd",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xd5cd817571cb07f0366d30ef643a8db2c61a122989f5a49f5944e599afa0e06f",
+  "scammer": "0x0e2bd0bf9022c5b3994e472333862a8c80a0ffdd",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x0e631d0167bdd131801ef0fda892071b6afbde54ba45c75df458c66806e854a3",
+  "scammer": "0x3192472d6bf39aa1a48813c37613f05e554a6ad6",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x9f14c2cfd8420980233519507745157a8633c600888771f547021d9d3f2cdde1",
+  "scammer": "0x9b56aaa0937047a211ad41b9ce5a4c0d731a442e",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 5,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xadad1342c82c36123df31bfa52f666d681a89ba757f11681da2149da1a0b85db",
+  "scammer": "0x9b56aaa0937047a211ad41b9ce5a4c0d731a442e",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 5,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x35043451e4007a56fe5fb2b14677aac1c3e8458d602144389a2edbbe4332853c",
+  "scammer": "0x9b56aaa0937047a211ad41b9ce5a4c0d731a442e",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 5,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xf83e68e73d6e324f596fca26a7390c2b02e970a1b83c11cb430bca68f6c12fbd",
+  "scammer": "0x9b56aaa0937047a211ad41b9ce5a4c0d731a442e",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x732d49442f9a8fd916483776404256337e95bc7f12b45013be6bf017c049cc1d",
+  "scammer": "0x9b56aaa0937047a211ad41b9ce5a4c0d731a442e",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 3,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x1e390052adadd24b8caf78d2f89bfdc2143e0e46e44b311329e18b97f075a7dc",
+  "scammer": "0x0e2bd0bf9022c5b3994e472333862a8c80a0ffdd",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x529a513309864dc616b32339755ea89932e80dba1d5e9e0b07c41cef8cfd256a",
+  "scammer": "0x3561e1bdbc8b8ff95f00f00a44074b326ef4790a",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 3,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xf791981022f6578f744ee11f0cfc2dfa00787454738641492de2935a29c6b9e6",
+  "scammer": "0x83eebe498d5fb5e25d8004c351f9681f91297ded",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x45b44c6174015e4827f2997060751665b61d752867146f1650c967ff4a361bd0",
+  "scammer": "0x8620d40610ea1a55e974daa60416fea5fe699d78",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xc529199cf0772d1dd8e2345bd0c11d320148a6844d612435605ff6017daaf565",
+  "scammer": "0x8620d40610ea1a55e974daa60416fea5fe699d78",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 2,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x9a23514c01d7c1d23a8cae74bb38ff38db7383a4692dffe11d0c32ca590f071d",
+  "scammer": "0x8620d40610ea1a55e974daa60416fea5fe699d78",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x604fcac597fba0b117ef5f6304f61cf552a3cabb150637c03781599085a339ce",
+  "scammer": "0x9b56aaa0937047a211ad41b9ce5a4c0d731a442e",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x5c3524b50b1554e2109c170e1d3a34c8f5bfbc986991fa80d12181678521844f",
+  "scammer": "0x64cf71225ec98a11577fa19ad78251e994a9dac5",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 3,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x4e9b9e45a37651cdc000da84dd587a546ba7b06fc2c635279155a377acaa6f8d",
+  "scammer": "0x96a29239a64ea58c224ff6f46ac31f8c7f886775",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x7fe62f958edfb5b54434d6871a97e261996fd8403d096eff4fea94e863ef5ca7",
+  "scammer": "0x9467354f9cfbbe99c9d8de2bef6d255fc0153b18",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x8a6627fbe62563c777d7b4b3e01b16444e2f7910379e5c8c4980192f16e78b81",
+  "scammer": "0x76dfa17e4f702cc5edd7b8422cfeab0ee3ec425f",
+  "value_eth": 0.25,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x26abd6dce6e293c49df5d8bd7157ef240123008332dd64d504892f4aa4d0b5dc",
+  "scammer": "0xdba0259fc8ca3e4d1f922c1a8a89147d807d4e37",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x1d7a94f19abc820786b5631a17ac49d7351955a4020fe4d3dce74bc78e545480",
+  "scammer": "0xbcb655d2f1f9e741de0e1a60610ce4869a400f64",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xd6bb43ccf6923cd27e47c2ab10d692c14342b3ca4d67a5999d710e53cb0e560c",
+  "scammer": "0xb0cf4ac72424849694e564103a00fca02c2b7ea8",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x34afe7a6b387dc33f4913d49b1e42f20fbffa7d62376d2ac27e9a169c7b9c07d",
+  "scammer": "0x9a30b1a9ec4387f507f42c8cd4577d93ca379090",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xeaf2fde287c3c2ccee37eb79aa28b3f7f4b2af2c64fdaa450c34edfa653ff1a8",
+  "scammer": "0x96a29239a64ea58c224ff6f46ac31f8c7f886775",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 2,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xfeff84fd14a487ac4ec3dece748c2c03f97dfad7b8bf3c802aad05bdf57da6ba",
+  "scammer": "0x96a29239a64ea58c224ff6f46ac31f8c7f886775",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 3,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xed256bd2df2fc0ffc27769df0895a2df93835ded7ae284b395e4f4f3cbcee6b0",
+  "scammer": "0x96a29239a64ea58c224ff6f46ac31f8c7f886775",
+  "value_eth": 0.034835417989483,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x985a5fd3988c3e82e61b467d6aa08795528cf1e19fde5f548705b75c24304d87",
+  "scammer": "0x96a29239a64ea58c224ff6f46ac31f8c7f886775",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x07257b2409bf2897df07e46424fed6a81cc85ddfc8aab829c23be050cf972e7f",
+  "scammer": "0x96a29239a64ea58c224ff6f46ac31f8c7f886775",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x526a0aa43e3560653b26da3c9c156ad8f0a3b6245bd99e2af7c79e92e83df1f4",
+  "scammer": "0xce52e335112ed3742bb05211696d6d03e65f75cc",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 5,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x16b59c418492b57720cab2b50cdde78021bb4748fe27927b2504d5572f7e9aa0",
+  "scammer": "0xce52e335112ed3742bb05211696d6d03e65f75cc",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 5,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x789daa8cd3ae2b3d542964664e2c34c4093356bf1d18db10151263ca46735b16",
+  "scammer": "0x4fa3a7790ba17fc6cb2e49d74338ecdd920ab25f",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 3,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xe0aedd3973733cfc280e21dd963920397e1fc60c6ae02adb605652f2d2438dc2",
+  "scammer": "0x41c846bab28f32dc12e6ed721b80b524d3810f36",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 2,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x5ee937bcba6b449b51b20d5ba1abf1b166b0a545bf476c495eb9855ea66c2e84",
+  "scammer": "0x2c4b4c6c5297f04757be27609144e65a8ee381ff",
+  "value_eth": 1.5,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x665befc98a24f0529e2f63c49f9a0aaf86656a5d4de50d4faa66d55c8b629edf",
+  "scammer": "0xce52e335112ed3742bb05211696d6d03e65f75cc",
+  "value_eth": 3.0,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x1fa981e1182b1ea8d0cac83d0cff71c309a21b41d2a6d5470d60dde6fc5fbd77",
+  "scammer": "0x2393bffe9281421e29e20b8c5c7c94f867fa2ab4",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x840d23090c3ac12d6313be9afada0cbe106574960ef57f275d0675ebf71cfd46",
+  "scammer": "0x2c4b4c6c5297f04757be27609144e65a8ee381ff",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xe0efb0bf6ab060bcb93ab6e59493acac5ab92f684241c279bf248115502c4a47",
+  "scammer": "0x07c2e376b18e8e4af49c0cd590d5bbc964a50222",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 2,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xb33881968c11c67e81451cc6eb1ef44d5f34f710090d3dc962e04168555acc87",
+  "scammer": "0x07c2e376b18e8e4af49c0cd590d5bbc964a50222",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 5,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x595a2269a7e65ab07cbb6e19ef1ae18da9a50453d5b492229c058d28ac9bbf16",
+  "scammer": "0xcb2a9296fe6203de9b06af1c81c63057a1a303b8",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 4,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x46b4ce48ddfa01016d813db71447c550e8da31fa0f7256a50c9facb46f3e8951",
+  "scammer": "0x2c4b4c6c5297f04757be27609144e65a8ee381ff",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 5,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x27d122626e7f66fa73386d7b638dce3f1edf335ea6100ec8f6d41b200e9fbce2",
+  "scammer": "0x2c4b4c6c5297f04757be27609144e65a8ee381ff",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 5,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xda89f70f058c0ce51dd4a107e33d5f5363418545dd6b083ee1e62660d532ea64",
+  "scammer": "0x2c4b4c6c5297f04757be27609144e65a8ee381ff",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 2,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x384018f0f9caec4ecf2b51786d06d3ad8f034b47d8b5f41af3d2ee65099e363f",
+  "scammer": "0x5d67c7b9bd41a7c9e946cb3d26837f85939dda69",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 5,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x3ec2f9b386e81435be5d70e07e96bcf610d8fc4d48f18524882a7b9620ade448",
+  "scammer": "0x014c56e8810134fd79fbf1910883ab4351e87cda",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xdd1149cbbaac1b24b077df8b802e3961dc43c6523f62e9333b8f548fd6a5305f",
+  "scammer": "0x903cb5c4cd7fcebbd0097db439e15a4d65a98c58",
+  "value_eth": 0.0,
+  "method": "net_nft_contract",
+  "nft_count": 5,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x88d2e10defddc5c8f02a7f7faada71792c44871224c52532264d900c4ec2fe0e",
+  "scammer": "0x2c4b4c6c5297f04757be27609144e65a8ee381ff",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x3e9fc674f1b3998690cd9088818f0d8a11ece6c67111386cf7eecf15cdb4293c",
+  "scammer": "0x0b3e87a076ac4b0d1975f0f232444af6deb96c59",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xa3ed6b364b5a676ab7c8d42a54a2d0b77a62691cb677c0bd2abea5a65c2feb00",
+  "scammer": "0x0b3e87a076ac4b0d1975f0f232444af6deb96c59",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xd5fb6731b9b9cffadf2ebbee2a0891f50cb1e21087c7e9a35e633ce031b0b213",
+  "scammer": "0x0b3e87a076ac4b0d1975f0f232444af6deb96c59",
+  "value_eth": 0.00495,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xfab795fce39d5ab091bb558213040a512ecc7beb1ad09a3778a5507d105a793f",
+  "scammer": "0x0b3e87a076ac4b0d1975f0f232444af6deb96c59",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 2,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x1476b75f82c16536e6ce56e414483a8335bcd7c2d9c7bbabf2c59c96a2173350",
+  "scammer": "0x0b3e87a076ac4b0d1975f0f232444af6deb96c59",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x8b2373b08c308f651bc660da74ca7f1a9c5eb4a0750b7a87d6fbe38c971a0d47",
+  "scammer": "0x0b3e87a076ac4b0d1975f0f232444af6deb96c59",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 7,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x35f5d3800293bee5b3884c0651f38e4a092b8cb796e5f6653602bf6d67d831a9",
+  "scammer": "0x0b3e87a076ac4b0d1975f0f232444af6deb96c59",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xb568e82e2889bb4e16ce1ccaa2d64d7d00bca6612d24c076b4ccdb10c0d61e3c",
+  "scammer": "0x0b3e87a076ac4b0d1975f0f232444af6deb96c59",
+  "value_eth": 0.106,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x41c625bba96192252911f35f05649d39c3888cfd9747669f3c41d92e094f5563",
+  "scammer": "0x0b3e87a076ac4b0d1975f0f232444af6deb96c59",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 14,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x00c5882e051064a558d21cbc19c0e2873fe3dc0e9ecbda64556895dd41ea4ac1",
+  "scammer": "0x0b3e87a076ac4b0d1975f0f232444af6deb96c59",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 5,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xeecf04df0f68252b4b5baec9d59285bf89fda1e73166e77a491c60f9525dd0a5",
+  "scammer": "0x0b3e87a076ac4b0d1975f0f232444af6deb96c59",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x18c20cd7e7657d285631d30adb8ed60b5f80ad3fd12c8d7c3b96cec53ae3179a",
+  "scammer": "0x0b3e87a076ac4b0d1975f0f232444af6deb96c59",
+  "value_eth": 2.350041390493181,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xb72b05792b3654ce58f84a2eccf49915e745e1f27503b1c49dac6a4d44ea6552",
+  "scammer": "0x0b3e87a076ac4b0d1975f0f232444af6deb96c59",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 3,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x5e845f40f68c1b03714e48866d4482e407517d5cf45830c6b17489e179b9f0cf",
+  "scammer": "0x0b3e87a076ac4b0d1975f0f232444af6deb96c59",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x4223f27aa5e30d63eb409a4f6f0818b9f35fe22719083d3717c0afbe13ebfdbd",
+  "scammer": "0x0b3e87a076ac4b0d1975f0f232444af6deb96c59",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 5,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xa545cd31194bd033fbc52e394f46f0023926bc85ccdf8dcdd02fbdfef2dd8f32",
+  "scammer": "0x0b3e87a076ac4b0d1975f0f232444af6deb96c59",
+  "value_eth": 0.208174,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x7a4abd1fee4b3cf569217137760f1c6ab58cebf1c4b907d78e8b29b3b38f4e81",
+  "scammer": "0x0b3e87a076ac4b0d1975f0f232444af6deb96c59",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x2ea2eb4aa78663a3803423c4b678b10f5a7af77ac4c5773117c4834fad412e5b",
+  "scammer": "0x0b3e87a076ac4b0d1975f0f232444af6deb96c59",
+  "value_eth": 5.507925,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xf5128f930f9ba110a02b721d7f8e7e5183ebf043e4560585a99f7f40905f255a",
+  "scammer": "0x0b3e87a076ac4b0d1975f0f232444af6deb96c59",
+  "value_eth": 0.09928,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x2db69807c4314efe698331137c245013ee398f121998d370844c23a1faa10047",
+  "scammer": "0x0b3e87a076ac4b0d1975f0f232444af6deb96c59",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 2,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x501dd001a632abbd3cb638cfe0ab5b81e82b1c38f01db0dfe700faffd9b832d6",
+  "scammer": "0x0b3e87a076ac4b0d1975f0f232444af6deb96c59",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 6,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xf674b1474c9b6089cd54ed514e5125af7363123675aa508781aa8a65fa13432d",
+  "scammer": "0x0b3e87a076ac4b0d1975f0f232444af6deb96c59",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xe4377dccf5e3c886296df114781fb5ac6dd9875bb819bd271434b75795f167c0",
+  "scammer": "0x0b3e87a076ac4b0d1975f0f232444af6deb96c59",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xc611b71324ec43b9261016e4b7aa09796118e7a5ae30ce9194e41e5aa60bf30e",
+  "scammer": "0x0b3e87a076ac4b0d1975f0f232444af6deb96c59",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 2,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x05bc7e6d878746c6f530ce845a7db515d19e0256082119510a55e88a10bd57ad",
+  "scammer": "0x0b3e87a076ac4b0d1975f0f232444af6deb96c59",
+  "value_eth": 0.01,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x7f79f4a7a6b4b60d34b0368cc30bea1ba6d4c9435ab03912e2b04dd49db900ab",
+  "scammer": "0x0b3e87a076ac4b0d1975f0f232444af6deb96c59",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xea23b5b883ca106b17adbbc8ffdc89248dbd57635bd4cea03e4a9d05f66c621b",
+  "scammer": "0x0b3e87a076ac4b0d1975f0f232444af6deb96c59",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 2,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xf535c667930ceadf04cf50a0b12d245c03b8ad54650f7b7dd5ae8ac5e7f3e243",
+  "scammer": "0x0b3e87a076ac4b0d1975f0f232444af6deb96c59",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xaf2a8fcc76a14b23ce22b46ad07ef243ef719c3c76adae189c17d55f61f82f54",
+  "scammer": "0x0b3e87a076ac4b0d1975f0f232444af6deb96c59",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 3,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xd9773cb2b3c4a99f9a6bae15d1e91498e195b3f7712fe5ec134c1195c7c8a299",
+  "scammer": "0x0b3e87a076ac4b0d1975f0f232444af6deb96c59",
+  "value_eth": 0.077125,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x91f354e2a0d88f6ffa00fd4316c8e2082ba60d39cc5184c547bc081efbae0b66",
+  "scammer": "0x0b3e87a076ac4b0d1975f0f232444af6deb96c59",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xf0c405e636940cf4e5b75e417ffd41a5e8039925dc13f5a37f2d81b85b96ef65",
+  "scammer": "0x0b3e87a076ac4b0d1975f0f232444af6deb96c59",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 5,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xb3e19ad69434042632fa15458fefbc9c8624a870f7db5c7c882c46e6b072b17b",
+  "scammer": "0x0b3e87a076ac4b0d1975f0f232444af6deb96c59",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 2,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x1e927f68e60ddc05cec84478304804457657f88b5246fbb36049ba399bbfe0ab",
+  "scammer": "0x0b3e87a076ac4b0d1975f0f232444af6deb96c59",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x27ca5322666840b01c0c6734a694d057daf2df733be22d45a1bbcf98e4a429cb",
+  "scammer": "0x0b3e87a076ac4b0d1975f0f232444af6deb96c59",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 2,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xe3bb54df6a7cb308747e1aa4296f16a4744a93efb11336dbeee3284c775ccfb9",
+  "scammer": "0x0b3e87a076ac4b0d1975f0f232444af6deb96c59",
+  "value_eth": 0.10230426210778254,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xc4a4ee9b8b229ce62aeb07bc1c1c5db6e54e57220c4ef222d81f5c8981371a6b",
+  "scammer": "0x0b3e87a076ac4b0d1975f0f232444af6deb96c59",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x94981ba3f4834336c10984a07aa0b35c5aa92327e8f6fcc4045079ec97abc9e7",
+  "scammer": "0x0b3e87a076ac4b0d1975f0f232444af6deb96c59",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x839f2fdebfd8252c9cb424fabbae4397d32c19b88b2b475c6835c23bce86cef2",
+  "scammer": "0x0b3e87a076ac4b0d1975f0f232444af6deb96c59",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xb30b6bc02657296e1d7b76e0cbd5cfc61f2f5ecf0b1a823b9a146deade871a92",
+  "scammer": "0x0b3e87a076ac4b0d1975f0f232444af6deb96c59",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 2,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xf0d2ba0d4b4602e40a63d3e04192344de264823d87b8d3866d3222da350a9406",
+  "scammer": "0x0b3e87a076ac4b0d1975f0f232444af6deb96c59",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 2,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x0031fc0a9118844e7ab6f71a3fc7b6d2d4c4fe3c2809a8fd6ae6bb9618ede9a9",
+  "scammer": "0x0b3e87a076ac4b0d1975f0f232444af6deb96c59",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xf6a90216dc2b8ddea0da75bee004a7275f7476eda243ef8bed57c402dcbbfe1d",
+  "scammer": "0x0b3e87a076ac4b0d1975f0f232444af6deb96c59",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 3,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x29fae2be875314f5890b15578d6a70ab980ec08fc7285b600c93c27f42f87617",
+  "scammer": "0x0b3e87a076ac4b0d1975f0f232444af6deb96c59",
+  "value_eth": 0.010004,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xc909dddd56c2deb8fc58551e9b9857e3187591b51982b1673616ba8754103b86",
+  "scammer": "0x0b3e87a076ac4b0d1975f0f232444af6deb96c59",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x2a9b7d6545f739c3e55d8632813b77a0bac21985694b150d7dab92ac94f9cbd2",
+  "scammer": "0x0b3e87a076ac4b0d1975f0f232444af6deb96c59",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 5,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xb0add29770add458a3b4426eabcdffb9f5da93c1d501062c393bbe9841d3c5e1",
+  "scammer": "0x0b3e87a076ac4b0d1975f0f232444af6deb96c59",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xfd529dbca7bb2a4fb9e1f4e3480502ff1266c8dadd8d25b1e831fb008ec02532",
+  "scammer": "0x0b3e87a076ac4b0d1975f0f232444af6deb96c59",
+  "value_eth": 0.004,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xfa164571c7887c6e18cf456d77ed729a54f7ea49eba28b5b7b56148c58e31480",
+  "scammer": "0x0b3e87a076ac4b0d1975f0f232444af6deb96c59",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x37fa18912cb235a75f3a88b2e183dc5d5082a46c849050272298d19a6f6e3e11",
+  "scammer": "0x0b3e87a076ac4b0d1975f0f232444af6deb96c59",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xab977add3fc5c5ee17c7d119918881d7dffbbbec6106ebb767b0c88a25e03a72",
+  "scammer": "0xc0fdf4fa92f88b82ccbebfc80fbe4eb7e5a8e0ca",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xc747e597c9aa5f48b8a7a040ebd74b351cb3f345e677b4a6e09d99871928aa4d",
+  "scammer": "0xc0fdf4fa92f88b82ccbebfc80fbe4eb7e5a8e0ca",
+  "value_eth": 5e-06,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x78abf99b13acdd207625d41224990c292c87bf1bf6b2f75025995f7093e15edb",
+  "scammer": "0xc0fdf4fa92f88b82ccbebfc80fbe4eb7e5a8e0ca",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x0ddeb0111a721c3392c80b4d77d503e3ece8037eccd28475d41c5d723d9f29c8",
+  "scammer": "0xc0fdf4fa92f88b82ccbebfc80fbe4eb7e5a8e0ca",
+  "value_eth": 0.0082085,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x010db0de8a377422ed604fa8411646e3e6528f15f97e07e50991434f2009920a",
+  "scammer": "0xc0fdf4fa92f88b82ccbebfc80fbe4eb7e5a8e0ca",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x647d37ec0ff0ebd7b9873f0d9ae1dba46c56a91021f01fc3101ea71f557ebd0e",
+  "scammer": "0xc0fdf4fa92f88b82ccbebfc80fbe4eb7e5a8e0ca",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 3,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xeeb1ee9365a382316f12d9473ccaa6edcf8275486c9e705c80ac0012d5738564",
+  "scammer": "0xc0fdf4fa92f88b82ccbebfc80fbe4eb7e5a8e0ca",
+  "value_eth": 0.101294,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xebcc9d49dec095f3cd69c9b0c3093fd093138ab719912b16767386674e0053ed",
+  "scammer": "0xc0fdf4fa92f88b82ccbebfc80fbe4eb7e5a8e0ca",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 2,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x40c69fc68c349da408cbe1e61311f505ff0c15524f8c9bfcc821a1eb924bbc1d",
+  "scammer": "0xc0fdf4fa92f88b82ccbebfc80fbe4eb7e5a8e0ca",
+  "value_eth": 0.01,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xd25685f6b90787e32a34600f07fa33fb537e702ef5f8bda1472361d047572ab5",
+  "scammer": "0xc0fdf4fa92f88b82ccbebfc80fbe4eb7e5a8e0ca",
+  "value_eth": 0.24993,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xfd9ad3c4bed145fb196778228bcbcbc6cc1b9071fa45bed13fff303c2512a8db",
+  "scammer": "0xc0fdf4fa92f88b82ccbebfc80fbe4eb7e5a8e0ca",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x8860272c1f5c7d3ae9a32f007a71ae6bed87bc0e695589f818934619844d26c3",
+  "scammer": "0xc0fdf4fa92f88b82ccbebfc80fbe4eb7e5a8e0ca",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 2,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x6cc5f2c7482fa534c554b78e8f37cc84655d72a32520627c870517997add34ae",
+  "scammer": "0xc0fdf4fa92f88b82ccbebfc80fbe4eb7e5a8e0ca",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x16b38721d7103ee4c4756df7c3dc7ca5ff068ed729285d75b95ab3c91ef93db4",
+  "scammer": "0xc0fdf4fa92f88b82ccbebfc80fbe4eb7e5a8e0ca",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 2,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xf16c0eb84eb567749189619ca7dd2aae3c176cbb0da7f9cad80419cb9556233e",
+  "scammer": "0xc0fdf4fa92f88b82ccbebfc80fbe4eb7e5a8e0ca",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x9d373e0fc015b68a6f6a1cdd590f89cb95b8338710518ba82444beff29e2a2e7",
+  "scammer": "0xc0fdf4fa92f88b82ccbebfc80fbe4eb7e5a8e0ca",
+  "value_eth": 0.000520234387464018,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xeabd5f47d6de0e4b53a8bd114bcb6d75686ea5f9fc9de3b2a3bf4702cf4e5a51",
+  "scammer": "0xc0fdf4fa92f88b82ccbebfc80fbe4eb7e5a8e0ca",
+  "value_eth": 0.05,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xd9ab9ed684a1f09001f7fa6563a9b58c4894029f56659d4f52e33afe15c367b8",
+  "scammer": "0xc0fdf4fa92f88b82ccbebfc80fbe4eb7e5a8e0ca",
+  "value_eth": 0.005,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xd2768eae83564d3c86cfb3396ee742411fcea63125cf0df5965afee8c048295f",
+  "scammer": "0xc0fdf4fa92f88b82ccbebfc80fbe4eb7e5a8e0ca",
+  "value_eth": 1.061,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x76f77eee9f59619e14d1297ae3a49da15c38751ffa5ec1e3daa4844ac1a99574",
+  "scammer": "0xc0fdf4fa92f88b82ccbebfc80fbe4eb7e5a8e0ca",
+  "value_eth": 0.05,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x512d9940225f0903969eaca161895a555b3d8889e7bae1f16fc539c08c603fd5",
+  "scammer": "0xc0fdf4fa92f88b82ccbebfc80fbe4eb7e5a8e0ca",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 2,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xd179fb57e02c50b0a31da9b484b227366e15fcc16c6a5c84c9bed656a51a87df",
+  "scammer": "0xc0fdf4fa92f88b82ccbebfc80fbe4eb7e5a8e0ca",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 5,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x3082f13ef97d33072bc08e57be60ca4653eed4db4ea99d4620c7d8c5fe91fb85",
+  "scammer": "0xc0fdf4fa92f88b82ccbebfc80fbe4eb7e5a8e0ca",
+  "value_eth": 0.02,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xcf3b7e163796e4acb11d112a7aa96760f366acb79b72ba4b8b4f8cda3be6809a",
+  "scammer": "0xc0fdf4fa92f88b82ccbebfc80fbe4eb7e5a8e0ca",
+  "value_eth": 0.09,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x3c75b9656f67268e8b7a6413f1fdc565be7fd96e0adf1b235f7332e432966c36",
+  "scammer": "0xc0fdf4fa92f88b82ccbebfc80fbe4eb7e5a8e0ca",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xa9f0e8a8b6fee9585e685f908d1f861c387f7bc81e3120e08fe99645fef2cca3",
+  "scammer": "0xc0fdf4fa92f88b82ccbebfc80fbe4eb7e5a8e0ca",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xc1951f8ac64aee9f62453637659389430e1862b18c9806315507dd081ab68858",
+  "scammer": "0xc0fdf4fa92f88b82ccbebfc80fbe4eb7e5a8e0ca",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x25ed7d4586d100a92d33867513671a85888265abc720112c0bc4d67f4cbc5667",
+  "scammer": "0xc0fdf4fa92f88b82ccbebfc80fbe4eb7e5a8e0ca",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 4,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x61464a7812633e34ceaea2fc9614f16e038bdd2af041153eec1e32b36aa70b24",
+  "scammer": "0xc0fdf4fa92f88b82ccbebfc80fbe4eb7e5a8e0ca",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 3,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xc452e4218ff3b762300eb24c04955420aa01118743ef9f33c4864007231a1b7c",
+  "scammer": "0xfd89107805348a13b63e943b2da688e3b15333f9",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x0cc40c85f651705ab9c3fb235e93291f924db0bb9e19f4655f48220a7c391ba7",
+  "scammer": "0xfd89107805348a13b63e943b2da688e3b15333f9",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x327b84e4b1ac7b8dcd3fbac5d07d7f150504d8efdb0cbcb7a595c55ca13d6433",
+  "scammer": "0x76d5e9f2244c735fc73eea080e3d71e52db83e90",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x44aa0f57963ce793e28c8bf2783c6de780da4d1600db0796fdbca221f6262093",
+  "scammer": "0x83a1a130c1424264463ac6ba3e3421e8d4c4829d",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x24321546474cc597aff51b90ebf6085553c54f338a90235c132ac4d181e3149a",
+  "scammer": "0x5515de03f84c930cdae230de1e98b658d56975c7",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 3,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x2add8ab2da0932337740d02dbc63288d82288b6419b154857e4751d0813d1d1b",
+  "scammer": "0xad58772bd97a03f32b08b9943552deca79b2edf6",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xace70a6c213521ddbd75414d9d40e6b8be71e48501f635cfc31a228c7ac27d1e",
+  "scammer": "0xbc293c3b099ae10d3733fa419b9a84d272f7aff5",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 10,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x52b2290f38df7bab71df68b231890f0c60a51f50028546b1c513a523c6dcb9c1",
+  "scammer": "0xbc293c3b099ae10d3733fa419b9a84d272f7aff5",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x90dbe5b99fdf9c31085cd549d70126a24c58aaad02c05f9e63a78decdd17016c",
+  "scammer": "0x222914378661cc680ce0b3bac057d582c8fd6bfa",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x2c6c0705775ce1c8d7d6d0c23dff1e93693400c7d8b5cb6c92ff6e58a32304f0",
+  "scammer": "0xafd069ff071cf4611302d84e5448713361068dbd",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 3,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xc8d988df3feda5c018df1785bb2755f17428293c7f048e510261e4f58e25c445",
+  "scammer": "0xe5e35fc79ebe5bcc705dfe1a4fedce7d27ccefb7",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x80dfb7803efc8738f8211b43d9a8956411fb7dcc1542cac6a030181a14d887e4",
+  "scammer": "0x23efcc8e90712f63239c5583cf325ca9f1521c5a",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 2,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x43e027d315913775613ceb2eb7a106d5b28a9b2b42c738d7952efb2b4eb73cb0",
+  "scammer": "0x39c7dee7957e002e181fb9487456fb0e9bfb2e47",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xfdf61054a9503607eb68b14f487a3999ce46514f147a265c1db5a0da8fbb2767",
+  "scammer": "0x6bb78583889bf9380db2206e66e2dcd641fb1f39",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 3,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x69dc401e4ab4f23eb858fdb7bf7b54e8700b95a53d0b2a064053b85ecff67775",
+  "scammer": "0xf3644dd3bbf658e1fcb3618a725183eb56b3399e",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x871596e0e8952b03b385868247fda0b3c8668d2c7b2e352cafc7fb05a845de9a",
+  "scammer": "0xb9a94219a1ebaa8376a9dae3d15799342dfe15b9",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x67f380ee4a2129187eaf99cdc4ba67f91d16fd0ae098161348c9665eccfe6e8a",
+  "scammer": "0x2eb44c02182cccd94ebd866e7d50473241fc48bb",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 2,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xb2b8e8ab24313f77e724490ab6c90b6f083195668de1600074f65b39dd23c8a7",
+  "scammer": "0xb9a94219a1ebaa8376a9dae3d15799342dfe15b9",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 2,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x6204d6eacd62a8d1b0c8d5fef9ba68269306e0f73b644316795a1a08c766560a",
+  "scammer": "0x6bb78583889bf9380db2206e66e2dcd641fb1f39",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 4,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x69be55db26b06fd8244661a1504d1be71a54df4e5a2dca67573279d794aa3f8b",
+  "scammer": "0x6bb78583889bf9380db2206e66e2dcd641fb1f39",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xdaf34d159c6a6c01f5f12cef7fef72f75c60a6fa5e16fa4961d0c596798d9f14",
+  "scammer": "0x8003e9eb09c1258fa89b6b1442ed211c80257fdd",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 4,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x06bed7fc839dfbeff4d020f284309ac4a50e2dc0efacb0fdf7525bf68b32a2ec",
+  "scammer": "0x56bb2c74ae7c9bb6cdd662793dd4a37264334665",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 57,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xdd684ab9dcc0f6685b1992db46786868ff4e83a4eed73af0575c7ab52d68a9cc",
+  "scammer": "0x56bb2c74ae7c9bb6cdd662793dd4a37264334665",
+  "value_eth": 0.0065,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x69467f22d25df30376f43b5e2b56f86261693966d09dea141738403c00348981",
+  "scammer": "0x56bb2c74ae7c9bb6cdd662793dd4a37264334665",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xe8c6a2f3325139e3c373d350576a415c5f4ab856bae3492399c4d56e636d8c5a",
+  "scammer": "0x56bb2c74ae7c9bb6cdd662793dd4a37264334665",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 2,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xfe460836c6bc1dacb377ee17ab0e2e07b25092b1f8a5d43734bfad5484bc419d",
+  "scammer": "0x56bb2c74ae7c9bb6cdd662793dd4a37264334665",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x540410268620c3a2fd3a645d767cb72c742c96c663397cf7f8f96c35152aa5fb",
+  "scammer": "0x56bb2c74ae7c9bb6cdd662793dd4a37264334665",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 4,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xe4af4d2e9d3bbcdadac74b956108f6c6343d20763b935a4261ff4d1093eb3998",
+  "scammer": "0x6bb78583889bf9380db2206e66e2dcd641fb1f39",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x3b8eebd64c870af2d1ca4e6c784e345d9a1ba14773e86955c510571a6e8c0913",
+  "scammer": "0x7438674541071ae0b2fdb2bd76a80b29df78488a",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 2,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xc002a4cef11e5466a898f5a7d3d740f5de019d96130aac8cdf2f384c785327cc",
+  "scammer": "0xf3d34cf12a0e6f4693474d7b836f9e2573652987",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xb9f2e79c6439a2e204abdc360308a8f5fd471a28eb5ccb3d5a0f3e8bc2f08d30",
+  "scammer": "0xe038c2145e9ba3ef42b488c25e69d9810ed7ea42",
+  "value_eth": 0.05,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x66388b2f734eb351e68ed6f266f575ae548bc4bd64d12d8c061e65cd7ca472f0",
+  "scammer": "0x54660062556c694e0bec0d1a3780baf395640455",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xedd53a8270266b067482dfff752ab73898db503f37692a758c18ce7d23885867",
+  "scammer": "0x7086f9b9ef5ab6653385f6751ee21bd82febe1a7",
+  "value_eth": 0.05,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xcd8ff24ca06e9d43179d0d10be12493867fbf170907959a4d5fc2f9812d3b18c",
+  "scammer": "0x6bb78583889bf9380db2206e66e2dcd641fb1f39",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xe711eebbf7199fb18833b0a1ebd3a50e7d2b3a09862051e8e5da83cdd0083b7c",
+  "scammer": "0x5515de03f84c930cdae230de1e98b658d56975c7",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 3,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x6bf7c87d1fa1c5c07cc623b65915a254c45b2f41b9b3958b609f9151d523e4db",
+  "scammer": "0x8003e9eb09c1258fa89b6b1442ed211c80257fdd",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 2,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xb8048a3f703653097b8a49bdc954656d19f6de1740b3f07c8be4f7f2ab60855e",
+  "scammer": "0x556786088f9874a4a52b478c5374cee901beb43d",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xc300820ce899b215a8e18e41e5c9caab45a3583dea4f61b9e07891bdd60a8a7e",
+  "scammer": "0x4b1c780947bf727899e85bfecb2d808fb27b9451",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x38c921003f0cabe58c9edd19fc659159a33937f965994323f28ff5a1d351e2c8",
+  "scammer": "0xad58772bd97a03f32b08b9943552deca79b2edf6",
+  "value_eth": 0.037,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x11f522a15ea33d352f06873363e74bd09c72aaf2855baeff7688ef70d07c2805",
+  "scammer": "0xbda475237028c6b5c32bc437795b55034cabe0ca",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 3,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x562734b4ae99e4763e88db3a6e06b7f3e19f2228a0c77e4b4ace132c06be4475",
+  "scammer": "0x5515de03f84c930cdae230de1e98b658d56975c7",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 2,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x012452f1235bf32aaea2598f253342b46b44883ef28d41fc6590f21fcf555311",
+  "scammer": "0xf2752ce230502890926716fcd87d27c924a30542",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 2,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xa4e6a0ac64d396afda7e4f36ecd49d8127b5786433931ff26b9464fdd0bdad52",
+  "scammer": "0xf2752ce230502890926716fcd87d27c924a30542",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x373435d4cdcfb99b92376d93b02b188d371efed48dfbf2e53b4d296c5034d4e5",
+  "scammer": "0x6bb78583889bf9380db2206e66e2dcd641fb1f39",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x75e0da53ea1398f5636425951d0d558d4f1a3a35f9e53b84b780508d7fa4ff67",
+  "scammer": "0xd86275f47908fc5ae20adb5ed179db6cecefbcd8",
+  "value_eth": 1e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x95e94617fd0e7138474d00444d49b804964996955ca718cece5f28d63b11f68d",
+  "scammer": "0xd86275f47908fc5ae20adb5ed179db6cecefbcd8",
+  "value_eth": 1e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xe0691aba35a2dfe54f52c8a8a5eebb70e58c24b2d780997b00c6d0c49ce932fa",
+  "scammer": "0xd86275f47908fc5ae20adb5ed179db6cecefbcd8",
+  "value_eth": 3e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x69c5bf1adf06a0a7c3e2b6aa8937a53fea8837eede3732a1d9dc80cc87453f27",
+  "scammer": "0xd86275f47908fc5ae20adb5ed179db6cecefbcd8",
+  "value_eth": 2e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x9638d04dcef811e6e5a62aa581815197c105af303f936e36ea99623eb46aa164",
+  "scammer": "0xd86275f47908fc5ae20adb5ed179db6cecefbcd8",
+  "value_eth": 7e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x35d14205c31c1df594b06210b64d093398e96db2051e04e7a3e895ce8dccbfa1",
+  "scammer": "0xd86275f47908fc5ae20adb5ed179db6cecefbcd8",
+  "value_eth": 1e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xa96ec986a2772c98101645e78fb2cf3da8a09d64f9433db9c7750073a806be76",
+  "scammer": "0xd86275f47908fc5ae20adb5ed179db6cecefbcd8",
+  "value_eth": 2e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x223bd89aa8e54911a0eef85cdd1c41e9d9c8b7f4a3e44e82adc174f5223c6980",
+  "scammer": "0xd86275f47908fc5ae20adb5ed179db6cecefbcd8",
+  "value_eth": 1e-17,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x8b074c4aca161da6f29fd43e52a02b2fb3add9bee9a7105db2bb62da8b61bfe6",
+  "scammer": "0xd86275f47908fc5ae20adb5ed179db6cecefbcd8",
+  "value_eth": 1e-17,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x389db1d101ad1e19f9da2c6dd5fac5a1d368546c9d5c09ce0c07990e8a5edd94",
+  "scammer": "0xd86275f47908fc5ae20adb5ed179db6cecefbcd8",
+  "value_eth": 2e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x341e939d17e8e76a5ccb5aa6f4d2d172afd01210184578ec437ef181e74d50a2",
+  "scammer": "0xd86275f47908fc5ae20adb5ed179db6cecefbcd8",
+  "value_eth": 4e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x3dc862262408cd33f6e9902824072c448dabd9799f0ea6632b10ddb19711c423",
+  "scammer": "0x71cdc86e6b4a08fda973a296c4f0716c244dd7de",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 4,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xbfda08cc6889e6099371003dfbeaff94319096d32d087fd5f7048daf3d19550d",
+  "scammer": "0xd86275f47908fc5ae20adb5ed179db6cecefbcd8",
+  "value_eth": 1e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x257f1e0f0375f418e5ea3f3179f4bc4dc6cd5ca0e325c4aa10c536b45c896a9b",
+  "scammer": "0x56bb2c74ae7c9bb6cdd662793dd4a37264334665",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 3,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x57a0a9092ec105c665ebe9a97f850653ec8b62628d5fd8f7bf32b937ab6a2ce1",
+  "scammer": "0xd86275f47908fc5ae20adb5ed179db6cecefbcd8",
+  "value_eth": 1e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x3337d7b03635399ca7fc27da45ff6971be57749071f57fe7ce5842cd805251b3",
+  "scammer": "0xd86275f47908fc5ae20adb5ed179db6cecefbcd8",
+  "value_eth": 1e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xed57963bf3808f934bd57cd2e90bf033a4712f6072d0e44b5ffd0111ae9c948b",
+  "scammer": "0xd86275f47908fc5ae20adb5ed179db6cecefbcd8",
+  "value_eth": 1e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x889a20c16e7b0f81d41a9e92f9e248eb2622054d76de85b779042dc5deffc99f",
+  "scammer": "0xd86275f47908fc5ae20adb5ed179db6cecefbcd8",
+  "value_eth": 1e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x66b98f121a2313ab9f68c95dbea569a7d88427e5b96b939c52d5a0a264f92b79",
+  "scammer": "0xd86275f47908fc5ae20adb5ed179db6cecefbcd8",
+  "value_eth": 1e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xf2a38fc0a30fb63c43527107fd3934ff9cc109eb593a69f52739b98f7965b951",
+  "scammer": "0x689febfd1ea5af9e70b86d8a29362ec119c289b0",
+  "value_eth": 1.5e-17,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xb46c801fd9a816558ca4e590f68d33959842c898a373d6430603951eafb9994e",
+  "scammer": "0x6d35357e2a7628c3fc5bcd25e127ef92d1e1600e",
+  "value_eth": 1e-18,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xd9b9d0effa8decb16849370b6f4db7662dc2512a6f4b76c23333d50fb1a29076",
+  "scammer": "0x6d35357e2a7628c3fc5bcd25e127ef92d1e1600e",
+  "value_eth": 1e-18,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xfad74f80bf0e857e8ed68d9ffd3558a08a464597b0b421f3b6b05d48e222b68d",
+  "scammer": "0x6d35357e2a7628c3fc5bcd25e127ef92d1e1600e",
+  "value_eth": 1e-18,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x06b1931ac0803d93c9cb8f7f52e3897d59dd1fa6e53fc3fd72bf4e50c966a0d5",
+  "scammer": "0x6d35357e2a7628c3fc5bcd25e127ef92d1e1600e",
+  "value_eth": 2e-18,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x1f481e15e19e0dbf3e9481fa65f5644c03a1b2397b4a9cef2462c159f9fac8ba",
+  "scammer": "0x6d35357e2a7628c3fc5bcd25e127ef92d1e1600e",
+  "value_eth": 2e-18,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xc0311377145dfa7a1d04396ec7dd93b176a2f2958c711dcde3a55ef5aeaadaa8",
+  "scammer": "0x6d35357e2a7628c3fc5bcd25e127ef92d1e1600e",
+  "value_eth": 2e-18,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xdacebe722886cc0431950197168cdb28c739cc85f263d77019daa8fd02744bf4",
+  "scammer": "0xed9c214cb0bc2817a6bc378f622f70f030259a29",
+  "value_eth": 1e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x76a5b505f0c7e9b24fb5559bff8dd645988643b3d3e52e82ee5967fff60359cb",
+  "scammer": "0xed9c214cb0bc2817a6bc378f622f70f030259a29",
+  "value_eth": 1e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xad6095ad23ab22b128d085e2bba1af7018bb9dc136efbf4d7eb69aaed623bbe8",
+  "scammer": "0xed9c214cb0bc2817a6bc378f622f70f030259a29",
+  "value_eth": 2e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x1e361a2ce9ed6eb97906996778bbf9df6ac2c5a5ebf5ed4b439df4baf8e45d9b",
+  "scammer": "0xed9c214cb0bc2817a6bc378f622f70f030259a29",
+  "value_eth": 3e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x0dbed8510456dc8d9b9acd9adb12beb27fc28eb876cd9f526864c39fa107d94a",
+  "scammer": "0xed9c214cb0bc2817a6bc378f622f70f030259a29",
+  "value_eth": 2e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x3aadae98fb542ccd85f8ba469a4f4d6f8289a9c40f24bdd1f0466a397663cfdf",
+  "scammer": "0xa3d1146f41bb41671f0453faf77bc9cec006f0c2",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xe7dfe3fb057aba9e9411f8ee5e0b53c7f5514136fc98e90dff221bc31753bd3d",
+  "scammer": "0x05fd7301b78e9c9a58a06a9ff25761b596756eb0",
+  "value_eth": 0.13483,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xe9cbc49fc5c716607fda866ef0622cfea3c0c5b316bac3ec3ac1f821e35772ca",
+  "scammer": "0xa3d1146f41bb41671f0453faf77bc9cec006f0c2",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 3,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x91f6d58abe60d6721254f978716bd4296bc30111e5a9662e5b3c56bee43aaef2",
+  "scammer": "0xa3d1146f41bb41671f0453faf77bc9cec006f0c2",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x9a79bfcde7a0f4094390bb72c143a06ab194f92a073c31ffdbcb1e6ed10180e1",
+  "scammer": "0x463d62fb84ffa243ffd55d8e6ee51a3895c863bc",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 11,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x5e6689efd07e7b62321c8a3f63b654fe99b24413b796759ce65c3adf03a3bd10",
+  "scammer": "0x463d62fb84ffa243ffd55d8e6ee51a3895c863bc",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 4,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x1e7028d96c77ba026cea7bc4f82c8f69596437b45f3717498959dcd13acb2159",
+  "scammer": "0xbcd890e65dde2efa47609c6cb2e366c451d59801",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x54c430aef503e936c2cbf91eb0bf5f23b20c0c83d6cb77a0e968424b1b59524f",
+  "scammer": "0x000075c1a1d1e43b9a00688703f071a919b60000",
+  "value_eth": 1e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xafdbb1b8cb46a3556257f3cad2addfce36f2c821f011a7ea0161139bed49df5e",
+  "scammer": "0x000075c1a1d1e43b9a00688703f071a919b60000",
+  "value_eth": 2e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x14c225c08f33e494e475cf1c59ea4baee63192409a473cf55b2ab20d52e60b05",
+  "scammer": "0x000075c1a1d1e43b9a00688703f071a919b60000",
+  "value_eth": 1e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xcade2aae0fe67906ce3348b2073abf881482badce48db301f12c0d7d53a4f0c1",
+  "scammer": "0x000075c1a1d1e43b9a00688703f071a919b60000",
+  "value_eth": 5e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x00da8b7b82d49f25e779033bcba2de7468133fe2e74202a671c87ba86816ff0f",
+  "scammer": "0x000075c1a1d1e43b9a00688703f071a919b60000",
+  "value_eth": 2e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xd193a28c814bed71cf11491766a03e44acbc592919ffee67058e46ac56d088b9",
+  "scammer": "0x000075c1a1d1e43b9a00688703f071a919b60000",
+  "value_eth": 1e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x9227548eec3e3dd3ec58e95521d50da7f56e54afd6897740a51388fc66e6898b",
+  "scammer": "0x000075c1a1d1e43b9a00688703f071a919b60000",
+  "value_eth": 1e-17,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x98c22a22e2cc607a597d1944487ff2c7214ae207214285f6d018c3170cfc3110",
+  "scammer": "0x000075c1a1d1e43b9a00688703f071a919b60000",
+  "value_eth": 1e-17,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xf88e88424053e83a1cb7d79323f9e3eccff1d885fce07194fdb62e9ea0feedda",
+  "scammer": "0x000075c1a1d1e43b9a00688703f071a919b60000",
+  "value_eth": 1e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xa858ffcd32a0b2482fe62e4a309ede4845b3a213abc3bf9134c3998f1ada7444",
+  "scammer": "0x000075c1a1d1e43b9a00688703f071a919b60000",
+  "value_eth": 1e-17,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x8ad687c9df915acb3b8bb5e81381a3954c6bd293bd2cc82b671a7b5255baf11e",
+  "scammer": "0x000075c1a1d1e43b9a00688703f071a919b60000",
+  "value_eth": 2e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x074d964f17968d9b94e4c686c40ca7e22cb3862b9e6a032927b8f5f3bb7233ec",
+  "scammer": "0x000075c1a1d1e43b9a00688703f071a919b60000",
+  "value_eth": 7e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x11aafede9f8da33db13d2906db1a3c86a081f2a8b55834895019567f5223dd98",
+  "scammer": "0x000075c1a1d1e43b9a00688703f071a919b60000",
+  "value_eth": 1e-17,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xd4b687f58703bd308e5d2c09d8a2be3a9c3fac57ffd54d961d02c8efe3570db0",
+  "scammer": "0x000075c1a1d1e43b9a00688703f071a919b60000",
+  "value_eth": 3e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xe436044a37ec34fe985d2496d9e1b369588e3031cfa67dbbe6e5cfc34045f298",
+  "scammer": "0x000075c1a1d1e43b9a00688703f071a919b60000",
+  "value_eth": 6e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x8e497bd71088d7e36c8f7e69b4beb82e0720e472886dbe2c5c7a4172f6166f6e",
+  "scammer": "0x000075c1a1d1e43b9a00688703f071a919b60000",
+  "value_eth": 1e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x818923a191b4212c4b3249d80f26bfc8f2b7c719d5307a75013dc1360bfb48a4",
+  "scammer": "0x000075c1a1d1e43b9a00688703f071a919b60000",
+  "value_eth": 1e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x1b31b11d7720d07fc328657c3cda6520b27dbff5dafe16b585bfa20dfbb4ae63",
+  "scammer": "0x000075c1a1d1e43b9a00688703f071a919b60000",
+  "value_eth": 6e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xad1a204684d0b052bf497d2b3dc22b1ecb97be774b3c202cc3139ddaaa5f32fb",
+  "scammer": "0x000075c1a1d1e43b9a00688703f071a919b60000",
+  "value_eth": 5e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x06491ebd98ed3754d9807318f323ce21d197b625682dcdaf11afe7d5915b443a",
+  "scammer": "0x000075c1a1d1e43b9a00688703f071a919b60000",
+  "value_eth": 2e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xb74c2b19b1df4a69b7d5ffa247a2dd067818ef98b036319331eb12b22bfdf57f",
+  "scammer": "0x000075c1a1d1e43b9a00688703f071a919b60000",
+  "value_eth": 1e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x5ef678df94b5ca989306fde488f5017c76d6be1c2ddac73fe61b9a02df57d2d8",
+  "scammer": "0x000075c1a1d1e43b9a00688703f071a919b60000",
+  "value_eth": 1e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xa660adcd53119274dc1708aec8f94a28a534a92ff8ca42bddf979e3d5ed76e76",
+  "scammer": "0x000075c1a1d1e43b9a00688703f071a919b60000",
+  "value_eth": 1e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x8bd2ab84c33d2b3f0e2d43b34c13775d5bf9e38f103499fc349bbff2bc830270",
+  "scammer": "0x000075c1a1d1e43b9a00688703f071a919b60000",
+  "value_eth": 1e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xbe92803d4453e378f237a54ab4c4da9c8460fb72a176082c7e953c2676bd4314",
+  "scammer": "0x000075c1a1d1e43b9a00688703f071a919b60000",
+  "value_eth": 1e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x408d89d3a1e456a29762436a97c0991ea4d10e8286d5c1df55615875d5c64a72",
+  "scammer": "0x000075c1a1d1e43b9a00688703f071a919b60000",
+  "value_eth": 1e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x9e2c320268f70ec0ff541f1e641073fed7f55c20f1555a9953b982e863bfbdd0",
+  "scammer": "0x000075c1a1d1e43b9a00688703f071a919b60000",
+  "value_eth": 1e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x2065fb9bd60b59e6691bb0d812d06125ee7bfde15728e1a2318f3a519dec2d41",
+  "scammer": "0x000075c1a1d1e43b9a00688703f071a919b60000",
+  "value_eth": 1e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x4273d8f6690c71f8fbdd725d245c2ac645f82a37d2a0d2e3778930752f233c3d",
+  "scammer": "0x000075c1a1d1e43b9a00688703f071a919b60000",
+  "value_eth": 1e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x8538946167826c58d14577c20d367df71204354dd343064b925d98a3d08d3d61",
+  "scammer": "0x000075c1a1d1e43b9a00688703f071a919b60000",
+  "value_eth": 1e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xe959762f1dc966113b6c8056610f98e341863f75e4c4a17376a4a5d238840561",
+  "scammer": "0x000075c1a1d1e43b9a00688703f071a919b60000",
+  "value_eth": 1e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x66805a794243cb325e96ada3f966d9eb29d0ab86061cd1df927d4142eea42436",
+  "scammer": "0x9a9c153c34b03045d114c22b80d5019538552653",
+  "value_eth": 1e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x71a0120a165129f24060fc7f3d6cdd1d6f5aea412ffe948c98653d20c2874a1f",
+  "scammer": "0x9a9c153c34b03045d114c22b80d5019538552653",
+  "value_eth": 1.3e-17,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xbff15e1f6518e8b44c9f87fb7de9990f1b1fc64ea7e0f03b2e5924b541c0201c",
+  "scammer": "0x9a9c153c34b03045d114c22b80d5019538552653",
+  "value_eth": 1e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xdf319ef5f7d656b53c0fa4f7c8907a7f65ebcbf0c1bed66a84a07de47ce9f32a",
+  "scammer": "0x9a9c153c34b03045d114c22b80d5019538552653",
+  "value_eth": 1e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x34c656f720858ae1ac6d80b162c3261eb5e9773347971cc1ae5b5e345649154d",
+  "scammer": "0x9a9c153c34b03045d114c22b80d5019538552653",
+  "value_eth": 1e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x2841f77837fdda63d1169cf39625357b130d4a14b98ead71b86ad662b0613de0",
+  "scammer": "0x9a9c153c34b03045d114c22b80d5019538552653",
+  "value_eth": 4e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x1d28442da99812dad7fe178a15ce066a03eb8da404851c18e148ffc81edc3df8",
+  "scammer": "0x9a9c153c34b03045d114c22b80d5019538552653",
+  "value_eth": 3e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xf24970259528cc9ffbf7603b3e5fdcba7581c88ccfd17ce59116987de6a1be40",
+  "scammer": "0x9a9c153c34b03045d114c22b80d5019538552653",
+  "value_eth": 1.1e-17,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x1a82adde6d6ed39b9443d042d50ff4b4c8eb51f950ffec76d72d9f9093153200",
+  "scammer": "0x9a9c153c34b03045d114c22b80d5019538552653",
+  "value_eth": 3e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x6ba97e75409daa999540c3299037a5af3f694fb1c7d8a94abde7c13ccc636b99",
+  "scammer": "0x9a9c153c34b03045d114c22b80d5019538552653",
+  "value_eth": 3e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x1e10d2c5cc82edc8d2917feef96b4f9a8f6ba25c58b8a16bb3421aa549f59bb2",
+  "scammer": "0x9a9c153c34b03045d114c22b80d5019538552653",
+  "value_eth": 4e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x8bcb6d5ea61b5052588f53fee4099aa12f9f3a0ac442daf91f96e4fb56034c3e",
+  "scammer": "0x9a9c153c34b03045d114c22b80d5019538552653",
+  "value_eth": 2e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xa129613aa6faf9e1ebfa475036c057fecf90b779e8842e323a33e13e429cc5db",
+  "scammer": "0x9a9c153c34b03045d114c22b80d5019538552653",
+  "value_eth": 1e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xe91cee82701779e5daaa5887d138bc73a8529314c1470509fc1ff286b5394819",
+  "scammer": "0x635241d839ecbdc5eb47874138053288e92f4dbc",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 2,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x60201f32d02c35d2d48a3aa89312caf2b1718afd5ccc5ef713a9b493306ecad3",
+  "scammer": "0x5f6920e6d7b019faa5ea31f9fd95ae96f18c4abd",
+  "value_eth": 0.9,
+  "method": "net_value",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x56e487642f640c146f0b8beaaa3f1918cb51b483fa5f878049996a9026ac70e7",
+  "scammer": "0xd120bc52d73a0f75320be40f23c762b3725e231b",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 3,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xdacd89338b1455d03445f508a37cc33325aa284a40afeb1fd8423125abc9f1c6",
+  "scammer": "0xd120bc52d73a0f75320be40f23c762b3725e231b",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 5,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xb254d095ddafe67f0f66faf2b83a2c4578537bc03471f10e097bf1fa2420eed8",
+  "scammer": "0xd120bc52d73a0f75320be40f23c762b3725e231b",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 3,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xc74f655f3c371b5ee95264175e1ba489a4e892940b77ed6a31ffadc7d32b0ba4",
+  "scammer": "0xd120bc52d73a0f75320be40f23c762b3725e231b",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 5,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xbf946408fb25da9df3358485d6e1a9d97a43a7ccf7a25512d55b4216c919a73e",
+  "scammer": "0xd120bc52d73a0f75320be40f23c762b3725e231b",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x92af447cbb78c4c0d36c3a5f0c442b66c1d4247a913567f257705be8c0ff1a10",
+  "scammer": "0xd120bc52d73a0f75320be40f23c762b3725e231b",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xd83229f7117477e0157fc2da718c42fd2f0ef8e0c241d6cf64b1df985308db89",
+  "scammer": "0xd120bc52d73a0f75320be40f23c762b3725e231b",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 5,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x0b4d4c4f3c2ecefcac2834520774259222dc274a3ab4c622ac8817ebd2455ae1",
+  "scammer": "0xd120bc52d73a0f75320be40f23c762b3725e231b",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 5,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xd647da736808e35692bc7a507931c03b215feca63750d0880ccef44f5ab601d9",
+  "scammer": "0xf1ba5650a1d9119c8465068df15e35582f074ec8",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 3,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x8ca1b5f631a9bf03a50f92803ea3e836952228f8af22d9aa1ee1136cbd9a0541",
+  "scammer": "0xf1ba5650a1d9119c8465068df15e35582f074ec8",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xd716d6e73189ee28c5e812f7aaeb8952065cc174ec2fdc004e00667dc4acf8c8",
+  "scammer": "0xf1ba5650a1d9119c8465068df15e35582f074ec8",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xb6e21802ed711e9c90dcd8f72157433fd0ddb7c8e46e2bc737ecd4bcba560a7a",
+  "scammer": "0x2ab2c62b3d35ba9e72ee661e5a174e1502a2ef78",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 5,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x41233fe55a51f85ddbeeae316010a582fc7fe1d316b6bcc99ef30ca65913e4c4",
+  "scammer": "0x2ab2c62b3d35ba9e72ee661e5a174e1502a2ef78",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 5,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x8f29ac806b158a330f2a9928a96785099964f007ffce3e367b1c2b81f2718056",
+  "scammer": "0x2ab2c62b3d35ba9e72ee661e5a174e1502a2ef78",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x9e3f55632c66e84a379cf75488c07b8bd82de71a4987ddeb455e2aa6f04f7682",
+  "scammer": "0x2ab2c62b3d35ba9e72ee661e5a174e1502a2ef78",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 2,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xd50b77002d5e1708bdfc4db4cc7e550e5098baa108301a12f5547de440f2a938",
+  "scammer": "0x2ab2c62b3d35ba9e72ee661e5a174e1502a2ef78",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 4,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x4fc54279682af488ebaa25f76a2532844dc362c7c5b881c046a67e4e71d0f47a",
+  "scammer": "0x2ab2c62b3d35ba9e72ee661e5a174e1502a2ef78",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 2,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xcf3c2b219d2b563bfe3d90c133686101bad26e9fca19bf412ecaf17fc0871ef1",
+  "scammer": "0x2ab2c62b3d35ba9e72ee661e5a174e1502a2ef78",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x79c075a8dc05f38fd3d4458fa5d869685b29d86d1eeb12d7f2ac0ad9b0e1ea13",
+  "scammer": "0x2ab2c62b3d35ba9e72ee661e5a174e1502a2ef78",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 2,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xc835eb2c929530d9eb640213e28d68869cbca1ef99869727d06f20cf86cf5875",
+  "scammer": "0x2ab2c62b3d35ba9e72ee661e5a174e1502a2ef78",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 5,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x0dedd7fa7c3401507012a2d87a221b76d0e8747fcfe79d31f12b667afbf3582c",
+  "scammer": "0x2ab2c62b3d35ba9e72ee661e5a174e1502a2ef78",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 5,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xbc43d6e1367c79e1ff013f0a4a994ebfe430fbbf01a2d8f5d029e6b82f7364ef",
+  "scammer": "0x2ab2c62b3d35ba9e72ee661e5a174e1502a2ef78",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x8f9cf808b79b6c7de840d29307dde104260e0d1fb8466f6068047e5693fcc282",
+  "scammer": "0x2ab2c62b3d35ba9e72ee661e5a174e1502a2ef78",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 4,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x22e26db55419a4574a5bd8588a07ff77eccefe550ec62926220edf7d470a4169",
+  "scammer": "0x2ab2c62b3d35ba9e72ee661e5a174e1502a2ef78",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x098a9acc14a9611833033eef208bed0698ab45c7de0eed1967bf30ff35f9e9c9",
+  "scammer": "0xf1ba5650a1d9119c8465068df15e35582f074ec8",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x450541415137f1390b7bdfbcf6fed0f5a7370a8eb9c8eee5f7c9690acd7c3c1b",
+  "scammer": "0xf1ba5650a1d9119c8465068df15e35582f074ec8",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 5,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xd5e3234d3f10eeebc56620ee917fc288470b36acfdfb57d830165d73547adc0e",
+  "scammer": "0xf1ba5650a1d9119c8465068df15e35582f074ec8",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 5,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x46525014c1ff1d047f65b22494a3db2b9ca29fb00dd60f491fae7a8f6631b143",
+  "scammer": "0xf1ba5650a1d9119c8465068df15e35582f074ec8",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x8cb10e3336324e8f840ef373b451e3da51fb05c4458e7ebf6117649df92e1ac6",
+  "scammer": "0xf1ba5650a1d9119c8465068df15e35582f074ec8",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x1c09c7c434c8479b823842103dc5640cd58daad9270a8ac2e32349f7024b2ca8",
+  "scammer": "0xf1ba5650a1d9119c8465068df15e35582f074ec8",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xe1e908f7a853a4f8e1ea2c8af6dc806130029616cced66889c37b97e380ca8c0",
+  "scammer": "0xf1ba5650a1d9119c8465068df15e35582f074ec8",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 2,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x785b1c0bba9072d26ae00183030df616c28be325c6955d2cafc023fe2a49f5c0",
+  "scammer": "0xf1ba5650a1d9119c8465068df15e35582f074ec8",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 1,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x8bd3e2fc041c57fe46f0e0aa1a99aa208347ef793731d6b9779e88aced38c6d5",
+  "scammer": "0xf1ba5650a1d9119c8465068df15e35582f074ec8",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 2,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x2bd49157ecef2dd66db5b7ff1a52e66aa8b70f743d22fe68f9246fe13d6f9348",
+  "scammer": "0xf1ba5650a1d9119c8465068df15e35582f074ec8",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 5,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xa952af5387f51c627b9112633a2809071ff899a167629161f0af163e900d996e",
+  "scammer": "0xee23459989798bb9fce8291e7011f7cbb3cb1193",
+  "value_eth": 0.0,
+  "method": "net_nft",
+  "nft_count": 7,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x13f59b00058fa7568647e9adb0f342bfa2ed3055c43614d0023c65f1f87f7bad",
+  "scammer": "0xff4bf933393012b126b3f988985c2858f63d13d1",
+  "value_eth": 1e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x6616000169370eda8762e2cbe7266e1bfd0cc0c6b38335a392ada4cd272bd0fb",
+  "scammer": "0xff4bf933393012b126b3f988985c2858f63d13d1",
+  "value_eth": 1e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x8bd99b97e88dc2cebfa215bc9d178a135e16ac9b3417420df62f7e1e1f0e7952",
+  "scammer": "0xff4bf933393012b126b3f988985c2858f63d13d1",
+  "value_eth": 1e-18,
+  "method": "net_value_contract",
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0xe0077267812aeeeb16cd6322df6acb4ec30cc9e068944a08e4496a8314ed1fb5",
+  "scammer": "0x88b2c792efff7202b3b7ac06902f35f3dea9ab72",
+  "value_eth": 0.0,
+  "method": "net_nft_contract",
+  "nft_count": 16,
+  "subtype": "free_buy_order"
+ },
+ {
+  "txhash": "0x2d58ffb716370958f78280f09890270375e398425e02861fc0a310d3738d55ef",
+  "scammer": "0x88b2c792efff7202b3b7ac06902f35f3dea9ab72",
+  "value_eth": 0.0,
+  "method": "net_nft_contract",
+  "nft_count": 16,
+  "subtype": "free_buy_order"
+ }
+]

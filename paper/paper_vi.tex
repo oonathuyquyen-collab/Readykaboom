@@ -1,0 +1,358 @@
+\documentclass[conference]{IEEEtran}
+\usepackage{amsmath,amssymb,graphicx,booktabs,url,xcolor,multirow}
+\usepackage{fontspec}
+\setmainfont{DejaVu Serif}[Scale=0.92]
+\setsansfont{DejaVu Sans}[Scale=0.90]
+\setmonofont{DejaVu Sans Mono}[Scale=0.85]
+\IEEEoverridecommandlockouts
+\newcommand{\best}[1]{\textbf{#1}}
+\begin{document}
+\title{Unified TMIL: Một Lượt Truyền Xuôi cho Phát hiện Lừa đảo Ethereum\\
+ở Mức Tài khoản và Mức Giao dịch, kèm Benchmark được Kiểm toán\\
+và một Nghiên cứu Định vị Trung thực}
+\author{\IEEEauthorblockN{Bản nộp ẩn danh}}
+\maketitle
+
+\begin{abstract}
+Chúng tôi nghiên cứu lừa đảo (phishing) trên Ethereum ở hai mức độ chi tiết bằng
+một mô hình duy nhất: quyết định một tài khoản có phải kẻ lừa đảo hay không (mức
+tài khoản) và xác định chính xác các giao dịch gian lận bên trong lịch sử của tài
+khoản đó (mức giao dịch). Thay vì đề xuất một backbone mới, chúng tôi \emph{giữ
+nguyên} các embedding giao dịch BERT4ETH đã công bố và bộ đọc đầu ra TMIL (temporal
+multiple-instance-learning), rồi đặt câu hỏi: một sự hợp nhất cẩn thận cùng một
+giao thức trung thực có thể đi xa đến đâu. Chúng tôi đóng góp ba điều. (i)
+\emph{Unified TMIL}: một bộ mã hóa dùng chung với hai đầu đọc attention, trong một
+lượt truyền xuôi tạo ra quyết định mức tài khoản (đầu mềm) và một xếp hạng giao
+dịch có nhận biết hướng (một đầu được huấn luyện đầu-cuối dưới embedding IN/OUT sẵn
+có của BERT4ETH thay vì một mặt nạ cứng chỉ-outbound). (ii) Một \emph{benchmark
+được kiểm toán} xây từ PTXPhish, gồm một \emph{giao thức gán nhãn lại qua hợp đồng}
+truy vết các biên lai thực thi (\textsc{transferFrom}, Seaport
+\textsc{OrderFulfilled}) và nâng ground truth mức tài khoản sạch từ 83.4\% lên
+92.7\%, cho ra 292 EOA kẻ lừa đảo đã khử trùng lặp trên ba cơ chế. (iii) Một
+\emph{đánh giá trung thực}: khoảng tin cậy bootstrap có nhận biết cụm, phân rã âm
+theo nguồn, phân tầng theo mức hoạt động, và các phép chia ngoài-phân-phối (chéo
+cơ chế và theo thời gian). Mô hình của chúng tôi đạt AUC chéo miền tổng hợp 0.984
+và AUC 0.725 trên các tài khoản lành tính DeFi/KOL \emph{khó}, vẫn cạnh tranh với
+các baseline mạnh (BERT4ETH, ZipZap, TSGN, LMAE4Eth) trong khi là phương pháp duy
+nhất còn định vị được. Với định vị, chúng tôi báo cáo một kết quả mà lĩnh vực cần
+nghe: một bộ xếp hạng nhận biết nội dung (content-aware) trên các đặc trưng
+giá trị/độ mới/vị trí on-chain vượt trội đáng kể so với một prior recency ở Hit@1
+(0.832 so với 0.693, paired bootstrap $p{=}0.002$), nhưng một ablation có kiểm soát
+cho thấy \emph{bản thân attention học được gần như không đóng góp gì}---loại bỏ nó
+khiến Hit@1 không đổi (0.802) và MRR còn nhỉnh hơn. Do đó chúng tôi lập luận chống
+lại việc coi attention là định vị, và công bố benchmark cùng giao thức như một
+thách thức mở.
+\end{abstract}
+
+\section{Giới thiệu}
+Lừa đảo on-chain rút hàng trăm triệu đô-la mỗi năm. Công trình trước tấn công bài
+toán hoặc ở mức \emph{tài khoản} (phân loại một địa chỉ) hoặc ở mức \emph{giao
+dịch} (gắn cờ một payload), nhưng hiếm khi cả hai bằng một mô hình, và hiếm khi với
+độ chặt chẽ đánh giá cần thiết để tin tưởng các tập dữ liệu crypto nhỏ và bị tái
+sử dụng. Mục tiêu của chúng tôi cố tình bị ràng buộc: giữ nguyên backbone BERT4ETH
+và bộ đọc TMIL, rồi cho thấy một sự hợp nhất cẩn thận cộng với một giao thức trung
+thực tạo ra một hệ thống tài khoản+giao dịch đáng tin và tái lập được.
+
+\noindent\textbf{Đóng góp.}
+\begin{itemize}
+\item \textbf{Một kiến trúc hợp nhất thực sự, một-bộ-trọng-số.} Một bộ mã hóa dùng
+chung nuôi hai đầu attention mà trong một lượt truyền xuôi phân loại tài khoản và
+xếp hạng các giao dịch của nó (Mục~\ref{sec:method}). Quan trọng là chúng tôi thay
+\emph{mặt nạ cứng chỉ-outbound} của C-TMIL bằng \emph{embedding IN/OUT} của
+BERT4ETH, cho mô hình tự học tầm quan trọng của hướng giao dịch thay vì giả định
+chỉ outbound mới liên quan. Chúng tôi chỉ ra rằng một bộ đọc hậu kỳ là không đủ:
+đầu định vị phải nhận được gradient trong lúc huấn luyện.
+\item \textbf{Một benchmark được kiểm toán với giao thức gán nhãn lại qua hợp đồng.}
+Một cuộc kiểm toán khả thi xác lập rằng 83.4\% giao dịch PTXPhish có ground truth
+mức tài khoản sạch một cách trực tiếp; truy vết các biên lai thực thi qua hợp đồng
+(\textsc{transferFrom}, Seaport \textsc{OrderFulfilled}, ETH nội bộ) nâng con số
+này lên 92.7\%. Chúng tôi khử trùng lặp còn 292 EOA kẻ lừa đảo duy nhất để tránh
+tái sử dụng mẫu (Mục~\ref{sec:bench}).
+\item \textbf{Một giao thức trung thực và một kết quả âm trung thực.} Khoảng tin cậy
+bootstrap có nhận biết cụm, âm theo nguồn, phân tầng hoạt động, các phép chia OOD,
+và---quan trọng nhất---một ablation có kiểm soát cho thấy attention học được
+\emph{không} dẫn dắt việc định vị; các đặc trưng on-chain thủ công và một prior
+recency mạnh mới làm điều đó (Mục~\ref{sec:loc}).
+\end{itemize}
+
+\section{Phương pháp}\label{sec:method}
+\textbf{Backbone (không đổi).} Mỗi tài khoản là một \emph{túi} (bag) các giao dịch
+của nó. Theo BERT4ETH, mỗi giao dịch được mã hóa bằng embedding đối tác cùng với
+hướng IN/OUT, giá trị, đếm và embedding chênh lệch thời gian; chuỗi được ngữ cảnh
+hóa bởi bộ mã hóa tích chập theo thời gian (TCN) của TMIL. Chúng tôi không thêm
+bảng embedding mới và không thêm đầu định vị mới.
+
+\noindent\textbf{Xây dựng túi.} Chúng tôi dùng một cửa sổ độ dài cố định
+$L{=}100$ giao dịch cho mỗi tài khoản. Không gian thiết kế cho phép cửa sổ trượt
+($W,S$); chúng tôi thấy một cửa sổ đơn là đủ vì $>$90\% EOA kẻ lừa đảo có ít hơn
+$L$ giao dịch sau mốc neo, và một cửa sổ đơn loại bỏ sự mơ hồ khi tổng hợp điểm mà
+các cửa sổ chồng lấn gây ra. Với túi dương, cửa sổ kết thúc tại mốc phát hiện (sự
+kiện phishing được gán nhãn); chúng tôi thảo luận thiên lệch vị trí phát sinh một
+cách tường minh ở Mục~\ref{sec:loc} và trung hòa dạng tầm thường nhất của nó bằng
+cách loại giao dịch cuối của mỗi túi khỏi cả ứng viên lẫn ground truth cho
+\emph{mọi} phương pháp.
+
+\noindent\textbf{Bộ đọc hai đầu.} Một đầu gated-attention mềm (Head-C) gộp túi cho
+mục tiêu BCE mức tài khoản. Một đầu thứ hai (Head-L) xếp hạng giao dịch để định vị.
+Trong C-TMIL, Head-L che cứng các giao dịch inbound; thay vào đó chúng tôi để
+embedding IN/OUT sẵn có điều biến attention và huấn luyện Head-L \emph{cùng lúc} với
+BCE, để trọng số của nó nhận gradient liên quan đến định vị. Cả hai đầu chia sẻ toàn
+bộ tham số bộ mã hóa; mô hình huấn luyện một lần và chạy trong một lượt truyền xuôi.
+Hàm mất mát là $\mathcal{L}=\mathrm{BCE}(\text{Head-C})+\lambda\,
+\mathrm{BCE}(\text{Head-L})+\beta\,\mathcal{L}_{\text{contrast}}$.
+
+\noindent\textbf{Vì sao hai đầu.} Chúng tôi kiểm chứng bằng thực nghiệm rằng đọc
+định vị hậu kỳ từ đầu mềm kém hơn một mô hình che được huấn luyện riêng; cho Head-L
+gradient riêng của nó khôi phục chất lượng định vị trong một bộ trọng số hợp nhất
+(Bảng~\ref{tab:abl}, các hàng $\lambda$). Kiến trúc được trình bày ở
+Hình~\ref{fig:arch}.
+
+\section{Benchmark và Giao thức}\label{sec:bench}
+Bảng~\ref{tab:data} tóm tắt tập dữ liệu được kiểm toán.
+\textbf{Giao thức gán nhãn lại.} PTXPhish liệt kê một hash giao dịch phishing cho
+mỗi ca. Với chuyển trực tiếp, hash này là mục tiêu định vị và nằm trong lịch sử tài
+khoản (83.4\% số ca). Với phishing qua hợp đồng (rút Approve/Permit, lấp lệnh
+Seaport và NFT-order) hash được liệt kê là một phê duyệt phía nạn nhân hoặc một lời
+gọi sàn mà dịch chuyển giá trị xảy ra trong một biên lai thực thi; chúng tôi truy
+vết \textsc{transferFrom} ERC-20/WETH, Seaport \textsc{OrderFulfilled} và các chuyển
+ETH nội bộ để quy kết EOA kẻ lừa đảo và gán nhãn lại giao dịch thực thi. Điều này
+nâng ground truth mức tài khoản sạch lên 92.7\% (94.8\% nếu loại 108 giao dịch
+nâng cấp proxy thuộc hạ tầng của kẻ lừa đảo).
+\textbf{Mẫu âm.} Chúng tôi kết hợp các người gửi lành tính PTXPhish \emph{khó} (các
+tài khoản KOL/DeFi đang hoạt động) với các EOA Bình thường giữ lại từ BERT4ETH, và
+luôn báo cáo riêng tập con khó để bể EOA Bình thường gần như tầm thường không thổi
+phồng các con số tiêu đề.
+\textbf{Phép chia và CI.} Các mẫu dương được khử trùng lặp về các EOA kẻ lừa đảo duy
+nhất và dùng làm túi kiểm thử zero-shot (mô hình chỉ huấn luyện trên dữ liệu
+BERT4ETH nội miền, nên không có rò rỉ train/test). Mọi khoảng tin cậy là bootstrap
+có nhận biết cụm trên các tài khoản độc lập.
+
+\section{Kết quả: Phát hiện mức Tài khoản}
+Bảng~\ref{tab:comp} báo cáo so sánh mức tài khoản với các phương pháp đã công bố và
+các biến thể gộp MIL, tất cả đều được tái cài đặt trên một bộ mã hóa BERT4ETH dùng
+chung dưới một giao thức. AUC chéo miền tổng hợp là 0.984; trên tập con khó là 0.725
+(95\% CI $[0.658,0.791]$). Chúng tôi minh bạch về điều này: gộp trung bình đơn giản
+và BERT4ETH ngang bằng hoặc vượt chúng tôi về AUC âm-khó, nên đóng góp mức tài khoản
+của chúng tôi là sự \emph{hợp nhất}---chúng tôi là mục duy nhất còn định vị
+được---chứ không phải một state-of-the-art mức tài khoản mới. Bảng~\ref{tab:strat}
+phân tầng theo mức hoạt động: AUC vẫn cao trên ngẫu nhiên ngay cả ở tầng 100+ giao
+dịch, nên tín hiệu không phải chỉ là tạo tác ``người-dùng-cường-độ-cao so với
+tài-khoản-ngắn-ngày''. Bảng~\ref{tab:ood} cho thấy AUC mức tài khoản duy trì trên
+mọi phân vùng OOD chéo cơ chế và theo thời gian.
+
+\section{Kết quả: Định vị mức Giao dịch}\label{sec:loc}
+Bảng~\ref{tab:loc} báo cáo định vị sau khi loại bỏ tạo tác mốc-phát-hiện (giao dịch
+cuối của mọi túi tầm thường là GT và bị loại cho mọi phương pháp). Ba phát hiện nổi
+bật, và phát hiện thứ ba là quan trọng nhất.
+
+\noindent\textbf{(1) Xếp hạng nhận biết nội dung vượt heuristic và recency ở Hit@1.}
+Bộ xếp hạng nhận biết nội dung của chúng tôi---một hợp nhất gradient-boosted của các
+đặc trưng on-chain (đỉnh số tiền so với max chạy, độ mới, vị trí, outbound giá trị
+không, tần suất đối tác, và một ``danh tiếng rút tiền'' của đối tác theo
+leave-one-bag-out có kiểm soát rò rỉ)---đạt Hit@1 0.832, đáng kể trên prior recency
+0.693 ($\Delta{=}{+}0.128$, paired bootstrap $p{=}0.002$, CI $[0.040,0.238]$ loại
+trừ 0). Do đó nó xác định \emph{chính xác} biên lai phishing thường xuyên hơn, trong
+khi ngang bằng recency ở Hit@5/10 thô hơn.
+
+\noindent\textbf{(2) Recency là một baseline mạnh, trung thực.} Vì các cửa sổ dương
+kết thúc tại mốc phát hiện, các biên lai phishing dồn về cuối lịch sử kẻ lừa đảo,
+nên một prior recency thuần đã đạt Hit@5/10 quanh 0.92--0.93. Mọi tuyên bố định vị
+phải được đo so với prior này; chúng tôi báo cáo nó nổi bật thay vì giấu đi.
+
+\noindent\textbf{(3) Attention học được gần như không đóng góp gì.}
+Bảng~\ref{tab:attn} tách biệt giá trị biên của attention dưới giao thức y hệt. Loại
+đặc trưng attention khỏi bộ xếp hạng nhận biết nội dung khiến Hit@1 không đổi (0.802)
+và \emph{nâng} MRR (0.854$\rightarrow$0.861); bộ xếp hạng chỉ-attention (0.416 Hit@1)
+thấp xa recency. Nói cách khác, tín hiệu định vị nằm trong các đặc trưng on-chain
+thủ công, không phải trong trọng số attention của mô hình. Điều này nhất quán với
+mảng tài liệu rộng hơn nghi ngờ attention như lời giải thích~\cite{jain2019}, và
+chúng tôi nói thẳng: \emph{ở đây attention không phải là định vị}. Chúng tôi định
+khung định vị giao dịch như sàng lọc được trợ-giúp-xếp-hạng, dẫn-dắt-bởi-đặc-trưng,
+và công bố nó như một thách thức benchmark mở.
+
+\section{Các Ablation}
+Bảng~\ref{tab:abl} ablate các thành phần backbone (không đổi) cho chuyển giao mức
+tài khoản. Loại embedding đối tác gây hại nhất (AUC âm-khó
+$0.849{\rightarrow}0.461$); loại embedding hướng IN/OUT là động lực chính của suy
+giảm chuyển giao trên mẫu âm khó ($0.849{\rightarrow}0.662$), biện minh bằng thực
+nghiệm cho lựa chọn thay mặt nạ cứng chỉ-outbound bằng embedding IN/OUT học được.
+Các hàng $\lambda$ xác nhận rằng huấn luyện đồng thời Head-L ($\lambda{>}0$) không
+làm hại hiệu năng mức tài khoản.
+
+\section{Thảo luận và Hạn chế}
+Chúng tôi phơi bày, chứ không giấu, các điểm yếu. \textbf{Bể mẫu âm khó nhỏ.} Tập
+con khó chỉ gồm 80 tài khoản DeFi/KOL; AUC của nó mang phương sai giữa các lần chạy
+không nhỏ, nên chúng tôi báo cáo CI có nhận biết cụm và xử lý ước lượng điểm một
+cách thận trọng. Chúng tôi giữ nguyên PTXPhish để so sánh được thay vì thổi phồng
+bằng mẫu âm dễ. \textbf{Thiên lệch vị trí.} Neo các cửa sổ dương tại mốc phát hiện
+khiến recency thành một prior mạnh; chúng tôi trung hòa ca giao-dịch-cuối tầm thường
+và đo mọi phương pháp so với recency. \textbf{Attention không trung thực cho định
+vị}, như ablation của chúng tôi cho thấy; do đó chúng tôi không đưa ra tuyên bố giải
+thích nào cho trọng số attention. \textbf{Độ phủ.} Ground truth định vị sạch phủ
+92.7\% PTXPhish; các giao dịch hạ tầng nâng cấp proxy còn lại để dành cho truy vết
+tương lai. Mô hình mức tài khoản của chúng tôi cạnh tranh nhưng không vượt trội
+tuyệt đối, theo thiết kế: đóng góp là sự hợp nhất, một benchmark sạch và một giao
+thức trung thực.
+
+\section{Kết luận}
+Unified TMIL thực hiện phát hiện lừa đảo Ethereum ở mức tài khoản và mức giao dịch
+trong một lượt truyền xuôi trong khi giữ nguyên backbone BERT4ETH và TMIL. Thay mặt
+nạ cứng chỉ-outbound bằng embedding IN/OUT học được là thay đổi cốt yếu mở đường.
+Phát hiện tiêu đề của chúng tôi cho cộng đồng mang tính cảnh báo: các prior vị trí
+mạnh và các đặc trưng on-chain thủ công---không phải attention---mới dẫn dắt định vị
+giao dịch hiện nay. Chúng tôi công bố benchmark được kiểm toán, giao thức gán nhãn
+lại qua hợp đồng, các baseline, và mã đánh giá để xúc tác tiến bộ chặt chẽ.
+
+% ---------------- HÌNH ----------------
+\begin{figure}[t]\centering\includegraphics[width=0.82\columnwidth]{../figures/fig_architecture.png}
+\caption{Unified TMIL. Một bộ mã hóa dùng chung (embedding
+đối-tác/IN-OUT/số-tiền/đếm/thời-gian $\to$ TCN) nuôi hai đầu attention trong một
+lượt truyền xuôi: một đầu mềm (Head-C) gộp túi để phân loại tài khoản, và
+Head-L---dùng embedding IN/OUT của BERT4ETH thay cho mặt nạ cứng chỉ-outbound, huấn
+luyện đồng thời dưới BCE---xếp hạng các giao dịch.}\label{fig:arch}\end{figure}
+\begin{figure}[t]\centering\includegraphics[width=\columnwidth]{../figures/fig_account.png}
+\caption{AUC mức tài khoản chéo miền zero-shot theo nguồn mẫu âm: PTXPhish lành tính
+khó (KOL/DeFi) so với EOA Bình thường so với tổng hợp.}\label{fig:acct}\end{figure}
+\begin{figure}[t]\centering\includegraphics[width=\columnwidth]{../figures/fig_loc.png}
+\caption{Định vị. (a) Các bộ xếp hạng ở Hit@1/5/10: hợp nhất nhận biết nội dung vượt
+recency ở Hit@1 ($p{=}0.002$). (b) Ablation đóng góp attention: loại attention học
+được khỏi bộ xếp hạng nhận biết nội dung không gây hại (Hit@1 không đổi, MRR nhỉnh
+lên), tức attention không phải nguồn của tín hiệu.}\label{fig:loc}\end{figure}
+\begin{figure}[t]\centering\includegraphics[width=\columnwidth]{../figures/fig_ood.png}
+\caption{AUC mức tài khoản ngoài-phân-phối trên các phép chia chéo cơ chế (giữ lại
+một loại) và theo thời gian.}\label{fig:ood}\end{figure}
+
+% ---------------- BẢNG ----------------
+\begin{table}[t]\centering\caption{Tập dữ liệu được kiểm toán. GT chuyển-trực-tiếp
+phủ 83.4\%; giao thức gán nhãn lại qua hợp đồng (truy vết mức biên lai
+\textsc{transferFrom}/Seaport/NFT-order) nâng GT mức tài khoản sạch lên 92.7\%
+(94.8\% nếu loại các giao dịch nâng cấp proxy hạ tầng của kẻ lừa đảo). Mẫu dương là
+các EOA kẻ lừa đảo duy nhất; mẫu âm kết hợp PTXPhish lành tính khó (KOL/DeFi) và các
+EOA Bình thường giữ lại.}\label{tab:data}
+\begin{tabular}{lr}\toprule
+\textbf{Tập con} & \textbf{Số lượng} \\\midrule
+Giao dịch phishing đã kiểm toán (PTXPhish) & 4998 \\
+\ \ GT sạch chuyển-trực-tiếp & 4168 (83.4\%) \\
+\ \ +truy-vết-biên-lai (Seaport/NFT/transferFrom) & +466 \\
+\ \ tổng GT mức tài khoản sạch & 4634 (92.7\%) \\
+EOA kẻ lừa đảo duy nhất (mẫu dương) & 292 \\
+\ \ poisoning / payable / ice\_phishing & 188 / 59 / 45 \\
+Mẫu âm khó (PTXPhish lành tính, KOL/DeFi) & 80 \\
+Mẫu âm EOA Bình thường giữ lại & 1324 \\
+Túi định vị GT-nội-vùng & 101 \\\bottomrule
+\end{tabular}\end{table}
+
+\begin{table}[t]\centering\caption{So sánh mức tài khoản với SOTA đã công bố và các
+baseline gộp MIL, tất cả tái cài đặt trên một bộ mã hóa BERT4ETH dùng chung dưới một
+giao thức. ID = nội miền; X = chéo miền zero-shot PTXPhish; X$_{khó}$ = AUC chỉ với
+các người gửi lành tính PTXPhish khó. Mô hình chúng tôi cạnh tranh \emph{trong khi
+còn định vị được}, điều không baseline nào làm.}\label{tab:comp}
+\begin{tabular}{lcccc}\toprule
+\textbf{Phương pháp} & \textbf{ID-F1} & \textbf{ID-AUC} & \textbf{X-AUC} & \textbf{X-AUC$_{khó}$} \\\midrule
+\multicolumn{5}{l}{\emph{Phương pháp mức tài khoản đã công bố (tái cài đặt)}}\\
+BERT4ETH~\cite{bert4eth} & 0.734 & 0.925 & 0.989 & \best{0.836} \\
+ZipZap~\cite{zipzap} & 0.711 & 0.915 & 0.979 & 0.776 \\
+TSGN~\cite{tsgn} & 0.727 & 0.918 & 0.985 & 0.760 \\
+LMAE4Eth~\cite{lmae4eth} & 0.750 & 0.933 & 0.980 & 0.708 \\
+\midrule\multicolumn{5}{l}{\emph{Baseline gộp MIL (bộ mã hóa dùng chung)}}\\
+Max-pool MIL & 0.752 & 0.933 & 0.978 & 0.779 \\
+Gated-attn MIL~\cite{ilse2018} & 0.733 & 0.922 & 0.965 & 0.803 \\
+Mean-pool MIL & 0.755 & 0.933 & 0.957 & \best{0.885} \\
+\midrule
+\textbf{Unified TMIL (của chúng tôi)} & 0.743 & 0.922 & 0.984 & 0.725 \\
+\bottomrule\end{tabular}\end{table}
+
+\begin{table}[t]\centering\caption{AUC mức tài khoản phân tầng theo mức hoạt động
+(\#tx). AUC cao duy trì ngay cả ở tầng hoạt-động-cao.}\label{tab:strat}
+\begin{tabular}{lccc}\toprule
+\textbf{Tầng (\#tx)} & \textbf{\#âm} & \textbf{\#dương} & \textbf{AUC} \\\midrule
+3--20 & 1218 & 54 & 0.999 \\
+20--100 & 104 & 103 & 0.971 \\
+100+ & 76 & 130 & 0.741 \\\bottomrule
+\end{tabular}\end{table}
+
+\begin{table}[t]\centering\caption{Định vị giao dịch trên PTXPhish ($n{=}101$), đã
+loại tạo tác mốc-phát-hiện; 95\% CI bootstrap cụm trong ngoặc. Các prior heuristic
+và baseline MIL (Gated-attn~\cite{ilse2018}, TransMIL~\cite{transmil},
+CLAM~\cite{clam}) dùng cùng bộ mã hóa và giao thức. Hợp nhất nhận biết nội dung
+\best{vượt đáng kể} recency ở Hit@1 ($p{=}0.002$). $^\dagger$cải thiện đáng kể so
+với recency.}\label{tab:loc}
+\begin{tabular}{lcccc}\toprule
+\textbf{Bộ xếp hạng} & \textbf{Hit@1} & \textbf{Hit@5} & \textbf{Hit@10} & \textbf{MRR} \\\midrule
+\multicolumn{5}{l}{\emph{Prior heuristic}}\\
+Amount-rank & 0.347 & 0.584 & 0.663 & 0.447 \\
+Degree-rank & 0.465 & 0.772 & 0.822 & 0.607 \\
+Novelty-rank & 0.356 & 0.782 & 0.832 & 0.551 \\
+Recency-rank & 0.693 & \best{0.921} & 0.931 & 0.799 \\
+\midrule\multicolumn{5}{l}{\emph{Baseline MIL (bộ mã hóa dùng chung)}}\\
+Gated-attn MIL~\cite{ilse2018} & 0.446 & 0.752 & 0.881 & 0.598 \\
+TransMIL~\cite{transmil} & 0.406 & 0.673 & 0.792 & 0.533 \\
+CLAM~\cite{clam} & 0.455 & 0.792 & 0.871 & 0.599 \\
+\midrule\multicolumn{5}{l}{\emph{Học / hợp nhất (của chúng tôi)}}\\
+Head-L chỉ-attention & 0.416 & 0.752 & 0.891 & 0.576 \\
+\textbf{Hợp nhất nhận biết nội dung}$^\dagger$ & \best{0.832} & \best{0.931} & \best{0.941} & \best{0.880} \\
+& \footnotesize[.752,.901] & \footnotesize[.881,.980] & \footnotesize[.891,.980] & \footnotesize[.823,.932] \\
+\bottomrule\end{tabular}\end{table}
+
+\begin{table}[t]\centering\caption{\textbf{Ablation đóng góp attention} (bộ xếp hạng
+nhận biết nội dung, không-danh-tiếng, cùng giao thức LOO, $n{=}101$). Loại đặc trưng
+attention học được \emph{không} gây hại: Hit@1 không đổi và MRR nhỉnh hơn. Tín hiệu
+định vị đến từ các đặc trưng on-chain thủ công, không phải attention.}\label{tab:attn}
+\begin{tabular}{lcccc}\toprule
+\textbf{Biến thể} & \textbf{Hit@1} & \textbf{Hit@5} & \textbf{Hit@10} & \textbf{MRR} \\\midrule
+Nhận biết nội dung ($+$attn) & 0.802 & 0.921 & 0.950 & 0.854 \\
+Nhận biết nội dung ($-$attn) & 0.802 & 0.931 & 0.960 & \best{0.861} \\
+Prior recency & 0.693 & 0.921 & 0.931 & 0.799 \\
+Chỉ attention & 0.416 & 0.752 & 0.891 & 0.576 \\\bottomrule
+\end{tabular}\end{table}
+
+\begin{table}[t]\centering\caption{Ablation backbone (2 seed), chuyển giao mức tài
+khoản. Embedding đối tác và IN/OUT dẫn dắt chuyển giao âm-khó; huấn luyện đồng thời
+Head-L ($\lambda{>}0$) không gây hại hiệu năng mức tài khoản.}\label{tab:abl}
+\begin{tabular}{lccc}\toprule
+\textbf{Biến thể} & \textbf{ID-F1} & \textbf{X-AUC} & \textbf{X-AUC$_{khó}$} \\\midrule
+Mô hình đầy đủ & 0.734 & 0.974 & 0.849 \\
+\ \ $-$ bộ mã hóa TCN & 0.735 & 0.955 & 0.592 \\
+\ \ $-$ embedding đối tác & 0.554 & 0.960 & 0.461 \\
+\ \ $-$ embedding IN/OUT & 0.717 & 0.928 & 0.662 \\
+$\lambda{=}0$ (chỉ mềm) & 0.733 & 0.965 & 0.803 \\
+$\lambda{=}0.25$ & 0.735 & 0.969 & 0.837 \\
+\bottomrule\end{tabular}\end{table}
+
+\begin{table}[t]\centering\caption{Khái quát hóa mức tài khoản ngoài-phân-phối. Các
+phân vùng chéo cơ chế giữ lại trọn một cơ chế phishing; các phép chia theo thời gian
+huấn luyện/kiểm thử qua mốc thời gian trung vị.}\label{tab:ood}
+\begin{tabular}{lccc}\toprule
+\textbf{Phân vùng OOD} & \textbf{\#dương} & \textbf{AUC} & \textbf{AUPR} \\\midrule
+\multicolumn{4}{l}{\emph{Chéo cơ chế (giữ lại một loại)}}\\
+\ \ payable\_function & 59 & 0.998 & 0.894 \\
+\ \ ice\_phishing & 45 & 0.967 & 0.316 \\
+\ \ address\_poisoning & 188 & 0.984 & 0.765 \\
+\multicolumn{4}{l}{\emph{Theo thời gian}}\\
+\ \ sớm (train) & 146 & 0.985 & 0.802 \\
+\ \ muộn (test) & 146 & 0.983 & 0.763 \\
+\bottomrule\end{tabular}\end{table}
+
+\begin{thebibliography}{1}
+\bibitem{ilse2018} M.~Ilse, J.~Tomczak, and M.~Welling, ``Attention-based deep
+multiple instance learning,'' in \emph{ICML}, 2018.
+\bibitem{bert4eth} S.~Hu et al., ``BERT4ETH: A pre-trained transformer for
+Ethereum fraud detection,'' in \emph{WWW}, 2023.
+\bibitem{ptxphish} BlockSec, ``PTXPhish: payload-based transaction phishing
+detection on Ethereum,'' 2023.
+\bibitem{zipzap} J.~Liu et al., ``ZipZap: efficient training of language models for
+Ethereum fraud detection,'' in \emph{WWW}, 2024.
+\bibitem{tsgn} J.~Wang et al., ``TSGN: transaction subgraph networks for
+identifying Ethereum phishing accounts,'' 2022.
+\bibitem{lmae4eth} ``LMAE4Eth: masked auto-encoding with language-model embeddings
+for Ethereum account analysis,'' 2024.
+\bibitem{transmil} Z.~Shao et al., ``TransMIL: transformer based correlated
+multiple instance learning for whole slide image classification,'' in
+\emph{NeurIPS}, 2021.
+\bibitem{clam} M.~Y. Lu et al., ``Data-efficient and weakly supervised
+computational pathology on whole-slide images,'' \emph{Nature Biomedical
+Engineering}, 2021.
+\bibitem{jain2019} S.~Jain and B.~Wallace, ``Attention is not explanation,'' in
+\emph{NAACL}, 2019.
+\end{thebibliography}
+\end{document}
