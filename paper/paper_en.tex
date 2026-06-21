@@ -233,6 +233,28 @@ slightly up), i.e.\ attention is not the source of the signal.}\label{fig:loc}\e
 \caption{Out-of-distribution account-level AUC across cross-mechanism (held-out
 type) and temporal splits.}\label{fig:ood}\end{figure}
 
+\begin{figure}[t]\centering\includegraphics[width=\columnwidth]{../figures/fig_bar_account_prf.png}
+\caption{Account-level in-domain Precision/Recall/F1 across all detectors (3-seed
+mean; ours highlighted). We attain the highest recall among published detectors and
+competitive F1, while being the only model that also localizes.}\label{fig:bar_prf}\end{figure}
+
+\begin{figure}[t]\centering\includegraphics[width=\columnwidth]{../figures/fig_bar_account_auc.png}
+\caption{Cross-domain hard-negative AUC (PTXPhish benign senders, $n{=}80$). We report
+this honestly: our unified model is competitive but not top on this hard, small-sample
+metric; we therefore frame the account-level result as ``competitive while also
+localizing,'' not as account SOTA.}\label{fig:bar_auc}\end{figure}
+
+\begin{figure}[t]\centering\includegraphics[width=\columnwidth]{../figures/fig_bar_loc.png}
+\caption{Transaction-level localization on PTXPhish ($n{=}101$, artifact-removed).
+Our content-aware fusion is SOTA, beating every heuristic, MIL baseline, and the
+recency prior at Hit@1 ($p{=}0.002$).}\label{fig:bar_loc}\end{figure}
+
+\begin{figure}[t]\centering\includegraphics[width=\columnwidth]{../figures/fig_bar_attn.png}
+\caption{Marginal value of learned attention. Strengthening the gated-attention head
+lifts attention-only localization by $+24\%$ rel., but attention is subsumed by
+engineered features inside the fusion (paired $p{=}0.68$).}\label{fig:bar_attn}\end{figure}
+
+
 % ---------------- TABLES ----------------
 \begin{table}[t]\centering\caption{Audited dataset. Direct-transfer GT covers
 83.4\%; the contract-mediated relabeling protocol (receipt-level
@@ -240,6 +262,7 @@ type) and temporal splits.}\label{fig:ood}\end{figure}
 92.7\% (94.8\% excluding scammer-infrastructure proxy-upgrade txs). Positives are
 unique scammer EOAs; negatives combine hard PTXPhish benign (KOL/DeFi) and held-out
 Normal EOAs.}\label{tab:data}
+\resizebox{\columnwidth}{!}{%
 \begin{tabular}{lr}\toprule
 \textbf{Subset} & \textbf{Count} \\\midrule
 Phishing tx audited (PTXPhish) & 4998 \\
@@ -251,13 +274,14 @@ Unique scammer EOAs (positives) & 292 \\
 Hard negatives (PTXPhish benign, KOL/DeFi) & 80 \\
 Held-out Normal-EOA negatives & 1324 \\
 Interior-GT localization bags & 101 \\\bottomrule
-\end{tabular}\end{table}
+\end{tabular}}\end{table}
 
 \begin{table}[t]\centering\caption{Account-level comparison vs.\ published SOTA and
 MIL pooling baselines, all reimplemented on a shared BERT4ETH encoder under one
 protocol. ID = in-domain; X = zero-shot cross-domain PTXPhish; X$_{hard}$ = AUC vs.\
 the hard PTXPhish benign senders only. Our model is competitive \emph{while
 additionally localizing}, which no baseline does.}\label{tab:comp}
+\resizebox{\columnwidth}{!}{%
 \begin{tabular}{lcccc}\toprule
 \textbf{Method} & \textbf{ID-F1} & \textbf{ID-AUC} & \textbf{X-AUC} & \textbf{X-AUC$_{hard}$} \\\midrule
 \multicolumn{5}{l}{\emph{Published account-level methods (reimplemented)}}\\
@@ -271,7 +295,7 @@ Gated-attn MIL~\cite{ilse2018} & 0.733 & 0.922 & 0.965 & 0.803 \\
 Mean-pool MIL & 0.755 & 0.933 & 0.957 & \best{0.885} \\
 \midrule
 \textbf{Unified TMIL (ours)} & 0.735 & 0.922 & 0.984 & 0.725 \\
-\bottomrule\end{tabular}\end{table}
+\bottomrule\end{tabular}}\end{table}
 
 \begin{table}[t]\centering\caption{In-domain account-level Precision/Recall/F1
 (threshold $0.5$, mean over 3 seeds; std in parentheses for ours). All methods share
@@ -305,6 +329,7 @@ priors and MIL baselines (Gated-attn~\cite{ilse2018}, TransMIL~\cite{transmil},
 CLAM~\cite{clam}) use the identical encoder and protocol. Content-aware fusion
 \best{significantly} beats recency at Hit@1 ($p{=}0.002$). $^\dagger$significant
 improvement over recency.}\label{tab:loc}
+\resizebox{\columnwidth}{!}{%
 \begin{tabular}{lcccc}\toprule
 \textbf{Ranker} & \textbf{Hit@1} & \textbf{Hit@5} & \textbf{Hit@10} & \textbf{MRR} \\\midrule
 \multicolumn{5}{l}{\emph{Heuristic priors}}\\
@@ -321,9 +346,10 @@ Head-L attention only & 0.416 & 0.752 & 0.891 & 0.576 \\
 Head-L (strong, +sharpen+inst) & 0.515 & 0.851 & 0.921 & 0.646 \\
 \textbf{Content-aware fusion}$^\dagger$ & \best{0.832} & \best{0.931} & \best{0.941} & \best{0.880} \\
 & \footnotesize[.752,.901] & \footnotesize[.881,.980] & \footnotesize[.891,.980] & \footnotesize[.823,.932] \\
-\bottomrule\end{tabular}\end{table}
+\bottomrule\end{tabular}}\end{table}
 
 \begin{table}[t]\centering\caption{Marginal value of the learned attention in the SOTA content-aware fusion (identical LOO protocol, $n{=}101$). Engineered features alone reach Hit@1 0.792--0.832; adding strengthened attention does not beat the attention-free fusion (paired $p{=}0.68$). Attention is a useful but non-essential signal.}\label{tab:attn}
+\resizebox{\columnwidth}{!}{%
 \begin{tabular}{lcccc}\toprule
 \textbf{Fusion variant} & \textbf{Hit@1} & \textbf{Hit@5} & \textbf{Hit@10} & \textbf{MRR} \\\midrule
 Content-aware ($+$baseline attn) & 0.832 & 0.931 & 0.941 & 0.880 \\
@@ -331,7 +357,7 @@ Content-aware ($+$strong attn) & 0.782 & 0.931 & 0.941 & 0.848 \\
 Content-aware ($-$attn) & 0.792 & 0.941 & 0.941 & 0.860 \\
 Recency prior & 0.693 & 0.921 & 0.931 & 0.799 \\
 Attention only & 0.416 & 0.752 & 0.891 & 0.576 \\\bottomrule
-\end{tabular}\end{table}
+\end{tabular}}\end{table}
 
 \begin{table}[t]\centering\caption{Backbone ablation (2 seeds), account-level
 transfer. The counterparty and IN/OUT embeddings drive hard-negative transfer;

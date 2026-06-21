@@ -237,6 +237,28 @@ lên), tức attention không phải nguồn của tín hiệu.}\label{fig:loc}\
 \caption{AUC mức tài khoản ngoài-phân-phối trên các phép chia chéo cơ chế (giữ lại
 một loại) và theo thời gian.}\label{fig:ood}\end{figure}
 
+\begin{figure}[t]\centering\includegraphics[width=\columnwidth]{../figures/fig_bar_account_prf.png}
+\caption{Precision/Recall/F1 mức tài khoản (in-domain) của mọi bộ phát hiện (trung
+bình 3 seed; phương pháp của chúng tôi được tô đậm). Chúng tôi đạt recall cao nhất
+và F1 cạnh tranh, đồng thời là mô hình duy nhất còn định vị được giao dịch.}\label{fig:bar_prf}\end{figure}
+
+\begin{figure}[t]\centering\includegraphics[width=\columnwidth]{../figures/fig_bar_account_auc.png}
+\caption{AUC cross-domain trên hard-negative (người gửi benign PTXPhish, $n{=}80$).
+Báo cáo trung thực: mô hình hợp nhất cạnh tranh nhưng không dẫn đầu ở metric khó,
+mẫu nhỏ này; do đó chúng tôi định khung kết quả account là ``cạnh tranh và còn định
+vị được'', không phải SOTA account.}\label{fig:bar_auc}\end{figure}
+
+\begin{figure}[t]\centering\includegraphics[width=\columnwidth]{../figures/fig_bar_loc.png}
+\caption{Định vị mức giao dịch trên PTXPhish ($n{=}101$, đã loại artifact). Bộ hợp
+nhất nhận-biết-nội-dung của chúng tôi đạt SOTA, thắng mọi heuristic, baseline MIL và
+prior recency ở Hit@1 ($p{=}0.002$).}\label{fig:bar_loc}\end{figure}
+
+\begin{figure}[t]\centering\includegraphics[width=\columnwidth]{../figures/fig_bar_attn.png}
+\caption{Giá trị biên của attention học được. Tăng cường head gated-attention nâng
+định vị attention-only lên $+24\%$ tương đối, nhưng attention bị đặc trưng thủ công
+nuốt trong fusion (paired $p{=}0.68$).}\label{fig:bar_attn}\end{figure}
+
+
 % ---------------- BẢNG ----------------
 \begin{table}[t]\centering\caption{Tập dữ liệu được kiểm toán. GT chuyển-trực-tiếp
 phủ 83.4\%; giao thức gán nhãn lại qua hợp đồng (truy vết mức biên lai
@@ -262,6 +284,7 @@ baseline gộp MIL, tất cả tái cài đặt trên một bộ mã hóa BERT4E
 giao thức. ID = nội miền; X = chéo miền zero-shot PTXPhish; X$_{khó}$ = AUC chỉ với
 các người gửi lành tính PTXPhish khó. Mô hình chúng tôi cạnh tranh \emph{trong khi
 còn định vị được}, điều không baseline nào làm.}\label{tab:comp}
+\resizebox{\columnwidth}{!}{%
 \begin{tabular}{lcccc}\toprule
 \textbf{Phương pháp} & \textbf{ID-F1} & \textbf{ID-AUC} & \textbf{X-AUC} & \textbf{X-AUC$_{khó}$} \\\midrule
 \multicolumn{5}{l}{\emph{Phương pháp mức tài khoản đã công bố (tái cài đặt)}}\\
@@ -275,13 +298,14 @@ Gated-attn MIL~\cite{ilse2018} & 0.733 & 0.922 & 0.965 & 0.803 \\
 Mean-pool MIL & 0.755 & 0.933 & 0.957 & \best{0.885} \\
 \midrule
 \textbf{Unified TMIL (của chúng tôi)} & 0.735 & 0.922 & 0.984 & 0.725 \\
-\bottomrule\end{tabular}\end{table}
+\bottomrule\end{tabular}}\end{table}
 
 \begin{table}[t]\centering\caption{Precision/Recall/F1 mức tài khoản in-domain
 (ngưỡng $0.5$, trung bình 3 seed; std trong ngoặc cho mô hình của chúng tôi). Mọi
 phương pháp dùng chung bộ mã hóa BERT4ETH và một giao thức. Mô hình hợp nhất của
 chúng tôi cạnh tranh về F1 và đạt recall cao nhất trong nhóm đã công bố---đồng thời
 là mô hình duy nhất \emph{còn} định vị được giao dịch.}\label{tab:prf}
+\resizebox{\columnwidth}{!}{%
 \begin{tabular}{lccc}\toprule
 \textbf{Phương pháp} & \textbf{Precision} & \textbf{Recall} & \textbf{F1} \\\midrule
 BERT4ETH~\cite{bert4eth} & 0.749 & 0.722 & 0.734 \\
@@ -292,7 +316,7 @@ Gated-attn MIL~\cite{ilse2018} & 0.736 & 0.721 & 0.728 \\
 TransMIL~\cite{transmil} & 0.719 & 0.745 & 0.729 \\
 CLAM~\cite{clam} & 0.729 & 0.721 & 0.724 \\\midrule
 \textbf{Unified TMIL (của chúng tôi)} & 0.709 \footnotesize{(.028)} & \best{0.766} \footnotesize{(.040)} & 0.735 \footnotesize{(.011)} \\
-\bottomrule\end{tabular}\end{table}
+\bottomrule\end{tabular}}\end{table}
 
 \begin{table}[t]\centering\caption{AUC mức tài khoản phân tầng theo mức hoạt động
 (\#tx). AUC cao duy trì ngay cả ở tầng hoạt-động-cao.}\label{tab:strat}
@@ -309,6 +333,7 @@ và baseline MIL (Gated-attn~\cite{ilse2018}, TransMIL~\cite{transmil},
 CLAM~\cite{clam}) dùng cùng bộ mã hóa và giao thức. Hợp nhất nhận biết nội dung
 \best{vượt đáng kể} recency ở Hit@1 ($p{=}0.002$). $^\dagger$cải thiện đáng kể so
 với recency.}\label{tab:loc}
+\resizebox{\columnwidth}{!}{%
 \begin{tabular}{lcccc}\toprule
 \textbf{Bộ xếp hạng} & \textbf{Hit@1} & \textbf{Hit@5} & \textbf{Hit@10} & \textbf{MRR} \\\midrule
 \multicolumn{5}{l}{\emph{Prior heuristic}}\\
@@ -325,9 +350,10 @@ Head-L chỉ-attention & 0.416 & 0.752 & 0.891 & 0.576 \\
 Head-L (mạnh, +sharpen+inst) & 0.515 & 0.851 & 0.921 & 0.646 \\
 \textbf{Hợp nhất nhận biết nội dung}$^\dagger$ & \best{0.832} & \best{0.931} & \best{0.941} & \best{0.880} \\
 & \footnotesize[.752,.901] & \footnotesize[.881,.980] & \footnotesize[.891,.980] & \footnotesize[.823,.932] \\
-\bottomrule\end{tabular}\end{table}
+\bottomrule\end{tabular}}\end{table}
 
 \begin{table}[t]\centering\caption{\textbf{Giá trị biên của attention} trong hợp nhất nhận-biết-nội-dung SOTA (cùng giao thức LOO, $n{=}101$). Riêng đặc trưng thủ công đã đạt Hit@1 0.792--0.832; thêm attention mạnh không thắng hợp nhất không-attention (paired $p{=}0.68$). Attention hữu ích nhưng không thiết yếu.}\label{tab:attn}
+\resizebox{\columnwidth}{!}{%
 \begin{tabular}{lcccc}\toprule
 \textbf{Biến thể} & \textbf{Hit@1} & \textbf{Hit@5} & \textbf{Hit@10} & \textbf{MRR} \\\midrule
 Nhận biết nội dung ($+$attn gốc) & 0.832 & 0.931 & 0.941 & 0.880 \\
@@ -335,7 +361,7 @@ Nhận biết nội dung ($+$attn mạnh) & 0.782 & 0.931 & 0.941 & 0.848 \\
 Nhận biết nội dung ($-$attn) & 0.792 & 0.941 & 0.941 & 0.860 \\
 Prior recency & 0.693 & 0.921 & 0.931 & 0.799 \\
 Chỉ attention & 0.416 & 0.752 & 0.891 & 0.576 \\\bottomrule
-\end{tabular}\end{table}
+\end{tabular}}\end{table}
 
 \begin{table}[t]\centering\caption{Ablation backbone (2 seed), chuyển giao mức tài
 khoản. Embedding đối tác và IN/OUT dẫn dắt chuyển giao âm-khó; huấn luyện đồng thời

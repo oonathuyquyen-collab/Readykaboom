@@ -146,7 +146,12 @@ Túi định vị GT-nội-vùng & 101\\\bottomrule
 
 \section{Kết quả: Mức Tài khoản}
 \begin{frame}{So sánh mức tài khoản (chéo miền zero-shot)}
-\centering\small
+\begin{columns}
+\begin{column}{0.5\textwidth}\centering
+\includegraphics[width=\textwidth]{../figures/fig_bar_account_auc.png}
+\end{column}
+\begin{column}{0.5\textwidth}\centering \scriptsize
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{lcccc}\toprule
 \textbf{Phương pháp} & \textbf{ID-F1} & \textbf{ID-AUC} & \textbf{X-AUC} & \textbf{X-AUC$_{khó}$}\\\midrule
 BERT4ETH & 0.734 & 0.925 & 0.989 & \textbf{0.836}\\
@@ -157,13 +162,20 @@ Max-pool MIL & 0.752 & 0.933 & 0.978 & 0.779\\
 Gated-attn MIL & 0.733 & 0.922 & 0.965 & 0.803\\
 Mean-pool MIL & 0.755 & 0.933 & 0.957 & \textbf{0.885}\\
 \textbf{Unified TMIL (của chúng tôi)} & 0.735 & 0.922 & 0.984 & 0.725\\\bottomrule
-\end{tabular}
+\end{tabular}}
 \vfill
-\footnotesize X-AUC tổng hợp \textbf{0.984}; tập con khó 0.725, CI $[0.658,0.791]$. Cạnh tranh \emph{và là phương pháp duy nhất còn định vị được}; đóng góp là \textbf{hợp nhất}, không phải SOTA tài khoản mới.
+{\tiny X-AUC tổng hợp \textbf{0.984}; tập con khó 0.725, CI $[0.658,0.791]$. Cạnh tranh \emph{và là phương pháp duy nhất còn định vị được}; đóng góp là \textbf{hợp nhất}, không phải SOTA tài khoản mới.}
+\end{column}
+\end{columns}
 \end{frame}
 
 \begin{frame}{Precision / Recall / F1 mức tài khoản (in-domain)}
-\centering\small
+\begin{columns}
+\begin{column}{0.5\textwidth}\centering
+\includegraphics[width=\textwidth]{../figures/fig_bar_account_prf.png}
+\end{column}
+\begin{column}{0.5\textwidth}\centering \scriptsize
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{lccc}\toprule
 \textbf{Phương pháp} & \textbf{Precision} & \textbf{Recall} & \textbf{F1}\\\midrule
 BERT4ETH & 0.749 & 0.722 & 0.734\\
@@ -174,9 +186,11 @@ Gated-attn MIL & 0.736 & 0.721 & 0.728\\
 TransMIL & 0.719 & 0.745 & 0.729\\
 CLAM & 0.729 & 0.721 & 0.724\\
 \textbf{Unified TMIL (của chúng tôi)} & 0.709 & \textbf{0.766} & 0.735\\\bottomrule
-\end{tabular}
+\end{tabular}}
 \vfill
-\footnotesize Ngưỡng 0.5, trung bình 3 seed (std của chúng tôi: P$\pm$.028, R$\pm$.040, F1$\pm$.011). F1 cạnh tranh và \textbf{recall cao nhất} trong nhóm đã công bố --- và là mô hình duy nhất \emph{còn} định vị được.
+{\tiny Ngưỡng 0.5, trung bình 3 seed (std của chúng tôi: P$\pm$.028, R$\pm$.040, F1$\pm$.011). F1 cạnh tranh và \textbf{recall cao nhất} trong nhóm đã công bố --- và là mô hình duy nhất \emph{còn} định vị được.}
+\end{column}
+\end{columns}
 \end{frame}
 
 \begin{frame}{AUC theo nguồn mẫu âm \& mức hoạt động}
@@ -219,7 +233,12 @@ muộn (test) & 0.983 & 0.763\\\bottomrule
 
 \section{Kết quả: Định vị}
 \begin{frame}{Định vị mức giao dịch ($n=101$)}
-\centering\small
+\begin{columns}
+\begin{column}{0.5\textwidth}\centering
+\includegraphics[width=\textwidth]{../figures/fig_bar_loc.png}
+\end{column}
+\begin{column}{0.5\textwidth}\centering \scriptsize
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{lcccc}\toprule
 \textbf{Bộ xếp hạng} & \textbf{Hit@1} & \textbf{Hit@5} & \textbf{Hit@10} & \textbf{MRR}\\\midrule
 Amount-rank & 0.347 & 0.584 & 0.663 & 0.447\\
@@ -232,9 +251,11 @@ CLAM & 0.455 & 0.792 & 0.871 & 0.599\\
 Head-L chỉ-attention & 0.416 & 0.752 & 0.891 & 0.576\\
 Head-L (mạnh: sharpen+inst) & 0.515 & 0.851 & 0.921 & 0.646\\
 \textbf{Hợp nhất nhận biết nội dung} & \textbf{0.832} & \textbf{0.931} & \textbf{0.941} & \textbf{0.880}\\\bottomrule
-\end{tabular}
+\end{tabular}}
 \vfill
-\footnotesize Hợp nhất nhận biết nội dung vượt recency ở Hit@1: $+0.139$, paired bootstrap $p{=}0.002$.
+{\tiny Hợp nhất nhận biết nội dung vượt recency ở Hit@1: $+0.139$, paired bootstrap $p{=}0.002$.}
+\end{column}
+\end{columns}
 \end{frame}
 
 \begin{frame}{Attention CÓ THỂ huấn luyện để định vị --- nhưng bị thâu tóm trong hợp nhất}
